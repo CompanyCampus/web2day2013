@@ -15,6 +15,19 @@ main = hakyll $ do
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
+    match "font/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+--    match "css/*" $ do
+--        route   idRoute
+--        compile compressCssCompiler
+    match "css/*.less" $ do
+       route   $ setExtension "css"
+       compile $ getResourceString >>=
+           withItemBody (unixFilter "./matewrapper.sh" []) >>=
+           return . fmap compressCss
+
 
     match (fromList ["about.rst", "contact.markdown"]) $ do
         route   $ setExtension "html"

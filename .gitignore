@@ -3,3 +3,5 @@ site
 *.o
 _site
 _cache
+.DS_Store
+a.txt
