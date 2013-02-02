@@ -12,7 +12,7 @@ main = hakyll $ do
 
 --------------------------------------------------------------------------------
 -- Assets
-    match "assets/images/*" $ do
+    match "assets/images/**" $ do
         route   idRoute
         compile copyFileCompiler
 

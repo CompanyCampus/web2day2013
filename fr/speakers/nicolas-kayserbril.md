@@ -6,6 +6,7 @@ twitterwiddgetid: 297759255245766656
 site: jplusplus.org
 avatar: nicolas-kayserbril.jpg
 bigphoto: nicolas-kayserbril.jpg
+bigphoto2: nicolas-kayserbril.jpg
 ---
 
 Nicolas Kayser-Bril journaliste et développeur, est co-fondateur de la société Journalism++.
