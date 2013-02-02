@@ -1,15 +1,72 @@
 @blocwidth:200px;
 @colorpicto1:#333333;
 
+@colorspeaker:#667086;
+@colorshare:#605A57;
+@colorwritespeaker:#ccc3a6;
+
 /* Blocks colors */
 @bloc-color-tickets:#df3580;
 
+/* body */
+body {
+background-color:#ffffff;
+margin:0;
+top:0;
+left:0;
+
+}
+
+body, p, ul, table {
+font-family: 'oswald_lightlight';
+}
+
+/* header */ 
+#header {
+width:100%;
+height:100px;
+position:relative;
+}
+
+/* logo */
+#logo img {
+width:225px;
+height:167px;
+z-index:500;
+}
+
+/* topmenu */
+#topmenu {
+list-style-type:none;
+display: inline;
+padding-left: 0;
+margin-left: 0;
+}
+#topmenu li{
+display: inline;
+}
+
+
+#separator {
+width:100%;
+background-color:#efefef;
+height:33px;
+position:absolute;
+top:100px;
+z-index:0;
+}
+
+
+/* content */
+#content {
+
+}
 
 /* block title */
 @bloc-color-title:#f5f5f5;
 @bloc-color-icon-light:@bloc-color-title;
 @bloc-color-icon-dark:#363434;
-@bloc-font-title-size:30px;
+@bloc-font-title-size:45px;
 
 /* block body */
 @bloc-color-body:@bloc-color-title;
@@ -23,7 +80,9 @@ background-color:@bloc-color-tickets!important;
 
 /* Font management */
 .bloc .bloc-title {
-font-family: 'Oswald', sans-serif;
+margin-top:5px;
+font-family: 'oswald_lightlight';
+font-weight:300;
 width:100%;
 font-size:@bloc-font-title-size;
 color:@bloc-color-title;
@@ -83,7 +142,9 @@ color:@bloc-color-icon-light;
 	width:@blocwidth*2+4;
 }
 
-
+.sharebloc{
+background-color:@colorshare;
+}
 .sharebloc .onerow{
    text-align:left;
    margin-top:15px;
@@ -100,8 +161,30 @@ color:@bloc-color-icon-light;
 width:@blocwidth*2+4;
 padding:20px;
 text-align:justify;
+background:@colorspeaker;
+color:@colorwritespeaker;
+i.icon-quote-right{
+position:absolute;
+top:10px;
+right:10px;
+}
+i.icon-quote-left{
+position:absolute;
+bottom:10px;
+left:10px;
+}
 }
 
 .twittertimeline{
    background:#333
+}
+
+.speakername{
+   background-color:@colorspeaker;
+   color:#FFFFFF;
+   font-size:40px;
+   padding:10px;
+}
+.speakername span.lastname{
+   text-transform:uppercase;
 }
