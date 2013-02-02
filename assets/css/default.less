@@ -2,6 +2,8 @@
 @colorpicto1:#333333;
 
 @colorspeaker:#667086;
+@colorspeaker2:#ABA29F;
+
 @colorshare:#605A57;
 @colorwritespeaker:#ccc3a6;
 
@@ -166,16 +168,12 @@ width:@blocwidth*2+4;
 padding:20px;
 text-align:justify;
 background:@colorspeaker;
-color:@colorwritespeaker;
-i.icon-quote-right{
+color:#ffffff;
+i.icon-book{
 position:absolute;
 top:10px;
-right:10px;
-}
-i.icon-quote-left{
-position:absolute;
-bottom:10px;
-left:10px;
+right:20px;
+color:@colorwritespeaker;
 }
 }
 
@@ -185,10 +183,29 @@ left:10px;
 
 .speakername{
    background-color:@colorspeaker;
+   span{
    color:#FFFFFF;
+   
+   }
    font-size:40px;
    padding:10px;
+   i{
+   position:absolute;
+   bottom:10px;
+   right:10px;
+   color:#FFFFFF;
+   
+   }
 }
 .speakername span.lastname{
    text-transform:uppercase;
+}
+
+.speakersblock{
+background:@colorspeaker2;
+color:#FFFFFF;
+i{
+width:100%;
+text-align:center;
+}
 }

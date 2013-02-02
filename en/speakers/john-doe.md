@@ -7,6 +7,7 @@ twitterwiddgetid: 297714458258718720
 site: john.doe.name
 avatar: john-doe.jpg
 bigphoto: john-doe.jpg
+bigphoto2: john-doe.jpg
 ---
 
 Before they sold out trust fund sunt, nesciunt esse next level duis banksy

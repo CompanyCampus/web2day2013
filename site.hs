@@ -14,7 +14,7 @@ main = hakyll $ do
 
 --------------------------------------------------------------------------------
 -- Assets
-    match "assets/images/*" $ do
+    match "assets/images/**" $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -113,7 +113,7 @@ getBlock lang args ctx = let
 
 blockLoader :: String -> Context String
 blockLoader lang =
-    functionField "block" (\args item -> getBlock lang args mempty)
+    functionField "block" (\args item -> getBlock lang args (constField "lang" lang))
 
 globalContext lang =
     blockLoader lang `mappend`
