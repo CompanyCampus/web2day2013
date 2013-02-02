@@ -10,6 +10,8 @@
 /* Blocks colors */
 @bloc-color-tickets:#df3580;
 
+@eventcolor:#464343;
+
 /* body */
 body {
 background-color:#ffffff;
@@ -17,6 +19,14 @@ margin:0;
 top:0;
 left:0;
 
+}
+
+#bloc_home {
+img{
+height:100%;
+}
+text-align:center;
+background:#eeeeee;
 }
 
 body, p, ul, table {
@@ -225,5 +235,37 @@ display:block;
 color:#FFFFFF;
 width:100%;
 height:100%;
+}
+}
+
+.eventbloc{
+background-color:@eventcolor;
+color:#ffffff;
+i{
+margin:4px;
+color:#ffffff;
+}
+a{
+display:block;
+position:absolute;
+top:0px;
+left:0px;
+width:100%;
+height:100%;
+margin:0px;
+padding:0px;
+}
+h3{
+padding:4px;
+color:#ffffff;
+font-size:20px;
+}
+span{
+color:#ffffff;
+display:block;
+margin-left:15px;
+}
+span.type_event{
+font-style:italic;
 }
 }

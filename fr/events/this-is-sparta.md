@@ -1,6 +1,6 @@
 ---
 title: This is sparta
-location: Sparta
+location: salle maxi
 start: xxxxxxx
 end: xxxxxxx
 type: panel
