@@ -1,6 +1,7 @@
 $(function(){
 	_.each($('.bloc'),function(i,a,y){
-		$(i).css('background-color','rvb('+(a*10)+',255,0)');
+		console.log(a);
+		$(i).css('background-color','rgb('+(a*20)+',255,'+(250-a*20)+')');
 	});
 });
 
