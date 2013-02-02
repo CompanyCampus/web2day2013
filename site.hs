@@ -40,10 +40,10 @@ main = hakyll $ do
 -- Reusable blocks
 --
     match "fr/blocks/*" $ do
-        compile $ pandocCompiler
+        compile $ getResourceBody
 
     match "en/blocks/*" $ do
-        compile $ pandocCompiler
+        compile $ getResourceBody
 
 --------------------------------------------------------------------------------
 -- Events
@@ -64,20 +64,12 @@ main = hakyll $ do
 
     match "templates/**" $ compile templateCompiler
 
---------------------------------------------------------------------------------
--- Compilator
---
-    match "blocs/*.md" $ do
-        compile pandocCompiler
-
---------------------------------------------------------------------------------
-
 getBlock :: String -> String -> (Context String) -> Compiler String
 getBlock lang name ctx = let
         blockContext = ctx `mappend` defaultContext
     in do
     tpl <- loadBody $ fromFilePath ("templates/blocks/"++ name ++".html")
-    content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++".md")
+    content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++".html")
     compiledBlock <- applyTemplate tpl blockContext content
     return $ itemBody compiledBlock
 
