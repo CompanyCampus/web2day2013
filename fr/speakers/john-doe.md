@@ -2,7 +2,8 @@
 firstname: John
 lastname: Doe
 email: john@doe.name
-twitter: @johndoe
+twitter: johndoe
+twitterwiddgetid: 297714458258718720
 site: john.doe.name
 avatar: john-doe.jpg
 bigphoto: john-doe.jpg
