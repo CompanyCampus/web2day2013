@@ -5,6 +5,7 @@ build: site
 
 site: site.hs
 	ghc --make site.hs
+	./site clean
 
 preview: site
 	./site preview
