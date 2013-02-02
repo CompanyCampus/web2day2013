@@ -71,8 +71,19 @@ z-index:0;
 
 /* content */
 #content {
-
+margin:40px;
 }
+
+@media (max-width: 767px) { #content {
+margin:20px;
+}
+ }
+ 
+ @media (max-width: 480px) { #content {
+ margin:4px;
+ }
+  }
+
 
 /* block title */
 @bloc-color-title:#f5f5f5;
@@ -219,6 +230,20 @@ i{
 width:100%;
 text-align:center;
 font-size:5em;
+}
+}
+
+.eventsblock{
+background:@eventcolor;
+color:#FFFFFF;
+i{
+width:100%;
+text-align:center;
+font-size:5em;
+margin-top:20px;
+}
+.bloc-title{
+font-size:@bloc-font-title-size/1.4;
 }
 }
 
