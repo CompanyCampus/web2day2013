@@ -2,7 +2,7 @@
 firstname: Cédric 
 lastname: Giorgi
 twitter: cgiorgi
-twitterwiddgetid: 297739080245059585
+twitterwiddgetid: 297776439456043009
 site: http://www.cookening.com/
 avatar: /assets/images/cedricgiorgi/cedricgiorgi.jpg
 bigphoto: /assets/images/cedricgiorgi/cedric1.jpg

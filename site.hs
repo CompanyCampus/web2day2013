@@ -117,7 +117,7 @@ getBlock lang args ctx = let
 
 blockLoader :: String -> Context String
 blockLoader lang =
-    functionField "block" (\args item -> getBlock lang args mempty)
+    functionField "block" (\args item -> getBlock lang args (constField "lang" lang))
 
 globalContext lang = blockLoader lang `mappend` defaultContext
 
