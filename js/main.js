@@ -1,9 +1,10 @@
+/*
 $(function(){
 	_.each($('.bloc'),function(i,a,y){
 		$(i).css('background-color','rgb('+(a*20)+',255,'+(250-a*25)+')');
 	});
 });
-
+*/
 
 jQuery(function($){
 	var mainpage = $('#content');
