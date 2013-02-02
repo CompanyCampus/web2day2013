@@ -42,29 +42,33 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 -- Reusable blocks
 --
-    forM_ ["en", "fr"] $ \lang ->
-        match (fromGlob (lang ++ "/blocks/*.md")) $ do
-            compile $ pandocCompiler
 
     forM_ ["en", "fr"] $ \lang ->
-        match (fromGlob (lang ++ "/blocks/*.html")) $ do
-            compile $ getResourceBody
+        match (fromGlob $ lang ++ "/blocks/*.md") $ do
+        compile $ pandocCompiler
+
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob $ lang ++ "/blocks/*.html") $ do
+        compile $ getResourceBody
 
 --------------------------------------------------------------------------------
 -- Events
 --
 
-    forM_ ["en", "fr"] $ \lang -> (makeElements lang "events" "event")
-
     forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "events" "event")
+
+    --forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (confSpeakersCtx lang) lang "events" "event")
+    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext defaultContext lang "events" "event")
+
 
 --------------------------------------------------------------------------------
 -- Speakers
 --
 
+    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "speakers" "speaker")
+
     forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (hisEventsCtx lang) lang "speakers" "speaker")
 
-    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "speakers" "speaker")
 
 --------------------------------------------------------------------------------
 -- Posts
@@ -122,7 +126,7 @@ globalContext lang =
 
 elementList :: String -> String -> String -> Compiler String
 elementList lang plural singular = do
-    elts <- loadAll $ fromGlob (lang ++ "/" ++ plural ++ "/*.md")
+    elts <- loadAllSnapshots (fromGlob (lang ++ "/" ++ plural ++ "/*.md")) "content"
     tpl  <- loadBody $ fromFilePath ("templates/" ++ singular ++ "-item.html")
     list <- applyTemplateList tpl defaultContext elts
     return list
@@ -147,6 +151,7 @@ makeElementsWithContext ctx lang plural singular = let
         match (fromGlob $ lang ++ "/"++ plural ++"/*.md") $ do
             route $ setExtension "html"
             compile $ pandocCompiler
+                >>= saveSnapshot "content"
                 >>= loadAndApplyTemplate (
                     fromFilePath $ "templates/"++ singular ++".html") bigCtx
                 >>= loadAndApplyTemplate "templates/default.html" bigCtx
@@ -154,15 +159,57 @@ makeElementsWithContext ctx lang plural singular = let
 
 makeElements = makeElementsWithContext mempty
 
+confSpeakersCtx :: String -> Context String
+confSpeakersCtx lang =
+    field "speakers" (\conf -> getSpeakerCompiler lang conf)
+
+getSpeakerCompiler lang conf = do
+    speakerList <- getSpeakerList conf
+    speakers <- getSpeakers lang speakerList
+    tpl <- loadBody "templates/speaker-item.html"
+    content <- applyTemplateList tpl defaultContext speakers
+    return content
+
+getSpeakerList :: Item String -> Compiler [String]
+getSpeakerList conf = do
+    metadata <- getMetadata $ itemIdentifier conf
+    return $ splitSpeakers metadata
+    where
+        getSpeakers = (fromMaybe "") . (M.lookup "speaker")
+        splitSpeakers = splitOn (==',') . getSpeakers
+
+getSpeakers :: String -> [String] -> Compiler [Item String]
+getSpeakers lang names = do
+    allSpeakers <- loadAllSnapshots  (fromGlob (lang ++ "/speakers/*.md")) "content"
+    filterItems (isWithinSpeakers names) allSpeakers
+
+isWithinSpeakers :: [String] -> (Item String) -> Compiler Bool
+isWithinSpeakers speakers speaker = do
+    return $ itemIdFromItem speaker `elem` speakers
+
+
+filterItems :: (Item String -> Compiler Bool) -> [Item String] -> Compiler ([Item String])
+filterItems p l = do
+    ct <- sequence $ map (keepItem p) l
+    return $ catMaybes ct
+
+keepItem :: (Item String -> Compiler Bool) -> Item String -> Compiler (Maybe (Item String))
+keepItem p i = do
+    ok <- p i
+    return $ if ok then Just i else Nothing
+
 hisEventsCtx :: String -> Context String
 hisEventsCtx lang =
     field "confs" (\speaker -> taSoeur lang speaker)
 
 taSoeur :: String -> Item String -> Compiler String
-taSoeur lang speaker = getEventsCompiler lang speakerId
+taSoeur lang speaker = getEventsCompiler lang $ itemIdFromItem speaker
+
+itemIdFromItem :: Item String -> String
+itemIdFromItem i = itemId
     where
-        speakerId = head $ splitOn (=='.') fileName
-        stringId = show $ itemIdentifier speaker
+        itemId = head $ splitOn (=='.') fileName
+        stringId = show $ itemIdentifier i
         fileName = last $ splitOn (=='/') stringId
 
 getEventsCompiler :: String -> String -> Compiler String
@@ -170,15 +217,12 @@ getEventsCompiler lang speaker = do
     hisEvents <- getEvents lang speaker
     tpl <- loadBody $ "templates/event-item.html"
     content <- applyTemplateList tpl defaultContext hisEvents
-    debugCompiler "--------------------------------------------------"
-    debugCompiler content
     return content
 
 getEvents :: String -> String -> Compiler [Item String]
 getEvents lang speaker = do
-    allEvents <- loadAll (fromGlob $ lang ++ "/events/*.md")
-    ct <- sequence $ map (keepConf speaker) allEvents
-    return $ catMaybes ct
+    allEvents <- loadAllSnapshots (fromGlob $ lang ++ "/events/*.md") "content"
+    filterItems (hasSpeaker speaker) allEvents
 
 hasSpeaker :: String -> Item String -> Compiler Bool
 hasSpeaker name conf =
@@ -189,11 +233,6 @@ hasSpeaker name conf =
         matchSpeakers = fmap $ any (== name)
         end = fromMaybe False
         pipe = end . matchSpeakers . splitSpeakers . getSpeakers
-
-keepConf :: String -> Item String -> Compiler (Maybe (Item String))
-keepConf name conf = do
-    ok <- hasSpeaker name conf
-    return $ if ok then Just conf else Nothing
 
 splitOn :: (a -> Bool) -> [a] -> [[a]]
 splitOn _ [] = []
