@@ -51,14 +51,19 @@ main = hakyll $ do
         match (fromGlob $ lang ++ "/blocks/*.html") $ do
         compile $ getResourceBody
 
+
+-- BREAKS DEP  CYCLE
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob $ lang ++ "/events/*.md") $ do
+        compile $ pandocCompiler
+
 --------------------------------------------------------------------------------
 -- Events
 --
 
     forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "events" "event")
 
-    --forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (confSpeakersCtx lang) lang "events" "event")
-    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext defaultContext lang "events" "event")
+    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (confSpeakersCtx lang) lang "events" "event")
 
 
 --------------------------------------------------------------------------------
@@ -126,7 +131,7 @@ globalContext lang =
 
 elementList :: String -> String -> String -> Compiler String
 elementList lang plural singular = do
-    elts <- loadAllSnapshots (fromGlob (lang ++ "/" ++ plural ++ "/*.md")) "content"
+    elts <- loadAll (fromGlob (lang ++ "/" ++ plural ++ "/*.md"))
     tpl  <- loadBody $ fromFilePath ("templates/" ++ singular ++ "-item.html")
     list <- applyTemplateList tpl defaultContext elts
     return list
@@ -151,7 +156,6 @@ makeElementsWithContext ctx lang plural singular = let
         match (fromGlob $ lang ++ "/"++ plural ++"/*.md") $ do
             route $ setExtension "html"
             compile $ pandocCompiler
-                >>= saveSnapshot "content"
                 >>= loadAndApplyTemplate (
                     fromFilePath $ "templates/"++ singular ++".html") bigCtx
                 >>= loadAndApplyTemplate "templates/default.html" bigCtx
@@ -180,7 +184,7 @@ getSpeakerList conf = do
 
 getSpeakers :: String -> [String] -> Compiler [Item String]
 getSpeakers lang names = do
-    allSpeakers <- loadAllSnapshots  (fromGlob (lang ++ "/speakers/*.md")) "content"
+    allSpeakers <- loadAll (fromGlob (lang ++ "/speakers/*.md"))
     filterItems (isWithinSpeakers names) allSpeakers
 
 isWithinSpeakers :: [String] -> (Item String) -> Compiler Bool
@@ -221,7 +225,7 @@ getEventsCompiler lang speaker = do
 
 getEvents :: String -> String -> Compiler [Item String]
 getEvents lang speaker = do
-    allEvents <- loadAllSnapshots (fromGlob $ lang ++ "/events/*.md") "content"
+    allEvents <- loadAll (fromGlob $ lang ++ "/events/*.md")
     filterItems (hasSpeaker speaker) allEvents
 
 hasSpeaker :: String -> Item String -> Compiler Bool
