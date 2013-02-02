@@ -60,19 +60,43 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
                 >>= relativizeUrls
 
+--------------------------------------------------------------------------------
+-- Speakers
+--
+
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob $ lang ++ "/speakers/*.md") $ do
+            route $ setExtension "html"
+            compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/speaker.html"   (globalContext lang)
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+                >>= relativizeUrls
+
+--------------------------------------------------------------------------------
+-- Posts
+--
+
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob $ lang ++ "/posts/*.md") $ do
+            route $ setExtension "html"
+            compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/post.html"   (globalContext lang)
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+                >>= relativizeUrls
+
+--------------------------------------------------------------------------------
+-- Index
+--
     match "index.html" $ do
         route idRoute
         compile $ getResourceBody
             >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
             >>= relativizeUrls
 
-    match "templates/**" $ compile templateCompiler
-
 --------------------------------------------------------------------------------
--- Compilator
+-- Compile all templates
 --
-    match "blocs/*.md" $ do
-        compile pandocCompiler
+    match "templates/**" $ compile templateCompiler
 
 --------------------------------------------------------------------------------
 
