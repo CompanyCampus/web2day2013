@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Control.Applicative ((<$>))
-import           Data.Monoid         (mappend)
+import           Data.Monoid         (mappend, mempty)
 import           Hakyll
 
 
@@ -37,39 +37,45 @@ main = hakyll $ do
         compile copyFileCompiler
 
 --------------------------------------------------------------------------------
--- Homepage blocks
+-- Reusable blocks
 --
-    match "posts/*" $ do
+    match "fr/blocks/*" $ do
+        compile $ pandocCompiler
+
+    match "en/blocks/*" $ do
+        compile $ pandocCompiler
+
+--------------------------------------------------------------------------------
+-- Events
+--
+
+    match "fr/events/*.md" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
-
-    match "index.html" $ do
-        route idRoute
-        compile $ do
-            let indexCtx = field "posts" $ \_ -> postList (take 3 . recentFirst)
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" postCtx
+                >>= loadAndApplyTemplate "templates/event.html"   (globalContext "fr")
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
                 >>= relativizeUrls
 
-    match "templates/*" $ compile templateCompiler
+    match "templates/**" $ compile templateCompiler
 
 
 --------------------------------------------------------------------------------
-postCtx :: Context String
-postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
 
+getBlock :: String -> String -> (Context String) -> Compiler String
+getBlock lang name ctx = let
+        blockContext = ctx `mappend` defaultContext
+    in do
+    tpl <- loadBody $ fromFilePath ("templates/blocks/"++ name ++".html")
+    content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++".md")
+    compiledBlock <- applyTemplate tpl blockContext content
+    return $ itemBody compiledBlock
 
---------------------------------------------------------------------------------
-postList :: ([Item String] -> [Item String]) -> Compiler String
-postList sortFilter = do
-    posts   <- sortFilter <$> loadAll "posts/*"
-    itemTpl <- loadBody "templates/post-item.html"
-    list    <- applyTemplateList itemTpl postCtx posts
-    return list
+-- getBlockInContext :: String -> Context String -> Context String
+-- getBlockInContext lang name ctx =
+--     field name (\_ -> getBlock lang name ctx)
+
+blockLoader :: String -> Context String
+blockLoader lang =
+    functionField "block" (\args item -> getBlock lang (head args) mempty)
+
+globalContext lang = blockLoader lang `mappend` defaultContext
