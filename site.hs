@@ -89,7 +89,7 @@ main = hakyll $ do
 -- Index
 --
     forM_ ["en", "fr"] $ \lang ->
-        match "index.html" $ do
+        match (fromGlob $ lang ++ "/index.html") $ do
             route idRoute
             compile $ getResourceBody
                 >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
