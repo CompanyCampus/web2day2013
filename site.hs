@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Control.Applicative ((<$>))
+import           Control.Monad       (forM_)
 import           Data.Monoid         (mappend, mempty)
 import           Hakyll
 
@@ -40,44 +41,74 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 -- Reusable blocks
 --
-    match "fr/blocks/*" $ do
-        compile $ getResourceBody
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob (lang ++ "/blocks/*.md")) $ do
+            compile $ pandocCompiler
 
-    match "en/blocks/*" $ do
-        compile $ getResourceBody
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob (lang ++ "/blocks/*.html")) $ do
+            compile $ getResourceBody
 
 --------------------------------------------------------------------------------
 -- Events
 --
 
-    match "fr/events/*.md" $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/event.html"   (globalContext "fr")
-            >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
-            >>= relativizeUrls
+    forM_ ["en", "fr"] $ \lang -> (makeElements lang "events" "event")
 
-    match "fr/speakers/*.md" $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/speaker.html"   (globalContext "fr")
-            >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
-            >>= relativizeUrls
+    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "events" "event")
 
-    match "index.html" $ do
-        route idRoute
-        compile $ getResourceBody
-            >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
-            >>= relativizeUrls
+--------------------------------------------------------------------------------
+-- Speakers
+--
 
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob $ lang ++ "/speakers/*.md") $ do
+            route $ setExtension "html"
+            compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/speaker.html" (globalContext lang)
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+                >>= relativizeUrls
+
+    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "speakers" "speaker")
+
+--------------------------------------------------------------------------------
+-- Posts
+--
+
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob $ lang ++ "/posts/*.md") $ do
+            route $ setExtension "html"
+            compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/post.html"   (globalContext lang)
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+                >>= relativizeUrls
+
+    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "posts" "post")
+
+--------------------------------------------------------------------------------
+-- Index
+--
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob $ lang ++ "/index.html") $ do
+            route idRoute
+            compile $ getResourceBody
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+                >>= relativizeUrls
+
+--------------------------------------------------------------------------------
+-- Compile all templates
+--
     match "templates/**" $ compile templateCompiler
 
-getBlock :: String -> String -> (Context String) -> Compiler String
-getBlock lang name ctx = let
+--------------------------------------------------------------------------------
+
+getBlock :: String -> [String] -> (Context String) -> Compiler String
+getBlock lang args ctx = let
         blockContext = ctx `mappend` defaultContext
+        [name, fmt] = args
     in do
     tpl <- loadBody $ fromFilePath ("templates/blocks/"++ name ++".html")
-    content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++".html")
+    content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++ "." ++ fmt)
     compiledBlock <- applyTemplate tpl blockContext content
     return $ itemBody compiledBlock
 
@@ -87,6 +118,36 @@ getBlock lang name ctx = let
 
 blockLoader :: String -> Context String
 blockLoader lang =
-    functionField "block" (\args item -> getBlock lang (head args) mempty)
+    functionField "block" (\args item -> getBlock lang args mempty)
 
 globalContext lang = blockLoader lang `mappend` defaultContext
+
+elementList :: String -> String -> String -> Compiler String
+elementList lang plural singular = do
+    elts <- loadAll $ fromGlob (lang ++ "/" ++ plural ++ "/*.md")
+    tpl  <- loadBody $ fromFilePath ("templates/" ++ singular ++ "-item.html")
+    list <- applyTemplateList tpl defaultContext elts
+    return list
+
+makeIndexPage lang plural singular =
+    create [fromFilePath (lang ++ "/"++ plural ++".html")] $ do
+        route $ setExtension "html"
+        compile $ do
+            let elts =
+                    field plural (\_ -> elementList lang plural singular) `mappend`
+                    globalContext lang
+                tplName = fromFilePath ("templates/" ++ plural ++ "-page.html")
+
+            makeItem ""
+                >>= loadAndApplyTemplate tplName elts
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+                >>= relativizeUrls
+
+makeElements lang plural singular =
+    match (fromGlob $ lang ++ "/"++ plural ++"/*.md") $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate (
+                fromFilePath $ "templates/"++ singular ++".html")  (globalContext lang)
+            >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+            >>= relativizeUrls

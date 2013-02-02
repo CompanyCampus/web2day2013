@@ -67,6 +67,9 @@ z-index:0;
 /* block body */
 @bloc-color-body:@bloc-color-title;
 
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
 .tickets {
 background-color:@bloc-color-tickets!important;
 }
@@ -105,14 +108,19 @@ color:@bloc-color-icon-light;
 /* Bloc management */
 .bloc {
 	display:block;
-	width:@blocwidth;
-	height:@blocwidth;
 	margin:0px;
 	margin-right:4px;
 	margin-bottom:4px;
    overflow:hidden;
    background:#cccccc;
 }
+
+.bloc1 {
+   width:@blocwidth;
+   height:@blocwidth;
+
+}
+
 
 .bloc2h {
 	width:@blocwidth*2+4;
@@ -125,6 +133,9 @@ color:@bloc-color-icon-light;
 .bloc2v2h, .bloc2h2v {
 	.bloc2v;
 	.bloc2h;
+}
+.blocfloat2h {
+	width:@blocwidth*2+4;
 }
 
 
@@ -139,6 +150,11 @@ color:@bloc-color-icon-light;
    bottom:10px;
    right:10px;
    color:@colorpicto1;
+}
+.speakerbio{
+width:@blocwidth*2+4;
+padding:20px;
+text-align:justify;
 }
 
 .twittertimeline{

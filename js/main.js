@@ -7,6 +7,18 @@ $(function(){
 */
 
 jQuery(function($){
+   
+	_.each($('.blocfloat2h'),function(i,a,y){
+      var e = $(i);
+      var ah = e.height();
+      var nt = (ah+(202 - (ah%202)))+2;
+      console.log(nt);
+      e.height(nt);
+      console.log(ah%202);
+      
+	});
+   
+   
 	var mainpage = $('#content');
 	mainpage.masonry({
 		isAnimated: true,
