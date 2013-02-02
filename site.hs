@@ -52,12 +52,23 @@ main = hakyll $ do
     match "fr/events/*.md" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-                >>= loadAndApplyTemplate "templates/event.html"   (globalContext "fr")
-                >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
-                >>= relativizeUrls
+            >>= loadAndApplyTemplate "templates/event.html"   (globalContext "fr")
+            >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
+            >>= relativizeUrls
+
+    match "index.html" $ do
+        route idRoute
+        compile $ getResourceBody
+            >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
+            >>= relativizeUrls
 
     match "templates/**" $ compile templateCompiler
 
+--------------------------------------------------------------------------------
+-- Compilator
+--
+    match "blocs/*.md" $ do
+        compile pandocCompiler
 
 --------------------------------------------------------------------------------
 
