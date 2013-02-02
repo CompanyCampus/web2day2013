@@ -103,7 +103,7 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 
 getBlock :: String -> [String] -> (Context String) -> Compiler String
-getBlock lang name ctx = let
+getBlock lang args ctx = let
         blockContext = ctx `mappend` defaultContext
         [name, fmt] = args
     in do
