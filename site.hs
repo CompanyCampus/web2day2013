@@ -49,15 +49,19 @@ main = hakyll $ do
     match "index.html" $ do
         route idRoute
         compile $ do
-            let indexCtx = field "posts" $ \_ -> postList (take 3 . recentFirst)
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" postCtx
-                >>= relativizeUrls
+           sharebloc <- loadAndApplyTemplate "templates/bloc.html" defaultContext "blocs/share.md"
+           indexcontent <- load "index.html"
+           defaultTemplate <- loadBody "templates/default.html"
+           content <- applyTemplate defaultTemplate (constField "share" sharebloc `mappend` defaultContext) indexcontent
+           return content
 
     match "templates/*" $ compile templateCompiler
 
+--------------------------------------------------------------------------------
+-- Compilator
+--
+   match "blocs/*.md" $ do
+      compile pandocCompiler
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
