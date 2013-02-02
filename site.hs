@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Control.Applicative ((<$>))
+import           Control.Monad       (forM_)
 import           Data.Monoid         (mappend, mempty)
 import           Hakyll
 
@@ -39,11 +40,13 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 -- Reusable blocks
 --
-    match "fr/blocks/*" $ do
-        compile $ pandocCompiler
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob (lang ++ "/blocks/*.md")) $ do
+            compile $ pandocCompiler
 
-    match "en/blocks/*" $ do
-        compile $ pandocCompiler
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob (lang ++ "/blocks/*.html")) $ do
+            compile $ getResourceBody
 
 --------------------------------------------------------------------------------
 -- Events
@@ -72,12 +75,14 @@ main = hakyll $ do
 
 --------------------------------------------------------------------------------
 
-getBlock :: String -> String -> (Context String) -> Compiler String
-getBlock lang name ctx = let
+getBlock :: String -> [String] -> (Context String) -> Compiler String
+getBlock lang args ctx = let
         blockContext = ctx `mappend` defaultContext
+        [name, fmt] = args
     in do
     tpl <- loadBody $ fromFilePath ("templates/blocks/"++ name ++".html")
-    content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++".md")
+    content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++ "." ++ fmt)
+    debugCompiler (lang ++ "/blocks/" ++ name)
     compiledBlock <- applyTemplate tpl blockContext content
     return $ itemBody compiledBlock
 
@@ -87,6 +92,6 @@ getBlock lang name ctx = let
 
 blockLoader :: String -> Context String
 blockLoader lang =
-    functionField "block" (\args item -> getBlock lang (head args) mempty)
+    functionField "block" (\args item -> getBlock lang args mempty)
 
 globalContext lang = blockLoader lang `mappend` defaultContext
