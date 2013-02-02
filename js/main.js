@@ -6,6 +6,19 @@ $(function(){
 });
 */
 
+$.fn.randomize = function(selector){
+    var $elems = selector ? $(this).find(selector) : $(this).children(),
+        $parents = $elems.parent();
+
+    $parents.each(function(){
+        $(this).children(selector).sort(function(){
+            return Math.round(Math.random()) - 0.5;
+        }).remove().appendTo(this);
+    });
+
+    return this;
+};
+
 jQuery(function($){
    
 	_.each($('.blocfloat2h'),function(i,a,y){
@@ -17,6 +30,8 @@ jQuery(function($){
       console.log(ah%202);
       
 	});
+   
+   $('.randomize_plz').randomize();
    
    
 	var mainpage = $('#content');
