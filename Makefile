@@ -11,4 +11,6 @@ preview: site
 
 clean: site
 	./site clean
+	rm site.hi
+	rm site.o
 	rm site
