@@ -1,6 +1,53 @@
 @blocwidth:200px;
+@colorpicto1:#333333;
+
+/* Blocks colors */
+@bloc-color-tickets:#df3580;
 
 
+/* block title */
+@bloc-color-title:#f5f5f5;
+@bloc-color-icon-light:@bloc-color-title;
+@bloc-color-icon-dark:#363434;
+@bloc-font-title-size:30px;
+
+/* block body */
+@bloc-color-body:@bloc-color-title;
+
+.tickets {
+background-color:@bloc-color-tickets!important;
+}
+
+/* Font management */
+.bloc .bloc-title {
+font-family: 'Oswald', sans-serif;
+width:100%;
+font-size:@bloc-font-title-size;
+color:@bloc-color-title;
+text-align:center;
+display:block;
+}
+
+.bloc .bloc-body {
+font-family: 'Oswald', sans-serif;
+width:100%;
+font-size:20px;
+color:@bloc-color-body;
+text-align:center;
+display:block;
+}
+
+.bloc .icon-dark {
+color:@bloc-color-icon-dark;
+}
+
+.bloc .icon-light {
+color:@bloc-color-icon-light;
+}
+
+
+
+/* Bloc management */
 .bloc {
 	display:block;
 	width:@blocwidth;
@@ -8,6 +55,8 @@
 	margin:0px;
 	margin-right:4px;
 	margin-bottom:4px;
+   overflow:hidden;
+   background:#cccccc;
 }
 
 .bloc2h {
@@ -21,4 +70,22 @@
 .bloc2v2h, .bloc2h2v {
 	.bloc2v;
 	.bloc2h;
+}
+
+
+.sharebloc .onerow{
+   text-align:left;
+   margin-top:15px;
+   margin-left:10px;
+}
+.sharebloc .icon-share{
+   margin:10px;
+   position:absolute;
+   bottom:10px;
+   right:10px;
+   color:@colorpicto1;
+}
+
+.twittertimeline{
+   background:#333
 }

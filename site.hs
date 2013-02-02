@@ -22,13 +22,14 @@ main = hakyll $ do
 
     match "assets/css/*.css" $ do
         route   idRoute
-        compile compressCssCompiler
+        compile copyFileCompiler
 
     match "assets/css/*.less" $ do
        route   $ setExtension "css"
        compile $ getResourceString >>=
-           withItemBody (unixFilter "lessc" ["-"]) >>=
-           return . fmap compressCss
+           withItemBody (unixFilter "lessc" ["-"])
+           -- >>=
+--           return . fmap copyFileCompiler
 
 --------------------------------------------------------------------------------
 -- JS
@@ -87,11 +88,12 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 -- Index
 --
-    match "index.html" $ do
-        route idRoute
-        compile $ getResourceBody
-            >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
-            >>= relativizeUrls
+    forM_ ["en", "fr"] $ \lang ->
+        match "index.html" $ do
+            route idRoute
+            compile $ getResourceBody
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+                >>= relativizeUrls
 
 --------------------------------------------------------------------------------
 -- Compile all templates
@@ -101,13 +103,12 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 
 getBlock :: String -> [String] -> (Context String) -> Compiler String
-getBlock lang args ctx = let
+getBlock lang name ctx = let
         blockContext = ctx `mappend` defaultContext
         [name, fmt] = args
     in do
     tpl <- loadBody $ fromFilePath ("templates/blocks/"++ name ++".html")
     content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++ "." ++ fmt)
-    debugCompiler (lang ++ "/blocks/" ++ name)
     compiledBlock <- applyTemplate tpl blockContext content
     return $ itemBody compiledBlock
 
