@@ -38,7 +38,7 @@ main = hakyll $ do
     match "js/*" $ do
         route   idRoute
         compile copyFileCompiler
-
+        
 --------------------------------------------------------------------------------
 -- Reusable blocks
 --
@@ -91,6 +91,7 @@ main = hakyll $ do
         match (fromGlob $ lang ++ "/index.html") $ do
             route idRoute
             compile $ getResourceBody
+                >>= loadAndApplyTemplate "templates/index.html" (globalContext lang)
                 >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
                 >>= relativizeUrls
 
