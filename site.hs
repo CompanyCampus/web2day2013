@@ -52,12 +52,13 @@ main = hakyll $ do
 -- Events
 --
 
-    match "fr/events/*.md" $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/event.html"   (globalContext "fr")
-            >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
-            >>= relativizeUrls
+    forM_ ["en", "fr"] $ \lang ->
+        match (fromGlob $ lang ++ "/events/*.md") $ do
+            route $ setExtension "html"
+            compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/event.html"   (globalContext lang)
+                >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+                >>= relativizeUrls
 
     match "index.html" $ do
         route idRoute
