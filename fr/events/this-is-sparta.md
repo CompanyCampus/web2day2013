@@ -4,7 +4,7 @@ location: Sparta
 start: xxxxxxx
 end: xxxxxxx
 type: panel
-speaker: John Doe
+speaker: cedric-giorgi
 ---
 
 Look around you. You'll see two councilmen, a union official, couple off-duty
