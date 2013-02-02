@@ -8,50 +8,36 @@ import           Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-    match "images/*" $ do
+
+--------------------------------------------------------------------------------
+-- Assets
+    match "assets/images/*" $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "font/*" $ do
+    match "assets/font/*" $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*.css" $ do
+    match "assets/css/*.css" $ do
         route   idRoute
         compile compressCssCompiler
 
-    match "css/*.less" $ do
+    match "assets/css/*.less" $ do
        route   $ setExtension "css"
        compile $ getResourceString >>=
            withItemBody (unixFilter "lessc" ["-"]) >>=
            return . fmap compressCss
 
-    match (fromList ["about.rst", "contact.markdown"]) $ do
-        route   $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
-
+--------------------------------------------------------------------------------
+-- Homepage blocks
+--
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
-
-    create ["archive.html"] $ do
-        route idRoute
-        compile $ do
-            let archiveCtx =
-                    field "posts" (\_ -> postList recentFirst) `mappend`
-                    constField "title" "Archives"              `mappend`
-                    defaultContext
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
-
 
     match "index.html" $ do
         route idRoute
