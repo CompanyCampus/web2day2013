@@ -30,6 +30,13 @@ main = hakyll $ do
            return . fmap compressCss
 
 --------------------------------------------------------------------------------
+-- JS
+--
+    match "js/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+--------------------------------------------------------------------------------
 -- Homepage blocks
 --
     match "posts/*" $ do

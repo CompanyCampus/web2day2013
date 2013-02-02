@@ -1,0 +1,25 @@
+@blocwidth:200px;
+
+
+.bloc {
+display:block;
+width:@blocwidth;
+height:@blocwidth;
+margin:0px;
+margin-right:4px;
+margin-bottom:4px;
+}
+
+
+.bloc2h {
+width:@blocwidth*2+4;
+}
+
+.bloc2v {
+height:@blocwidth*2+4;
+}
+
+.bloc2v2h, .bloc2h2v {
+.bloc2v;
+.bloc2h;
+}
