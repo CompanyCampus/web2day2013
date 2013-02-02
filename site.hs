@@ -57,6 +57,13 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
             >>= relativizeUrls
 
+    match "fr/speakers/*.md" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/speaker.html"   (globalContext "fr")
+            >>= loadAndApplyTemplate "templates/default.html" (globalContext "fr")
+            >>= relativizeUrls
+
     match "index.html" $ do
         route idRoute
         compile $ getResourceBody
