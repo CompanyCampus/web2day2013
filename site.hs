@@ -26,8 +26,9 @@ main = hakyll $ do
     match "assets/css/*.less" $ do
        route   $ setExtension "css"
        compile $ getResourceString >>=
-           withItemBody (unixFilter "lessc" ["-"]) >>=
-           return . fmap copyFileCompiler
+           withItemBody (unixFilter "lessc" ["-"])
+           -- >>=
+--           return . fmap copyFileCompiler
 
 --------------------------------------------------------------------------------
 -- JS
