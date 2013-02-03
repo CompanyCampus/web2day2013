@@ -23,17 +23,26 @@ getSpeakerCompiler lang conf = do
     content <- applyTemplateListWithContexts tpl (makeItemContextPairList speakers)
     return content
 
+
 makeMetadataContext :: Metadata -> Context String
 makeMetadataContext m =
     (Context $ \k _ -> do
-        return $ fromMaybe "" $ M.lookup k m) `mappend`
-    urlField "url2"
+        return $ fromMaybe "" $ M.lookup k m)
+
+makeUrlField :: Identifier -> Context String
+makeUrlField id =
+    field "url" $ \_ -> do
+        fp <- getRoute id
+        return $ fromMaybe "" $ fmap toUrl fp
 
 
 makeItemContextPairList :: [(Identifier, Metadata)] -> [(Context String, Item String)]
 makeItemContextPairList ims = map f ims
     where
-    f p = (makeMetadataContext (snd p), Item (fst p) "")
+    f p = (makeItemContext p, Item (fst p) "")
+    makeItemContext p =
+        makeUrlField (fst p) `mappend`
+        makeMetadataContext (snd p)
 
 applyTemplateListWithContexts :: Template
                               -> [(Context a, Item a)]
