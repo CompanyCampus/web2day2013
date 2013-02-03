@@ -3,7 +3,7 @@ all: build
 build: site
 	./site build
 
-site: site.hs
+site: site.hs LinkedCompilers.hs RouteFactories.hs Utils.hs
 	ghc --make site.hs
 	./site clean
 
