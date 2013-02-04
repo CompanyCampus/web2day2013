@@ -1,10 +1,10 @@
 ---
 title: This is sparta
-location: Sparta
-start: xxxxxxx
-end: xxxxxxx
+location: salle maxi
+start: 2013-05-16 15:30
+end: 2013-05-16 16:30
 type: panel
-speaker: John Doe
+speaker: cedric-giorgi
 ---
 
 Look around you. You'll see two councilmen, a union official, couple off-duty

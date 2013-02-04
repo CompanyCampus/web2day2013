@@ -1,0 +1,9 @@
+BEGIN:VEVENT
+UID:$url$
+DTSTAMP:$iso8601_start$
+ORGANIZER;CN=Web2Day:MAILTO:contact@web2day-nantes.org
+LOCATION:$location$
+DTSTART:$iso8601_start$
+DTEND:$iso8601_end$
+SUMMARY:$title$
+END:VEVENT

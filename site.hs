@@ -64,6 +64,11 @@ main = hakyll $ do
 
     forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (confSpeakersCtx lang) lang "events" "event")
 
+--------------------------------------------------------------------------------
+-- Calendar
+--
+    forM_ ["en", "fr"] makeCalendar
+
 
 --------------------------------------------------------------------------------
 -- Speakers
