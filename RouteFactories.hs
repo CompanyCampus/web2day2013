@@ -1,7 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 module RouteFactories where
 
-import          Data.Monoid             (mappend, mempty)
+import qualified Data.Map                as M
+import           Data.Maybe              (fromMaybe)
+import           Data.Monoid             (mappend, mempty)
+import           Data.Time.Clock         (UTCTime (..))
+import           Data.Time.LocalTime     (LocalTime, hoursToTimeZone, localTimeToUTC)
+import           Data.Time.Format        (formatTime, parseTime)
+import           System.FilePath         (takeBaseName, takeFileName)
+import           System.Locale           (TimeLocale, defaultTimeLocale)
 
 import Hakyll
 
@@ -57,3 +64,35 @@ makeElementsWithContext ctx lang plural singular = let
                 >>= relativizeUrls
 
 makeElements = makeElementsWithContext mempty
+
+makeCalendar :: String -> Rules ()
+makeCalendar lang =
+    create [fromFilePath $ lang ++ "/calendar.ics"] $ do
+    route idRoute
+    compile $ do
+        makeItem ""
+            >>= calendarCompiler lang
+            >>= loadAndApplyTemplate "templates/calendar.ics" (globalContext lang)
+
+calendarCompiler :: String -> Item a ->  Compiler (Item String)
+calendarCompiler lang item = do
+    events <- loadAll $ fromGlob (lang ++ "/events/*.md")
+    tpl <- loadBody "templates/ics-event"
+    contents <- applyTemplateList tpl (iso8601Ctx `mappend` globalContext lang) events
+    makeItem contents
+
+iso8601Ctx = (iso8601_date "start") `mappend` (iso8601_date "end")
+
+makeIso8601 :: String -> Maybe String
+makeIso8601 =
+    let parser = parseTime defaultTimeLocale "%Y-%m-%d %H:%M" :: String -> Maybe LocalTime
+        addTimeZone = localTimeToUTC (hoursToTimeZone 2) -- /!\ Hard coded for May 2013
+        formatter = formatTime defaultTimeLocale "%Y%m%dT%H%M%SZ%z"
+    in fmap (formatter . addTimeZone) . parser
+
+iso8601_date :: String -> Context String
+iso8601_date date =
+    field ("iso8601_"++ date) (\item -> do
+        metadata <- getMetadata $ itemIdentifier item
+        return $ fromMaybe "" $ M.lookup date metadata >>= makeIso8601
+    )
