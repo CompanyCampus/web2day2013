@@ -6,6 +6,9 @@ $(function(){
 });
 */
 
+var blocwidth= 200;
+var blocspace=8;
+
 $.fn.randomize = function(selector){
     var $elems = selector ? $(this).find(selector) : $(this).children(),
         $parents = $elems.parent();
@@ -24,10 +27,9 @@ jQuery(function($){
 	_.each($('.blocfloat2h'),function(i,a,y){
       var e = $(i);
       var ah = e.height();
-      var nt = (ah+(202 - (ah%202)))+((Math.floor(ah/202)-1)*2);
-      console.log(nt);
+      var v = blocwidth + (blocspace / 2);
+      var nt = (ah+(v - (ah%v)))+((Math.floor(ah/v)-1)*(blocspace / 2));
       e.height(nt);
-      console.log(ah%202);
       
 	});
    
@@ -39,7 +41,7 @@ jQuery(function($){
 		isAnimated: true,
 		itemSelector:'.bloc:not(.hidden)',
 		isFitWidth:true,
-		columnWidth:204
+		columnWidth:blocwidth + (blocspace)
 	});
 	/*
 	$('h1 a').click(function(e){
