@@ -4,7 +4,7 @@ location: salle maxi
 start: 2013-05-16 15:30
 end: 2013-05-16 16:30
 type: panel
-speaker: cedric-giorgi,john-doe
+speaker: cedric-giorgi,bruno-walther
 ---
 
 Look around you. You'll see two councilmen, a union official, couple off-duty

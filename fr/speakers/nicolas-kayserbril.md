@@ -1,8 +1,8 @@
 ---
 firstname: Nicolas 
 lastname: Kayser-Bril
-twitter: nicolaskb
-twitterwiddgetid: 297759255245766656
+twitter: @nicolaskb
+twitterwiddgetid: 303860331275489281
 site: jplusplus.org
 avatar: nicolas-kayserbril.jpg
 bigphoto: nicolas-kayserbril.jpg

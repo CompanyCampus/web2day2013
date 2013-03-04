@@ -1,0 +1,14 @@
+---
+firstname: Thibault 
+lastname: Lougnon
+twitter: @ThibaultLougnon
+twitterwiddgetid: 303948669588209665
+site: http://fr.textmaster.com
+avatar: thibault-lougnon.jpg
+bigphoto: thibault-lougnon.jpg
+bigphoto2: thibault-lougnon.jpg
+---
+
+Thibault a travaillé à New York chez Calyon Securities, la banque d'affaires du Crédit Agricole-Crédit Lyonnais, en fusions et acquisitions spécialisé dans les opérations internationales. Avant cela, Thibault était le fondateur de Réservoir Jeunes, une société spécialisée dans les médias de proximité, qu'il créa à l'âge de 19 ans et qu'il dirigea pendant près de trois ans, développant successivement l'activité dans trois villes distinctes parallèlement à ses études. Au sein de Chausson Finance, Thibault a conseillé de multiples opérations dans les domaines du logiciel et de l'Internet comme PurePeople, TVtrip, Nexway, Mixicom, Konbini, MixCommerce, Intrasense, Kyriba, Symphonie, L4 Logistics, Vitec, SkyRecon, ExaProtect, Criston, Novalys, etc. Thibault est diplômé de l'ESSCA d'Angers, spécialisation banque-finance.
+
+
