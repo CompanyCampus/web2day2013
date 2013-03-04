@@ -1,4 +1,5 @@
 @blocwidth:200px;
+@blocspace:8px;
 @colorpicto1:#333333;
 
 @colorspeaker:#667086;
@@ -145,8 +146,8 @@ color:@bloc-color-icon-light;
 .bloc {
 	display:block;
 	margin:0px;
-	margin-right:4px;
-	margin-bottom:4px;
+	margin-right:@blocspace;
+	margin-bottom:@blocspace;
    overflow:hidden;
    background:#cccccc;
 }
@@ -161,21 +162,21 @@ color:@bloc-color-icon-light;
 .bloc2h {
 height:@blocwidth;
 
-	width:@blocwidth*2+4;
+	width:@blocwidth*2+(@blocspace);
 }
 
 .bloc2v {
 width:@blocwidth;
 
-	height:@blocwidth*2+4;
+	height:@blocwidth*2+(@blocspace);
 }
 
 .bloc2v2h, .bloc2h2v {
-width:@blocwidth*2+4;
-height:@blocwidth*2+4;
+width:@blocwidth*2+(@blocspace);
+height:@blocwidth*2+(@blocspace);
 }
 .blocfloat2h {
-	width:@blocwidth*2+4;
+	width:@blocwidth*2+(@blocspace);
 }
 
 .bloc.sharebloc{
@@ -195,7 +196,6 @@ overflow:visible!important;
 }
 }
 .speakerbio{
-width:@blocwidth*2+4;
 padding:20px;
 text-align:justify;
 background:@colorspeaker;
