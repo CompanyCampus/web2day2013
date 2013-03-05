@@ -7,6 +7,8 @@ type: panel
 speaker: cedric-giorgi,bruno-walther
 ---
 
+Nouveau contenu
+
 Look around you. You'll see two councilmen, a union official, couple off-duty
 cops and a judge. I wouldn't have a second's hesitation of blowing your head
 off in front of them. Now, that's power you can't buy. That's the power of
