@@ -4,9 +4,9 @@ lastname: Giorgi
 twitter: @cgiorgi
 twitterwiddgetid: 303859205243273217
 site: http://www.cookening.com/
-avatar: /assets/images/cedric-giorgi/cedricgiorgi.jpg
-bigphoto: /assets/images/cedric-giorgi/cedric1.jpg
-bigphoto2: /assets/images/cedric-giorgi/cookening.png
+avatar: /assets/images/speakers/cedric-giorgi/cedricgiorgi.jpg
+bigphoto: /assets/images/speakers/cedric-giorgi/cedric1.jpg
+bigphoto2: /assets/images/speakers/cedric-giorgi/cookening.png
 ---
 
 Cédric is co-Founder and CEO of Cookening, a new collaborative consumption platform in the food industry.
