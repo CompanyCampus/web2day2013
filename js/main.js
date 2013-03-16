@@ -40,7 +40,7 @@ jQuery(function($){
 	mainpage.masonry({
 		isAnimated: true,
 		itemSelector:'.bloc:not(.hidden)',
-		isFitWidth:true,
+//		isFitWidth:true,
 		columnWidth:blocwidth + (blocspace)
 	});
 	/*
