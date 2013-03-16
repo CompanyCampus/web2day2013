@@ -24,6 +24,11 @@ $.fn.randomize = function(selector){
 
 jQuery(function($){
    
+});
+
+
+jQuery(function($){
+   
 	_.each($('.blocfloat2h'),function(i,a,y){
       var e = $(i);
       var ah = e.height();
@@ -79,4 +84,4 @@ jQuery(function($){
 		$('a[href="'+location.hash+'"]').trigger('click');
 	}
 	*/
-})
+});
