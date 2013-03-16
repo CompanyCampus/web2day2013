@@ -109,7 +109,7 @@ imagesList dir = let
    
 
 imagesDataCtx = let
-   dirs = ["200x200", "408x408", "408x200"]
+   dirs = ["200x200", "408x408", "200x408", "408x200"]
    lists = map imagesList dirs
    in 
       mconcat $ zipWith field dirs (map const lists) 
