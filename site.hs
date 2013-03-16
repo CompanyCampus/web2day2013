@@ -34,8 +34,7 @@ main = hakyll $ do
     match "assets/css/*.less" $ do
        route   $ setExtension "css"
        compile $ getResourceString >>=
-           withItemBody (unixFilter "lessc" ["-"])
-           >>= return . fmap id
+           withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
 
 --------------------------------------------------------------------------------
 -- JS
