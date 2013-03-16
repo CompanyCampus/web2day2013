@@ -96,3 +96,13 @@ iso8601_date date =
         metadata <- getMetadata $ itemIdentifier item
         return $ fromMaybe "" $ M.lookup date metadata >>= makeIso8601
     )
+
+makeSinglePages :: String -> Rules ()
+makeSinglePages lang =
+    let r = gsubRoute ("pages/") (const "")
+    in
+        match (fromGlob $ lang ++ "/pages/*.md") $ do
+        route $ r `composeRoutes` (setExtension "html")
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+            >>= relativizeUrls
