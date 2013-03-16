@@ -34,8 +34,7 @@ main = hakyll $ do
     match "assets/css/*.less" $ do
        route   $ setExtension "css"
        compile $ getResourceString >>=
-           withItemBody (unixFilter "lessc" ["-"])
-           >>= return . fmap id
+           withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
 
 --------------------------------------------------------------------------------
 -- JS
@@ -87,6 +86,13 @@ main = hakyll $ do
     forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "posts" "post")
 
     forM_ ["en", "fr"] $ \lang -> (makeElements lang "posts" "post")
+
+
+--------------------------------------------------------------------------------
+-- Simple pages
+--
+    forM_ ["en", "fr"] makeSinglePages
+
 
 --------------------------------------------------------------------------------
 -- Index

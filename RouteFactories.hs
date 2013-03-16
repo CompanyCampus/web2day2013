@@ -98,6 +98,16 @@ iso8601_date date =
         return $ fromMaybe "" $ M.lookup date metadata >>= makeIso8601
     )
 
+makeSinglePages :: String -> Rules ()
+makeSinglePages lang =
+    let r = gsubRoute ("pages/") (const "")
+    in
+        match (fromGlob $ lang ++ "/pages/*.md") $ do
+        route $ r `composeRoutes` (setExtension "html")
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
+            >>= relativizeUrls
+
 imagesList :: String -> Compiler String
 imagesList dir = let
       addBrackets = ("["++) . (++"]")
