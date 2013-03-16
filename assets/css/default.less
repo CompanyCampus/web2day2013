@@ -19,6 +19,12 @@
 @contributorscolor: #CCC3A6;
 @moreinfocolor: #372F2B;
 
+/* calendar color */
+
+@salle_mini: #df3580; 
+@salle_maxi: #c39f6b;
+@trempolino: #9cb07d;
+
 /* body */
 body {
 background-color:#ffffff;
@@ -98,6 +104,7 @@ margin:20px;
  @media (max-width: 480px) { #content {
  margin:4px;
  }
+ 
   }
 
 
@@ -181,6 +188,17 @@ width:@blocwidth;
 width:@blocwidth*2+(@blocspace);
 height:@blocwidth*2+(@blocspace);
 }
+
+.bloc3v2h, .bloc2h3v {
+height:@blocwidth*3+(@blocspace*2);
+width:@blocwidth*2+(@blocspace);
+}
+
+.bloc4v2h, .bloc2h4v {
+height:@blocwidth*4+(@blocspace*3);
+width:@blocwidth*2+(@blocspace);
+}
+
 .blocfloat2h {
 	width:@blocwidth*2+(@blocspace);
 }
@@ -367,4 +385,31 @@ i{
 display: block;
 margin-top: 25px;
 }
+}
+
+/* Calendar css */
+.my_event (@initcolor) {
+   background-color: @initcolor;
+   border : 1px solid @initcolor;
+   border-color:@initcolor;
+   .fc-event-skin, .fc-event-bg{
+      border-color:@initcolor;
+      background-color: @initcolor;
+   }
+   .fc-event-head{
+      border-color:@initcolor;   
+      background-color: @initcolor - #222222;
+   }
+}
+
+.salle_maxi.fc-event-skin{
+   .my_event(@salle_maxi)
+}
+
+.salle_mini.fc-event-skin{
+   .my_event(@salle_mini)
+}
+
+.trempolino.fc-event-skin{
+   .my_event(@trempolino)
 }
