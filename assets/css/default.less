@@ -12,6 +12,10 @@
 @bloc-color-tickets:#df3580;
 
 @eventcolor:#464343;
+@topicolor: #667086;
+@blogcolor: #C39F6B;
+@partnerscolor: #9CB07D;
+@mediapartnerscolor: #9BB6C2;
 
 /* body */
 body {
@@ -290,7 +294,7 @@ margin:0px;
 padding:0px;
 }
 h3{
-padding:4px;
+padding-left:4px;
 color:#ffffff;
 font-size:20px;
 }
@@ -298,8 +302,45 @@ span{
 color:#ffffff;
 display:block;
 margin-left:15px;
+margin-bottom: 4px;
 }
 span.type_event{
 font-style:italic;
+}
+}
+
+.topicblock{
+background-color: @topicolor;
+i{
+display: block;
+margin-top: 20px;
+}
+}
+
+.blogblock{
+background-color: @blogcolor;
+i{
+display: block;
+margin-top: 10px;
+}
+}
+
+.partnersblock{
+background-color: @partnerscolor;
+i{
+display: block;
+margin-top: 10px;
+}
+}
+
+.mediapartnersblock{
+background-color: @mediapartnerscolor;
+.bloc-title{
+font-size: @bloc-font-title-size/1.2;
+line-height: 99%;
+}
+i{
+display: block;
+margin-top: 10px;
 }
 }

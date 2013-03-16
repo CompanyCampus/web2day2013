@@ -22,6 +22,9 @@ $.fn.randomize = function(selector){
     return this;
 };
 
+
+
+
 jQuery(function($){
    
 	_.each($('.blocfloat2h'),function(i,a,y){
@@ -33,6 +36,26 @@ jQuery(function($){
       
 	});
    
+   _.each(my_images,function(v, k){
+      var is_square = (_.uniq(k.split("x")).length == 1);
+      var r = _.random(0, (is_square ? 1 : 2));
+      var b_class_name = (function(kk){
+         switch(kk){
+            case "200x200" : return "bloc1";
+            case "408x408" : return "bloc2v2h";
+            case "408x200" : return "bloc2h";
+            case "200x408" : return "bloc2v";
+         }
+      }(k));
+      for(var i = 0 ; i < r ; i++){
+         var insert = v[_.random(0,_.size(v)-1)];
+         var c  = $('#content');
+         var ch = c.find('div.bloc');
+         var n = _.random(0,_.size(ch)-1);
+         $('<div class="bloc '+b_class_name+'"><img src="/'+insert+'"/></div>').insertAfter($(ch[n]));
+      }
+   });
+   
    $('.randomize_plz').randomize();
    
    
@@ -40,7 +63,7 @@ jQuery(function($){
 	mainpage.masonry({
 		isAnimated: true,
 		itemSelector:'.bloc:not(.hidden)',
-		isFitWidth:true,
+//		isFitWidth:true,
 		columnWidth:blocwidth + (blocspace)
 	});
 	/*
@@ -79,4 +102,4 @@ jQuery(function($){
 		$('a[href="'+location.hash+'"]').trigger('click');
 	}
 	*/
-})
+});
