@@ -6,4 +6,5 @@ LOCATION:$location$
 DTSTART:$iso8601_start$
 DTEND:$iso8601_end$
 SUMMARY:$title$
+DESCRIPTION:more infos : http://www.web2day-nantes.org$url$
 END:VEVENT
