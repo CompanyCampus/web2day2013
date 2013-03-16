@@ -43,6 +43,7 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
         
+    makeImagesdata
 --------------------------------------------------------------------------------
 -- Reusable blocks
 --
@@ -62,6 +63,14 @@ main = hakyll $ do
     forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "events" "event")
 
     forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (confSpeakersCtx lang) lang "events" "event")
+
+--------------------------------------------------------------------------------
+-- Topics
+--
+
+    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "topics" "topic")
+
+    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (topicEventsCtx lang) lang "topics" "topic")
 
 --------------------------------------------------------------------------------
 -- Calendar
