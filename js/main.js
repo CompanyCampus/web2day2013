@@ -52,7 +52,7 @@ jQuery(function($){
          var c  = $('#content');
          var ch = c.find('div.bloc');
          var n = _.random(0,_.size(ch)-1);
-         $('<div class="bloc '+b_class_name+'"><img src="/'+insert+'"/></div>').insertAfter($(ch[n]));
+         $('<div class="optionalOnMobile bloc '+b_class_name+'"><img src="/'+insert+'"/></div>').insertAfter($(ch[n]));
       }
    });
    
@@ -103,3 +103,31 @@ jQuery(function($){
 	}
 	*/
 });
+
+
+   	$(document).ready(function() {
+         var opts = {
+                     height: 616,
+                     year:2013,
+                     month:4,
+                     date:17,
+                     header:{
+                        left:   '',
+                        center: '',
+                        right:  ''
+                     },
+                     defaultView: 'agendaDay',
+            			events: 'https://www.google.com/calendar/feeds/gm9kigemqnjj5snv7cee19pb1c%40group.calendar.google.com/public/basic',
+            			eventClick: function(event) {
+            				// opens events in a popup window
+            				window.open(event.url, 'gcalevent', 'width=700,height=600');
+            				return false;
+            			}
+            };
+            var opts2 = _.clone(opts);
+	
+   		$('#calendar-friday').fullCalendar(opts);
+         opts2['date'] = 16;
+   		$('#calendar-thursday').fullCalendar(opts2);
+		
+   	});
