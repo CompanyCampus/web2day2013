@@ -122,7 +122,17 @@ jQuery(function($){
             				// opens events in a popup window
             				window.open(event.url, 'gcalevent', 'width=700,height=600');
             				return false;
-            			}
+            			},
+                     eventAfterRender:function( event, element, view ) {
+                        var b_class_name = (function(kk){
+                           switch(kk){
+                              case "salle maxi" : return "salle_maxi";
+                              case "salle mini" : return "salle_mini";
+                           }
+                        }(event.location));
+                        console.log(arguments);
+                        element.addClass(b_class_name);
+                     }
             };
             var opts2 = _.clone(opts);
 	
