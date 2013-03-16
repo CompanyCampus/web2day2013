@@ -109,13 +109,13 @@ itemIdFromIdentifier i = itemId
 
 getEventsCompiler :: String -> String -> Compiler String
 getEventsCompiler lang speaker = do
-    hisEvents <- getEvents lang speaker
+    hisEvents <- getSpeakerEvents lang speaker
     tpl <- loadBody $ "templates/event-item.html"
     content <- applyTemplateList tpl defaultContext hisEvents
     return content
 
-getEvents :: String -> String -> Compiler [Item String]
-getEvents lang speaker = do
+getSpeakerEvents :: String -> String -> Compiler [Item String]
+getSpeakerEvents lang speaker = do
     allEvents <- loadAll (fromGlob $ lang ++ "/events/*.md")
     filterItems (hasSpeaker speaker) allEvents
 
@@ -129,4 +129,29 @@ hasSpeaker name conf =
         end = fromMaybe False
         pipe = end . matchSpeakers . splitSpeakers . getSpeakers
 
+topicEventsCtx :: String -> Context String
+topicEventsCtx lang =
+    field "events" (\topic -> getTopicEventsCompiler lang (itemIdFromIdentifier $ itemIdentifier topic))
 
+getTopicEventsCompiler :: String -> String -> Compiler String
+getTopicEventsCompiler lang topic = do
+    events <- getTopicEvents lang topic
+    tpl <- loadBody "templates/event-item.html"
+    content <- applyTemplateListWithContexts tpl (makeItemContextPairList events)
+    return content
+
+getTopicEvents :: String -> String -> Compiler [(Identifier, Metadata)]
+getTopicEvents lang topic = do
+    allEvents <- getAllMetadata (fromGlob $ lang ++ "/events/*.md")
+    return $ filter (hasTopic topic) allEvents
+
+getEventTopic (_,m) = fromMaybe "--" $ M.lookup "topic" m
+
+hasTopic :: String -> (Identifier, Metadata) -> Bool
+hasTopic topic (_,m) =
+    pipe m
+    where
+        getTopic = M.lookup "topic"
+        matchTopic = fmap (== topic)
+        end = fromMaybe False
+        pipe = end . matchTopic . getTopic
