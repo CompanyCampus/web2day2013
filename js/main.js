@@ -22,9 +22,7 @@ $.fn.randomize = function(selector){
     return this;
 };
 
-jQuery(function($){
-   
-});
+
 
 
 jQuery(function($){
@@ -37,6 +35,23 @@ jQuery(function($){
       e.height(nt);
       
 	});
+   
+   _.each(my_images,function(v, k){
+      var is_square = (_.uniq(k.split("x")).length == 1);
+      var r = _.random(0, (is_square ? 1 : 2));
+      var b_class_name = (function(kk){
+         switch(kk){
+            case "200x200" : return "bloc1";
+            case "408x408" : return "bloc2v2h";
+            case "408x200" : return "bloc2h";
+            case "200x408" : return "bloc2v";
+         }
+      }(k));
+      for(var i = 0 ; i < r ; i++){
+         var insert = v[_.random(0,_.size(v)-1)];
+         $('<div class="bloc '+b_class_name+'"><img src="/'+insert+'"/></div>').appendTo('#content');
+      }
+   });
    
    $('.randomize_plz').randomize();
    
