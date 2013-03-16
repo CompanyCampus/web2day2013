@@ -122,7 +122,11 @@ jQuery(function($){
             				// opens events in a popup window
             				window.open(event.url, 'gcalevent', 'width=700,height=600');
             				return false;
-            			}
+            			},
+                     eventAfterRender:function( event, element, view ) {
+                        console.log(arguments);
+                        element.css('background','#ff0000');
+                     }
             };
             var opts2 = _.clone(opts);
 	
