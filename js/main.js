@@ -124,8 +124,14 @@ jQuery(function($){
             				return false;
             			},
                      eventAfterRender:function( event, element, view ) {
+                        var b_class_name = (function(kk){
+                           switch(kk){
+                              case "salle maxi" : return "salle_maxi";
+                              case "salle mini" : return "salle_mini";
+                           }
+                        }(event.location));
                         console.log(arguments);
-                        element.css('background','#ff0000');
+                        element.addClass(b_class_name);
                      }
             };
             var opts2 = _.clone(opts);
