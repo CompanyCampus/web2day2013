@@ -44,6 +44,7 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
         
+    makeImagesdata
 --------------------------------------------------------------------------------
 -- Reusable blocks
 --

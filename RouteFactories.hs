@@ -1,9 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 module RouteFactories where
 
+import           Data.List               (intercalate)
 import qualified Data.Map                as M
 import           Data.Maybe              (fromMaybe)
-import           Data.Monoid             (mappend, mempty)
+import           Data.Monoid             (mappend, mconcat, mempty)
 import           Data.Time.Clock         (UTCTime (..))
 import           Data.Time.LocalTime     (LocalTime, hoursToTimeZone, localTimeToUTC)
 import           Data.Time.Format        (formatTime, parseTime)
@@ -96,3 +97,29 @@ iso8601_date date =
         metadata <- getMetadata $ itemIdentifier item
         return $ fromMaybe "" $ M.lookup date metadata >>= makeIso8601
     )
+
+imagesList :: String -> Compiler String
+imagesList dir = let
+      addBrackets = ("["++) . (++"]")
+      addQuotes = ("\""++) . (++"\"")
+      imgs = loadAll (fromGlob $ "assets/images/photos/" ++ dir ++ "/*") :: Compiler [Item CopyFile]
+   in do
+      list <- imgs
+      return $ addBrackets $ intercalate (",") $ map (addQuotes . show . itemIdentifier) list
+   
+
+imagesDataCtx = let
+   dirs = ["200x200", "408x408", "408x200"]
+   lists = map imagesList dirs
+   in 
+      mconcat $ zipWith field dirs (map const lists) 
+
+makeImagesdata :: Rules ()
+makeImagesdata = 
+   create ["js/imagesdata.js"] $ do
+      route idRoute
+      compile $ do 
+         makeItem ""
+             >>= loadAndApplyTemplate "templates/imagesdata.js" imagesDataCtx
+   
+   
