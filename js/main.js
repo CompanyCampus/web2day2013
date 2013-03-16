@@ -36,6 +36,7 @@ jQuery(function($){
       
 	});
    
+   if(($('.no_more_pic')).length == 0){
    _.each(my_images,function(v, k){
       var is_square = (_.uniq(k.split("x")).length == 1);
       var r = _.random(0, (is_square ? 1 : 2));
@@ -55,6 +56,7 @@ jQuery(function($){
          $('<div class="optionalOnMobile bloc '+b_class_name+'"><img src="/'+insert+'"/></div>').insertAfter($(ch[n]));
       }
    });
+   }
    
    $('.randomize_plz').randomize();
    
