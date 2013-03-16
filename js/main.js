@@ -49,7 +49,10 @@ jQuery(function($){
       }(k));
       for(var i = 0 ; i < r ; i++){
          var insert = v[_.random(0,_.size(v)-1)];
-         $('<div class="bloc '+b_class_name+'"><img src="/'+insert+'"/></div>').appendTo('#content');
+         var c  = $('#content');
+         var ch = c.find('div.bloc');
+         var n = _.random(0,_.size(ch)-1);
+         $('<div class="bloc '+b_class_name+'"><img src="/'+insert+'"/></div>').insertAfter($(ch[n]));
       }
    });
    
