@@ -116,20 +116,17 @@ imagesList dir = let
    in do
       list <- imgs
       return $ addBrackets $ intercalate (",") $ map (addQuotes . show . itemIdentifier) list
-   
 
 imagesDataCtx = let
    dirs = ["200x200", "408x408", "200x408", "408x200"]
    lists = map imagesList dirs
-   in 
-      mconcat $ zipWith field dirs (map const lists) 
+   in
+      mconcat $ zipWith field dirs (map const lists)
 
 makeImagesdata :: Rules ()
-makeImagesdata = 
+makeImagesdata =
    create ["js/imagesdata.js"] $ do
       route idRoute
-      compile $ do 
+      compile $ do
          makeItem ""
              >>= loadAndApplyTemplate "templates/imagesdata.js" imagesDataCtx
-   
-   
