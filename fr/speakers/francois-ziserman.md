@@ -5,8 +5,8 @@ twitter: @ziserman
 twitterwiddgetid: 303857974437347328
 site: http://www.ziserman.com/blog/
 avatar: /assets/images/speakers/francois-ziserman/francois-ziserman1.jpg
-bigphoto: 
-bigphoto2:
+bigphoto: /assets/images/speakers/francois-ziserman/francois-ziserman1.jpg
+bigphoto2: /assets/images/speakers/francois-ziserman/francois-ziserman1.jpg
 ---
 
 François Ziserman est le fondateur dirigeant d’ARAOK!.
