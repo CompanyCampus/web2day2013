@@ -8,7 +8,7 @@ import           Data.Monoid             (mappend, mconcat, mempty)
 import           Data.Time.Clock         (UTCTime (..))
 import           Data.Time.LocalTime     (LocalTime, hoursToTimeZone, localTimeToUTC)
 import           Data.Time.Format        (formatTime, parseTime)
-import           System.FilePath         (takeBaseName, takeFileName)
+import           System.FilePath         (joinPath, replaceExtension, splitDirectories)
 import           System.Locale           (TimeLocale, defaultTimeLocale)
 
 import Hakyll
@@ -20,17 +20,26 @@ globalContext lang =
 
 getBlock :: String -> [String] -> (Context String) -> Compiler String
 getBlock lang args ctx = let
-        blockContext = ctx `mappend` defaultContext
+        invertLangCtx = constField "ilang" . invertLang
+        blockContext identifier = (invertLangCtx identifier) `mappend` ctx `mappend` defaultContext
         [name, fmt] = args
     in do
+    identifier <- getUnderlying
     tpl <- loadBody $ fromFilePath ("templates/blocks/"++ name ++".html")
     content <- load $ fromFilePath (lang ++ "/blocks/"++ name ++ "." ++ fmt)
-    compiledBlock <- applyTemplate tpl blockContext content
+    compiledBlock <- applyTemplate tpl (blockContext $ show identifier) content
     return $ itemBody compiledBlock
 
 blockLoader :: String -> Context String
 blockLoader lang =
     functionField "block" (\args item -> getBlock lang args (constField "lang" lang))
+
+invertLang :: FilePath -> FilePath
+invertLang = joinPath . il . splitDirectories . (flip replaceExtension "html")
+    where
+        il ("fr":xs) = "en":xs
+        il ("en":xs) = "fr":xs
+        il xs         = xs
 
 elementList :: String -> String -> String -> Compiler String
 elementList lang plural singular = do
