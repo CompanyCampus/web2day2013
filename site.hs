@@ -42,7 +42,11 @@ main = hakyll $ do
     match "js/*" $ do
         route   idRoute
         compile copyFileCompiler
-        
+
+    match "index.html" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     makeImagesdata
 --------------------------------------------------------------------------------
 -- Reusable blocks
