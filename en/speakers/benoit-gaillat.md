@@ -4,9 +4,9 @@ lastname: Gaillat
 twitter: @Benoit_Gaillat
 twitterwiddgetid: 304196019057459200
 site: http://www.info-ecommerce.fr/
-avatar: benoit-gaillat.jpg
-bigphoto: benoit-gaillat.jpg
-bigphoto2: benoit-gaillat.jpg
+avatar: /assets/images/speakers/benoit-gaillat/benoit-gaillat1.jpg
+bigphoto: /assets/images/speakers/benoit-gaillat/benoit-gaillat2.jpg
+bigphoto2: /assets/images/speakers/benoit-gaillat/benoit-gaillat3.jpg
 ---
 
 Since 2009 Benoît is an e-commerce consultant and founder of an e-commerce informations blog.

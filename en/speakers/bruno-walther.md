@@ -4,9 +4,9 @@ lastname: Walther
 twitter: @brunowalther
 twitterwiddgetid: 303953881476505600
 site: http://captaindash.com/
-avatar: bruno-walther.jpg
-bigphoto: bruno-walther.jpg
-bigphoto2: bruno-walther.jpg
+avatar: /assets/images/speakers/bruno-walther/bruno-walther1.jpg
+bigphoto: /assets/images/speakers/bruno-walther/bruno-walther2.jpg
+bigphoto2: /assets/images/speakers/bruno-walther/bruno-walther3.jpg
 ---
 
 Bruno is currently the founder & Co Chairman of CaptainDash. He is a serial entrepreneur. 
