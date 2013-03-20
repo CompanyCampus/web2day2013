@@ -5,8 +5,8 @@ twitter:
 twitterwiddgetid: 
 site: http://www.alanmitchell.biz/ReinventingMarketing.htm
 avatar: /assets/images/speakers/alan-mitchell/alan-mitchell1.png
-bigphoto: /assets/images/speakers/alan-mitchell/alan-mitchell3.png
-bigphoto2: /assets/images/speakers/alan-mitchell/alan-mitchell2.png
+bigphoto: /assets/images/speakers/alan-mitchell/alan-mitchell2.png
+bigphoto2: /assets/images/speakers/alan-mitchell/alan-mitchell3.png
 ---
 
 Alan Mitchell interest is wealth creation. Real wealth creation that is, things and activities that enrich human lives. He serves as Chairman of the Buyer Centric Commerce Forum.
