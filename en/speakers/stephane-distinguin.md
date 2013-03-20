@@ -4,9 +4,9 @@ lastname: Distinguin
 twitter: @fano
 twitterwiddgetid: 303869842207948800
 site: http://www.fabernovel.com
-avatar: stephane-distinguin.jpg
-bigphoto: stephane-distinguin.jpg
-bigphoto2: stephane-distinguin.jpg
+avatar: /assets/images/speakers/stephane-distinguin/stephane-distinguin1.png
+bigphoto: /assets/images/speakers/stephane-distinguin/stephane-distinguin2.png
+bigphoto2: /assets/images/speakers/stephane-distinguin/stephane-distinguin3.png
 ---
 
 Graduated from ESCP, Stéphane Distinguin joined Deloitte & Touche in 1997. In 1999 he cofunded Up&Up, an «early stage» investment fund. as a French entrepreneur and activist in the field of innovation, he created FaberNovel in 2003.  
