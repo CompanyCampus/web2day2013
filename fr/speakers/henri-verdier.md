@@ -4,9 +4,9 @@ lastname: Verdier
 twitter: @HenriVerdier
 twitterwiddgetid: 304195264330207232
 site: http://www.henriverdier.com/
-avatar: /assets/images/speakers/henri-verdier/henri-verdier1.jpg
-bigphoto: 
-bigphoto2: /assets/images/speakers/henri-verdier/henri-verdier2.jpg
+avatar: /assets/images/speakers/henri-verdier/henri-verdier1.png
+bigphoto: /assets/images/speakers/henri-verdier/henri-verdier2.png
+bigphoto2: /assets/images/speakers/henri-verdier/henri-verdier3.png
 ---
 
 Ancien élève de l'École normale supérieure, Henri Verdier fut le directeur général de la société Odile Jacob Multimédia, développant notamment avec Georges Charpak un ensemble de supports pédagogiques pour La main à la pâte. En 2007, il rejoint Lagardère Active comme directeur chargé de l'innovation. En 2009, il rejoint l'Institut Télécom comme directeur de la prospective, en charge de la création du Think Tank « Futur numérique ». Il est cofondateur de la société MFG-Labs.

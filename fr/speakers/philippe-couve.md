@@ -4,9 +4,9 @@ lastname: Couve
 twitter: @couve
 twitterwiddgetid: 303823402299432961
 site: http://www.samsa.fr/
-avatar: philippe-couve.jpg
-bigphoto: philippe-couve.jpg
-bigphoto2: philippe-couve.jpg
+avatar: /assets/images/speakers/philippe-couve/philippe-couve1.png
+bigphoto: /assets/images/speakers/philippe-couve/philippe-couve2.png
+bigphoto2: /assets/images/speakers/philippe-couve/philippe-couve3.png
 ---
 
 Philippe Couve a été présentateur de journaux sur RFI, puis grand reporter. Il a co-dirigé  le service internet de RFI, l’Atelier RFI (émission participative basée sur un blog) puis l’Atelier des médias qui a été l’une des premières web-émissions participatives dans le monde.

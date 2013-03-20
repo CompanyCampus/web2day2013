@@ -4,7 +4,7 @@ lastname: de la Jonquière
 twitter: @mention
 twitterwiddgetid: 303953027713343488
 site: https://fr.mention.net/
-avatar: /assets/images/speakers/edouard-delajonquiere/edouard-delajonquiere1.jpg
+avatar: /assets/images/speakers/edouard-delajonquiere/edouard-delajonquiere1.png
 bigphoto: /assets/images/speakers/edouard-delajonquiere/edouard-delajonquiere3.png
 bigphoto2: /assets/images/speakers/edouard-delajonquiere/edouard-delajonquiere2.png
 ---

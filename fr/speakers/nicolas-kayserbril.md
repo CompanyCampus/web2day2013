@@ -4,9 +4,9 @@ lastname: Kayser-Bril
 twitter: @nicolaskb
 twitterwiddgetid: 303860331275489281
 site: jplusplus.org
-avatar: nicolas-kayserbril.jpg
-bigphoto: nicolas-kayserbril.jpg
-bigphoto2: nicolas-kayserbril.jpg
+avatar: /assets/images/speakers/nicolas-kayserbril/nicolas-kayserbril1.png
+bigphoto: /assets/images/speakers/nicolas-kayserbril/nicolas-kayserbril2.png
+bigphoto2: /assets/images/speakers/nicolas-kayserbril/nicolas-kayserbril3.png
 ---
 
 Nicolas Kayser-Bril journaliste et développeur, est co-fondateur de la société Journalism++.

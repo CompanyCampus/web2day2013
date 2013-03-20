@@ -4,9 +4,9 @@ lastname: Roukine
 twitter: @sroukine
 twitterwiddgetid: 304196578841870336
 site: http://www.sergeroukine.com/
-avatar: serge-roukine.jpg
-bigphoto: serge-roukine.jpg
-bigphoto2: serge-roukine.jpg
+avatar: /assets/images/speakers/serge-roukine/serge-roukine1.png
+bigphoto: /assets/images/speakers/serge-roukine/serge-roukine2.png
+bigphoto2: /assets/images/speakers/serge-roukine/serge-roukine3.png
 ---
 
 Serge est e fondateur de Codeur.com et de Graphiste.com. Il est l'auteur de 'Améliorez vos taux de conversion web' et 'Réussir son marketing web'. 
