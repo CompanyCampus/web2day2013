@@ -4,7 +4,7 @@ lastname: Lazorthes
 twitter: @CelineLz
 twitterwiddgetid: 303947251691159552
 site: http://www.leetchi.com
-avatar: /assets/images/speakers/celine-lazorthes/celine-lazorthes1.jpg
+avatar: /assets/images/speakers/celine-lazorthes/celine-lazorthes1.png
 bigphoto: /assets/images/speakers/celine-lazorthes/celine-lazorthes3.png
 bigphoto2: /assets/images/speakers/celine-lazorthes/celine-lazorthes2.png
 ---
