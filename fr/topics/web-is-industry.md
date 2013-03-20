@@ -1,0 +1,3 @@
+---
+title: Web is Industry
+---
