@@ -4,9 +4,9 @@ lastname: Roukine
 twitter: @sroukine
 twitterwiddgetid: 304196578841870336
 site: http://www.sergeroukine.com/
-avatar: serge-roukine.jpg
-bigphoto: serge-roukine.jpg
-bigphoto2: serge-roukine.jpg
+avatar: /assets/images/speakers/serge-roukine/serge-roukine1.png
+bigphoto: /assets/images/speakers/serge-roukine/serge-roukine2.png
+bigphoto2: /assets/images/speakers/serge-roukine/serge-roukine3.png
 ---
 
 Serge is an entrepreneur, author, teacher, consultant, event creator and web marketing enthousiast.
