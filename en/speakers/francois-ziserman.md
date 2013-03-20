@@ -4,9 +4,9 @@ lastname: Ziserman
 twitter: @ziserman
 twitterwiddgetid: 303857974437347328
 site: http://www.ziserman.com/blog/
-avatar: francois-ziserman.jpg
-bigphoto: francois-ziserman.jpg
-bigphoto2: francois-ziserman.jpg
+avatar: /assets/images/speakers/francois-ziserman/francois-ziserman1.png
+bigphoto: /assets/images/speakers/francois-ziserman/francois-ziserman2.png
+bigphoto2: /assets/images/speakers/francois-ziserman/francois-ziserman3.png
 ---
 
 François Ziserman is the founder and CEO of Araok! .

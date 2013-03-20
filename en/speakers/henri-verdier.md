@@ -4,9 +4,9 @@ lastname: Verdier
 twitter: @HenriVerdier
 twitterwiddgetid: 304195264330207232
 site: http://www.henriverdier.com/
-avatar: henri-verdier.jpg
-bigphoto: henri-verdier.jpg
-bigphoto2: henri-verdier.jpg
+avatar: /assets/images/speakers/henri-verdier/henri-verdier1.png
+bigphoto: /assets/images/speakers/henri-verdier/henri-verdier2.png
+bigphoto2: /assets/images/speakers/henri-verdier/henri-verdier3.png
 ---
 
 Henri Verdier is a French entrepreneur, and currently the Head of Etalab, the French Agency for Public Open data.

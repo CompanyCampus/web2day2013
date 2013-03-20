@@ -4,9 +4,9 @@ lastname: Guillaud
 twitter: @hubertguillaud
 twitterwiddgetid: 304197236785553409
 site: http://www.internetactu.net/author/hubert/
-avatar: hubert-guillaud.jpg
-bigphoto: hubert-guillaud.jpg
-bigphoto2: hubert-guillaud.jpg
+avatar: /assets/images/speakers/hubert-guillaud/hubert-guillaud1.png
+bigphoto: /assets/images/speakers/hubert-guillaud/hubert-guillaud2.png
+bigphoto2: /assets/images/speakers/hubert-guillaud/hubert-guillaud3.png
 ---
 
 Hubert Guillaud is editor-in-chief of InternetActu.net and monitor responsible at the Fondation 'Internet nouvelle génération'. 
