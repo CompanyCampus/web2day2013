@@ -5,7 +5,7 @@ start: 2013-05-16 15:30
 end: 2013-05-16 16:30
 type: panel
 speaker: cedric-giorgi,bruno-walther
-topic: data
+topic: innovation-media
 ---
 
 Nouveau contenu
