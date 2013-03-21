@@ -1,4 +1,3 @@
-
 ---
 title: Conférence de lancement
 location: salle maxi

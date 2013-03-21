@@ -1,10 +1,10 @@
 ---
 title: Rapport N-Colin & P-Collin
 location: salle maxi
-start: 2013-05-16 12:00
-end: 2013-05-16 12:30
+start: 2013-05-16 11:20
+end: 2013-05-16 11:50
 type: Talk
-speaker: stephane-distinguin,
+speaker: nicolas-colin,
 topic: data
 ---
 

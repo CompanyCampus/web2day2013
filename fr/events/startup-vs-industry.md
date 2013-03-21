@@ -1,8 +1,8 @@
 ---
 title: Startup vs. Industry
 location: salle maxi
-start: 2013-05-16 10:30
-end: 2013-05-16 11:30
+start: 2013-05-16 10:00
+end: 2013-05-16 11:20
 type: panel
 speaker: stephane-distinguin,
 topic: web-is-industry

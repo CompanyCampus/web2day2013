@@ -1,5 +1,5 @@
 ---
-title: L'éco-système au développement des médias
+title: L'écosystème au développement des médias
 location: salle maxi
 start: 2013-05-16 14:00
 end: 2013-05-16 15:30

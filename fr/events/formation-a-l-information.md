@@ -1,5 +1,5 @@
 ---
-title: Master Class : La formation à l'information
+title: La formation à l'information
 location: salle mini
 start: 2013-05-17 09:15
 end: 2013-05-17 10:15

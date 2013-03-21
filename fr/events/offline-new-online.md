@@ -1,8 +1,8 @@
 ---
 title: Le offline nouvel online
 location: salle maxi
-start: 2013-05-17 10:30
-end: 2013-05-17 10:50
+start: 2013-05-16 11:50
+end: 2013-05-16 12:05
 type: talk
 speaker: cedric-giorgi,
 topic: sustainable-development

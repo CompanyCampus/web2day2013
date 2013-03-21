@@ -1,10 +1,10 @@
 ---
 title: DIY
 location: salle mini
-start: 2013-05-16 11:15
-end: 2013-05-16 12:15
+start: 2013-05-16 11:00
+end: 2013-05-16 12:00
 type: Demo
-speaker: cedric-giorgi
+speaker: olivier-mevel, jonathan-schemoul
 topic: internet-of-things
 ---
 
