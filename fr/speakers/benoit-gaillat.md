@@ -9,8 +9,6 @@ bigphoto: /assets/images/speakers/benoit-gaillat/benoit-gaillat2.png
 bigphoto2: /assets/images/speakers/benoit-gaillat/benoit-gaillat3.png
 ---
 
-Depuis 2009 Benoît est consultant e-commerce et fondateur-rédacteur du blog info-ecommerce.fr (élu meilleur blog e-commerce 2011 par la Fevad), mais il est également e-commerçant depuis plus de 7 ans.
-Il a été responsable e-commerce du site Palais des Thés, après avoir exercé le même poste chez EnjoySunGlasses, ou celui de chef de projet e-commerce chez Rexel.
-Benoît est désormais co-fondateur et Directeur Associé de skeelbox, une agence de conseil et de stratégie ecommerce indépendante.
+Benoit est Directeur Associé de Skeelbox. Il travaille depuis 8 ans dans l'e-commerce, et a piloté la stratégie e-marketing de plusieurs sites marchands, leaders dans leur domaine. Il accompagne désormais les e-commerçants pour développer leur activité, en les aidant à définir et piloter leur stratégie e-commerce.
 
 
