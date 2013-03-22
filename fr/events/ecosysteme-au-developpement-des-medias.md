@@ -3,8 +3,8 @@ title: L'écosystème au développement des médias
 location: salle maxi
 start: 2013-05-16 14:00
 end: 2013-05-16 15:30
-type: panel
-speaker: morgiane-achache,raphael-labbe, nicolas-kayserbril, damian-vanachter, philippe-couve
+type: Panel
+speaker: morgiane-achache,raphael-labbe, nicolas-kayserbril, damian-vanachter, philippe-couve, romain-saillet
 topic: innovation-media
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Conférence de lancement
 location: salle maxi
-start: 2013-05-16 9:30
+start: 2013-05-16 09:30
 end: 2013-05-16 10:00
 type: Panel
 speaker: 

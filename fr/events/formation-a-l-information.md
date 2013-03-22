@@ -1,9 +1,9 @@
 ---
 title: La formation à l'information
 location: salle mini
-start: 2013-05-17 09:15
-end: 2013-05-17 10:15
-type: talk
+start: 2013-05-17 09:30
+end: 2013-05-17 09:45
+type: Talk
 speaker: damien-vanachter,
 topic: innovation-media
 ---

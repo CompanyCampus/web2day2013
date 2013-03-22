@@ -1,9 +1,9 @@
 ---
 title: Les nouvelles expériences médiatiques
 location: salle mini
-start: 2013-05-17 09:15
-end: 2013-05-17 10:15
-type: talk
+start: 2013-05-17 09:45
+end: 2013-05-17 10:00
+type: Talk
 speaker: nicolas-loubet,
 topic: innovation-media
 ---
