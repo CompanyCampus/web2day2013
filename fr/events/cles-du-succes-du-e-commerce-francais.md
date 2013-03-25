@@ -1,6 +1,6 @@
 ---
 title: Les clés du succès du e-commer français ?
-location: salle maxi
+location: salle Aaron Swartz
 start: 2013-05-17 11:15
 end: 2013-05-17 12:30
 type: Panel

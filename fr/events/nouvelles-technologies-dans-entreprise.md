@@ -1,6 +1,6 @@
 ---
 title: Les nouvelles technologies dans l'entreprise
-location: salle maxi
+location: salle Aaron Swartz
 start: 2013-05-17 16:20
 end: 2013-05-17 17:30
 type: Panel

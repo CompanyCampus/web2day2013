@@ -1,6 +1,6 @@
 ---
 title: Rapport N-Colin & P-Collin
-location: salle maxi
+location: salle Aaron Swartz
 start: 2013-05-16 11:20
 end: 2013-05-16 11:50
 type: Talk
