@@ -1,13 +1,27 @@
 GENERAL
-Modifier les noms des espaces.
+- Modifier les noms des espaces pour la légende ; salle micro = salle steve jobs / salle maxi = salle Aaron Swartz !
+- Police du texte de présentation à mettre en blanc
+- On peut intégrer une vidéo ? on a le teaser du web2day qui doit arriver.
 
 SPEAKERS
-- Police sur phot à réduire pour éviter les double-lignes qui masquent la tête des speakers
+- Police sur photo speaker à réduire pour éviter les double-lignes qui masquent la tête des speakers
 - Lien vers le site web du speaker sur la photo horizontale
 
+TOPICS
+- Grossir police des Topics
+- ajouter le topic sur la page event
+
+EVENTS
+- Modifier brique titre events (titre caché)
+- ajouter le topic sur la page event 
+
 AGENDA
-- légende couleur pour les salles
+- légende couleur pour les salles, on reprend les couleurs du logo :
+. bleu trempo
+. rose steve jobs
+. orange Aaron Swartz
 - Nom des salles du coup on part sur Aaron Schwartz (salle maxi) et Steve Jobs (salle micro)
+- Comment je peux ajouter du contenu sur l'agenda ?
 
 CONTRIBUTEURS
 - Fiche (même format que speaker)
@@ -19,3 +33,14 @@ site
 avatar
 logo boite
 description
+
+SPONSORS
+c'est la grosse partie ! je vais essayer d'expliquer par écrit mais le plus simple et de se voir :)
+- Sur la home et en bas de chaque page, on met une brique pour chaque type de sponsors avec un logo aléatoire sur fond blanc (pas le choix :-/) :
+. Official > rectangle (4 + CCI + Région)
+. Gold > carré (6 ou 8)
+. Silver > carré (10 ou 12)
+. Friends > carré (Stereo, Trempo, Nefs, CC)
+. Media > carré
+. Orga > rectangle (Powered by + logo Atlantic2)
+Avec un lien à chaque fois vers la page sponsors
