@@ -14,7 +14,8 @@ import Hakyll
 
 confSpeakersCtx :: String -> Context String
 confSpeakersCtx lang =
-    field "speakers" (\conf -> getSpeakerCompiler lang conf)
+    field "speakers" (\conf -> getSpeakerCompiler lang conf) `mappend`
+    field "topicBlock" (\conf -> getTopicCompiler lang conf)
 
 getSpeakerCompiler lang conf = do
     speakerList <- getSpeakerList conf
@@ -24,25 +25,26 @@ getSpeakerCompiler lang conf = do
     return content
 
 
-makeMetadataContext :: Metadata -> Context String
-makeMetadataContext m =
-    (Context $ \k _ -> do
-        return $ fromMaybe "" $ M.lookup k m)
 
-makeUrlField :: Identifier -> Context String
-makeUrlField id =
-    field "url" $ \_ -> do
-        fp <- getRoute id
-        return $ fromMaybe "" $ fmap toUrl fp
+makeDefaultContext :: (Identifier, Metadata) -> Context String
+makeDefaultContext (i, m) =
+        makeUrlField i `mappend`
+        makeMetadataContext m
+    where
+        makeMetadataContext m =
+            (Context $ \k _ -> do
+                return $ fromMaybe "" $ M.lookup k m)
+
+        makeUrlField id =
+            field "url" $ \_ -> do
+                fp <- getRoute id
+                return $ fromMaybe "" $ fmap toUrl fp
 
 
 makeItemContextPairList :: [(Identifier, Metadata)] -> [(Context String, Item String)]
 makeItemContextPairList ims = map f ims
     where
-    f p = (makeItemContext p, Item (fst p) "")
-    makeItemContext p =
-        makeUrlField (fst p) `mappend`
-        makeMetadataContext (snd p)
+    f p = (makeDefaultContext p, Item (fst p) "")
 
 applyTemplateListWithContexts :: Template
                               -> [(Context a, Item a)]
@@ -145,8 +147,6 @@ getTopicEvents lang topic = do
     allEvents <- getAllMetadata (fromGlob $ lang ++ "/events/*.md")
     return $ filter (hasTopic topic) allEvents
 
-getEventTopic (_,m) = fromMaybe "--" $ M.lookup "topic" m
-
 hasTopic :: String -> (Identifier, Metadata) -> Bool
 hasTopic topic (_,m) =
     pipe m
@@ -155,3 +155,22 @@ hasTopic topic (_,m) =
         matchTopic = fmap (== topic)
         end = fromMaybe False
         pipe = end . matchTopic . getTopic
+
+getTopicCompiler :: String
+                 -> Item String
+                 -> Compiler String
+getTopicCompiler lang conf = do
+        md <- getMetadata $ itemIdentifier conf
+        maybe (return "") (getTopicCompilerBlock lang) (M.lookup "topic" md)
+
+getTopicCompilerBlock :: String
+                      -> String
+                      -> Compiler String
+getTopicCompilerBlock lang topic = do
+        i <- makeItem ""
+        md <- getMetadata $ getTopicId topic
+        tpl <- loadBody "templates/topic-item.html"
+        item <- applyTemplate tpl (makeDefaultContext (getTopicId topic, md)) i
+        return $ itemBody item
+    where
+        getTopicId t = fromFilePath $ lang ++ "/topics/" ++ t ++ ".md"
