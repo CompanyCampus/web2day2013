@@ -1,10 +1,10 @@
 ---
-title: Offline new Online
+title: Future economy
 location: Room 1
-start: 2013-05-16 11:50
-end: 2013-05-16 12:05
+start: 2013-05-17 15:25
+end: 2013-05-17 15:50
 type: Talk
-speaker: cedric-giorgi,
+speaker: louisdavid-benyayer
 topic: sustainable-development
 ---
 
