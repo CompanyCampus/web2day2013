@@ -1,5 +1,5 @@
 ---
-title: The collaborative comsuption in B2B
+title: The collaborative consumption in B2B
 location: Room 2
 start: 2013-05-16 16:00
 end: 2013-05-16 17:00
