@@ -1,10 +1,10 @@
 ---
-title: Open Ideo
+title: Future economy
 location: Room 1
-start: 2013-05-17 09:15
-end: 2013-05-17 10:15
+start: 2013-05-17 15:25
+end: 2013-05-17 15:50
 type: Talk
-speaker: blaise-bertrand
+speaker: louisdavid-benyayer
 topic: sustainable-development
 ---
 

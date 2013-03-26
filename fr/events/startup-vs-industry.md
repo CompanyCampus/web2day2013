@@ -1,6 +1,6 @@
 ---
 title: Startup vs. Industry
-location: salle Aaron Swartz
+location: Room 1
 start: 2013-05-16 10:00
 end: 2013-05-16 11:20
 type: Panel

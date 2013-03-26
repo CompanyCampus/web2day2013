@@ -1,6 +1,6 @@
 ---
 title: La formation à l'information
-location: salle Steve Jobs
+location: Room 2
 start: 2013-05-17 09:30
 end: 2013-05-17 09:45
 type: Talk
