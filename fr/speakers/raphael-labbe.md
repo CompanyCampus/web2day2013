@@ -3,7 +3,7 @@ firstname: Raphaël
 lastname: Labbé
 twitter: @leafar
 twitterwiddgetid: 303861060237131777
-site: leafar.eu
+site: http://leafar.eu/
 avatar: /assets/images/speakers/raphael-labbe/raphael-labbe1.png
 bigphoto: /assets/images/speakers/raphael-labbe/raphael-labbe2.png
 bigphoto2: /assets/images/speakers/raphael-labbe/raphael-labbe3.png
