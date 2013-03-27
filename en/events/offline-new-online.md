@@ -5,7 +5,7 @@ start: 2013-05-16 11:50
 end: 2013-05-16 12:05
 type: Talk
 speaker: cedric-giorgi,
-topic: sustainable-development
+topic: develop-business
 ---
 
 More informations coming soon...
