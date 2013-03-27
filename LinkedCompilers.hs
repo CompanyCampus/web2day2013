@@ -90,10 +90,10 @@ keepItem p i = do
 
 hisEventsCtx :: String -> Context String
 hisEventsCtx lang =
-    field "confs" (\speaker -> taSoeur lang speaker)
+    field "confs" (\speaker -> speakerEventsCompiler lang speaker)
 
-taSoeur :: String -> Item String -> Compiler String
-taSoeur lang speaker = getEventsCompiler lang $ itemIdFromItem speaker
+speakerEventsCompiler :: String -> Item String -> Compiler String
+speakerEventsCompiler lang speaker = getEventsCompiler lang $ itemIdFromItem speaker
 
 itemIdFromItem :: Item String -> String
 itemIdFromItem i = itemId
