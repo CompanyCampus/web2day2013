@@ -6,7 +6,7 @@ twitterwiddgetid: 314822990405713921
 site: http://www.kisskissbankbank.com/
 avatar: /assets/images/speakers/vincent-ricordeau/vincent-ricordeau1.png
 bigphoto: /assets/images/speakers/vincent-ricordeau/vincent-ricordeau2.png
-bigphoto2: /assets/images/speakers/stephane-distinguin/stephane-distinguin3.png
+bigphoto2: /assets/images/speakers/vincent-ricordeau/vincent-ricordeau3.png
 ---
 
 Vincent Ricordeau, co-fondateur de KissKissBankBank est un serial entrepreneur. Il a fondé et dirigé plusieurs entreprises avant de rejoindre SportFive, leader du marketing sportif et d'en devenir le Vice Président.
