@@ -99,6 +99,14 @@ main = hakyll $ do
 
     forM_ ["en", "fr"] $ \lang -> (makeElements lang "posts" "post")
 
+--------------------------------------------------------------------------------
+-- Contributors
+--
+
+    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "contributors" "contributor")
+
+    forM_ ["en", "fr"] $ \lang -> (makeElements lang "contributors" "contributor")
+
 
 --------------------------------------------------------------------------------
 -- Simple pages
