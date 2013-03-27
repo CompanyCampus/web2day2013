@@ -1,5 +1,5 @@
 ---
-title: Données prédictives, état des lieux
+title: Enjeux de l'analyse prédictive
 location: Room 2
 start: 2013-05-17 10:15
 end: 2013-05-17 10:35
