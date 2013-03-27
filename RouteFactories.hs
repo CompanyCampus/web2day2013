@@ -35,8 +35,10 @@ blockLoader lang =
     functionField "block" (\args item -> getBlock lang args (constField "lang" lang))
 
 invertLang :: FilePath -> FilePath
-invertLang = joinPath . il . splitDirectories . (flip replaceExtension "html")
+invertLang = joinPath . il . removePage . splitDirectories . getPath
     where
+        getPath = (flip replaceExtension "html")
+        removePage = filter (/= "pages")
         il ("fr":xs) = "en":xs
         il ("en":xs) = "fr":xs
         il xs         = xs
