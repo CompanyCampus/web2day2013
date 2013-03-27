@@ -1,15 +1,15 @@
 GENERAL
 - Modifier les noms des espaces pour la légende ; salle micro = salle steve jobs / salle maxi = salle Aaron Swartz !
-    => Ça en est où pour les nouveaux noms ?
+    => Ça en est où pour les nouveaux noms ? rien d'original Room 1 et Room 2 et trempo reste trempo
 - On peut intégrer une vidéo ? on a le teaser du web2day qui doit arriver.
-    => Oui, il suffit de mettre le HTML en dur
+    => Oui, il suffit de mettre le HTML en dur // OK
 
 SPEAKERS
 - Police sur photo speaker à réduire pour éviter les double-lignes qui masquent la tête des speakers
     => Pourquoi ne pas mettre le bandeau sur le bas du bloc ?
 - Lien vers le site web du speaker sur la photo horizontale
     => pourquoi pas sur le bloc où il y a son nom ? Ça me parait plus
-       compréhensible
+       compréhensible // oui c'est vrai mais certains ont leur logo dans la photo horizontale
 
 TOPICS
 - Grossir police des Topics
@@ -19,10 +19,10 @@ AGENDA
 . bleu trempo
 . rose steve jobs
 . orange Aaron Swartz
-- Nom des salles du coup on part sur Aaron Schwartz (salle maxi) et Steve Jobs (salle micro)
+- Nom des salles du coup on part sur room 1 (salle maxi) et Room 2 (salle micro)
     => Cf plus haut
 - Comment je peux ajouter du contenu sur l'agenda ?
-    => Tant que le site n'est pas en ligne, Quentin s'en charge manuellement
+    => Tant que le site n'est pas en ligne, Quentin s'en charge manuellement // OK
 
 SPONSORS
 c'est la grosse partie ! je vais essayer d'expliquer par écrit mais le plus simple et de se voir :)
@@ -38,4 +38,4 @@ Avec un lien à chaque fois vers la page sponsors
 
 !!!!! VERSION MOBILE ILLISIBLE !!!!!!
 Réduire le nombre de briques ?
-    => plus précisément ? (screenshot plz)
+    => plus précisément ? (screenshot plz) j'ai demandé à Jordane de m'envoyer ça ! L'idée c'est que sur mobile on reste sur une largeur de 4 carrées (en horizontal). Du coup c'est vraiment trop petit, d'autant plus pour l'agenda
