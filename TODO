@@ -1,11 +1,15 @@
 GENERAL
 - Modifier les noms des espaces pour la légende ; salle micro = salle steve jobs / salle maxi = salle Aaron Swartz !
+    => Ça en est où pour les nouveaux noms ?
 - Police du texte de présentation à mettre en blanc
 - On peut intégrer une vidéo ? on a le teaser du web2day qui doit arriver.
+    => Oui, il suffit de mettre le HTML en dur
 
 SPEAKERS
 - Police sur photo speaker à réduire pour éviter les double-lignes qui masquent la tête des speakers
 - Lien vers le site web du speaker sur la photo horizontale
+    => pourquoi pas sur le bloc où il y a son nom ? Ça me parait plus
+       compréhensible
 
 TOPICS
 - Grossir police des Topics
@@ -16,7 +20,9 @@ AGENDA
 . rose steve jobs
 . orange Aaron Swartz
 - Nom des salles du coup on part sur Aaron Schwartz (salle maxi) et Steve Jobs (salle micro)
+    => Cf plus haut
 - Comment je peux ajouter du contenu sur l'agenda ?
+    => Tant que le site n'est pas en ligne, Quentin s'en charge manuellement
 
 CONTRIBUTEURS
 - Fiche (même format que speaker)
@@ -43,3 +49,4 @@ Avec un lien à chaque fois vers la page sponsors
 
 !!!!! VERSION MOBILE ILLISIBLE !!!!!!
 Réduire le nombre de briques ?
+    => plus précisément ? (screenshot plz)
