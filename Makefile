@@ -15,5 +15,5 @@ clean: site
 
 mrproper: clean
 	rm site
-	rm site.hi
-	rm site.o
+	rm *.hi
+	rm *.o
