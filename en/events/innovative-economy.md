@@ -1,5 +1,5 @@
 ---
-title: L'économie de demain
+title: Innovative economy
 location: Room 1
 start: 2013-05-17 15:25
 end: 2013-05-17 15:50
@@ -8,3 +8,4 @@ speaker: louisdavid-benyayer
 topic: sustainable-development
 ---
 
+More informations coming soon...
