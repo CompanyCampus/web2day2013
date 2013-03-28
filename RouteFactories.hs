@@ -13,9 +13,12 @@ import           System.Locale           (TimeLocale, defaultTimeLocale)
 
 import Hakyll
 
+import LinkedCompilers
+
 globalContext lang =
     blockLoader lang `mappend`
     constField "lang" lang `mappend`
+    field "eventcolor" (getRoomClass . itemIdentifier) `mappend`
     defaultContext
 
 getBlock :: String -> [String] -> (Context String) -> Compiler String
@@ -47,7 +50,7 @@ elementList :: String -> String -> String -> Compiler String
 elementList lang plural singular = do
     elts <- loadAll (fromGlob (lang ++ "/" ++ plural ++ "/*.md"))
     tpl  <- loadBody $ fromFilePath ("templates/" ++ singular ++ "-item.html")
-    list <- applyTemplateList tpl defaultContext elts
+    list <- applyTemplateList tpl (globalContext lang) elts
     return list
 
 makeIndexPage lang plural singular =

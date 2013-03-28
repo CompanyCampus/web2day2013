@@ -6,7 +6,7 @@ import           Control.Applicative    ((<$>))
 import           Data.List              (intersperse)
 import qualified Data.Map               as M
 import           Data.Maybe             (catMaybes, fromMaybe)
-import           Data.Monoid            (mappend)
+import           Data.Monoid            (mappend, mempty)
 
 import           Utils
 
@@ -15,7 +15,21 @@ import Hakyll
 confSpeakersCtx :: String -> Context String
 confSpeakersCtx lang =
     field "speakers" (\conf -> getSpeakerCompiler lang conf) `mappend`
+    roomClassCtx `mappend`
     field "topicBlock" (\conf -> getTopicCompiler lang conf)
+
+getRoomClass id = do
+    md <- getMetadata id
+    return $ case (M.lookup "location" md) of
+        Just "Room 1" -> "event-maxi"
+        Just "Room 2" -> "event-mini"
+        Just "Trempolino" -> "event-trempolino"
+        _ -> ""
+
+getConstRoomClassCtx id =
+    field "eventcolor" (const (getRoomClass id))
+
+roomClassCtx = field "eventcolor" (getRoomClass . itemIdentifier)
 
 getSpeakerCompiler lang conf = do
     speakerList <- getSpeakerList conf
@@ -40,11 +54,16 @@ makeDefaultContext (i, m) =
                 fp <- getRoute id
                 return $ fromMaybe "" $ fmap toUrl fp
 
-
 makeItemContextPairList :: [(Identifier, Metadata)] -> [(Context String, Item String)]
-makeItemContextPairList ims = map f ims
+makeItemContextPairList ims =
+    makeItemContextPairListWith ims (const mempty)
+
+makeItemContextPairListWith :: [(Identifier, Metadata)]
+                            -> (Identifier -> Context String)
+                            -> [(Context String, Item String)]
+makeItemContextPairListWith ims a = map f ims
     where
-    f p = (makeDefaultContext p, Item (fst p) "")
+    f p = (makeDefaultContext p `mappend` (a $ fst p), Item (fst p) "")
 
 applyTemplateListWithContexts :: Template
                               -> [(Context a, Item a)]
@@ -113,8 +132,12 @@ getEventsCompiler :: String -> String -> Compiler String
 getEventsCompiler lang speaker = do
     hisEvents <- getSpeakerEvents lang speaker
     tpl <- loadBody $ "templates/event-item.html"
-    content <- applyTemplateList tpl defaultContext hisEvents
+    content <- applyTemplateList tpl ctx hisEvents
     return content
+    where
+        ctx =
+            roomClassCtx `mappend`
+            defaultContext
 
 getSpeakerEvents :: String -> String -> Compiler [Item String]
 getSpeakerEvents lang speaker = do
@@ -139,7 +162,8 @@ getTopicEventsCompiler :: String -> String -> Compiler String
 getTopicEventsCompiler lang topic = do
     events <- getTopicEvents lang topic
     tpl <- loadBody "templates/event-item.html"
-    content <- applyTemplateListWithContexts tpl (makeItemContextPairList events)
+    content <- applyTemplateListWithContexts tpl (
+        makeItemContextPairListWith events getConstRoomClassCtx)
     return content
 
 getTopicEvents :: String -> String -> Compiler [(Identifier, Metadata)]
