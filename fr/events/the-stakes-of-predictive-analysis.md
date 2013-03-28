@@ -8,4 +8,4 @@ speaker: colin-delahiguera
 topic: stakes-of-datas
 ---
 
-Plus d'informations très vite...
+Lors de ce talk de 20 minutes, Colin de la Higuera, professeur en informatique à l'université de Nantes introduira la session sur les données prédictives par un état des lieux et exposera ses usages les plus fréquents. 

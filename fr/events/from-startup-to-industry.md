@@ -8,4 +8,4 @@ speaker: stephane-distinguin,
 topic: web-is-industry
 ---
 
-Comment passe-t-on d'un modèle startup à un modèle industriel, ou comment appliquer la méthodologie startup en milieu industriel ?
+Les startups bousculent les modèles d'entreprises traditionnels. Arrivées à maturité ne sont elles pas contraintes d'adopter des processus industriels ? A contrario, est ce que les méthodes "startup" peuvent s'appliquer aux entreprises traditionnelles ? Stéphane Distinguin développera ces sujets durant ce panel.

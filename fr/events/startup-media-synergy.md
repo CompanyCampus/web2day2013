@@ -8,4 +8,4 @@ speaker: morgiane-achache,raphael-labbe,nicolas-kayserbril,damian-vanachter,phil
 topic: innovation-media
 ---
 
-Dans quelles mesures le dynamisme de l'écosystème numérique influence le développement des médias ?
+Durant ce panel consacré aux médias Morgiane Achache, Raphael Labbe, Nicolas Kayserbril, Damian Van Achter, Philippe Couve et Romain Saillet tâcherons de répondre à la question : dans quelles mesures le dynamisme de l'écosystème numérique influence le développement des médias ?

@@ -8,4 +8,4 @@ speaker: serge-roukine,benoit-gaillat,tatiana-pecanac,francois-ziserman
 topic: develop-business
 ---
 
-Plus d'informations très vite...
+Serge Roukine, Benoit Gaillat, Tatiana Pecanac, Francois Ziserman

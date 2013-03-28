@@ -8,4 +8,4 @@ speaker: matthieu-charron
 topic: collaborative-economy
 ---
 
-Plus d'informations très vite...
+Transformer notre consommation de masse en consommation plus responsable, c'est le mouvement qui bouscule les anciens modèles économiques depuis quelques temps. Lors de ce panel, vous pourrez voir l'application de ce nouveau mode consommation en entreprise. 
