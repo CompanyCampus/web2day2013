@@ -1,5 +1,5 @@
 ---
-title: L'économie innovante
+title: Les nouveaux business models de la distribution
 location: Room 1
 start: 2013-05-17 15:25
 end: 2013-05-17 15:50
