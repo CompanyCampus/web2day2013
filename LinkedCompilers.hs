@@ -63,7 +63,7 @@ makeItemContextPairListWith :: [(Identifier, Metadata)]
                             -> [(Context String, Item String)]
 makeItemContextPairListWith ims a = map f ims
     where
-    f p = (makeDefaultContext p `mappend` (a $ fst p), Item (fst p) "")
+    f p = ((a $ fst p) `mappend` makeDefaultContext p, Item (fst p) "")
 
 applyTemplateListWithContexts :: Template
                               -> [(Context a, Item a)]
