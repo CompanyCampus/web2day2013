@@ -8,4 +8,4 @@ speaker: damien-vanachter,
 topic: innovation-media
 ---
 
-Quelles sont les nouvelles méthodes de formation à l'information ?
+Devant les quantités d'informations diffusées sur le web, le professionnel du journalisme peut se retrouver désemparé. Il est primordial d’enseigner la plus-value qu’apporte le web, de transmettre son intérêt pour ce nouvel outil qui va devenir indispensable au métier. Cette idée de transmission, de partage et d’échange est très présente chez ce journaliste visionnaire.

@@ -8,4 +8,4 @@ speaker: claire-gallon,henri-verdier,louisdavid-benyayer,simon-chignard
 topic: stakes-of-datas
 ---
 
-Plus d'informations très vite...
+Avec l'ouverture des données publiques aux citoyens, un marché semble se dessiner. Acteurs publics et entreprises de l’économie numérique se font les promoteurs de « l’open data », chacun mettant derrière ce concept des objectifs et des promesses différentes. Nos 4 intervenants exprimerons leurs visions de l'open data. 
