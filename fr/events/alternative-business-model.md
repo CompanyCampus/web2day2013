@@ -8,4 +8,3 @@ speaker: liam-boogar,adrien-demalherbe,james-parton
 topic: startup
 ---
 
-Plus d'informations très vite...
