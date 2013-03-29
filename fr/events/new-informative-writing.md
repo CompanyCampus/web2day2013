@@ -8,4 +8,4 @@ speaker: nicolas-kayserbril
 topic: innovation-media
 ---
 
-Quelles sont les nouvelles écritures informationnelles sur le web ?
+Le data-journalisme consiste à raconter des histoires avec des données pragmatiques. Le devoir du data-journaliste est de savoir croquer, écraser, mâcher et presser les données collectées afin d'en ressortir du sens. Durant 15 minutes, Nicolas Kayser Bril apportera son expertise dans ce domaine en pleine structuration. 

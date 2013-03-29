@@ -8,4 +8,4 @@ speaker: olivier-mevel,jonathan-schemoul
 topic: internet-of-things
 ---
 
-Plus d'informations très vite...
+Réparer, fabriquer, créer les objets du quotidiens soi-même, tel est le crédo du Do It Yourself. Grande partie de la thématique objets connectés, cette tendance s'inscrit sur le long terme. Se passer des distributeurs, des professionnels du bâtiments pour les petits tracas de tous les jours devient une philosophie avec le DIY.
