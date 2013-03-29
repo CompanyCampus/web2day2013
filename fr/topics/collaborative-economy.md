@@ -1,4 +1,4 @@
 ---
-title: Economie Collaborative - test de contenu test de contenu test de contenu test de contenu test de contenu test de contenu 
+title: Economie Collaborative - Changez la manière de produire et de consommer en collaborant
 ---
 
