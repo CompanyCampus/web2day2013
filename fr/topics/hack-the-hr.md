@@ -1,5 +1,5 @@
 ---
-title: Hack The HR - Partez à l'abordage des Ressources Humaines !
+title: Hack The HR
 ---
 
-
+Partez à l'abordage des Ressources Humaines !

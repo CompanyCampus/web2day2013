@@ -1,5 +1,5 @@
 ---
-title: Startup Corner -  
+title: Startup Corner 
 ---
 
 
