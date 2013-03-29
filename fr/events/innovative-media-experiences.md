@@ -8,4 +8,4 @@ speaker: nicolas-loubet,
 topic: innovation-media
 ---
 
-Comment créer des expériences médiatiques enrichissantes et créatives ?
+Nicolas Loubet interviendra sur l'importance du réseau et des rencontres dans le milieu professionnel. Il s’est donné pour mission de développer des synergies entre les acteurs du monde de la culture, du numérique et de la recherche pour créer de l’innovation et l'appliquer au domaine médiatique.
