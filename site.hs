@@ -109,6 +109,15 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
+-- Partners
+--
+
+    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "partners" "partner")
+
+    forM_ ["en", "fr"] $ \lang -> (makeElements lang "partners" "partner")
+
+
+--------------------------------------------------------------------------------
 -- Simple pages
 --
     forM_ ["en", "fr"] makeSinglePages
