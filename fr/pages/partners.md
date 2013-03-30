@@ -1,5 +1,5 @@
 ---
-title: Patenaires
+title: Partenaires
 ---
 
 <div class="randomize_plz">
