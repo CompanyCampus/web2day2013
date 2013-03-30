@@ -6,7 +6,7 @@ import           Control.Applicative    ((<$>))
 import           Data.List              (intersperse)
 import qualified Data.Map               as M
 import           Data.Maybe             (catMaybes, fromMaybe)
-import           Data.Monoid            (mappend, mempty)
+import           Data.Monoid            (mappend, mconcat, mempty)
 
 import           Utils
 
@@ -198,3 +198,27 @@ getTopicCompilerBlock lang topic = do
         return $ itemBody item
     where
         getTopicId t = fromFilePath $ lang ++ "/topics/" ++ t ++ ".md"
+
+getPartnersOfType :: String -> [(Identifier, Metadata)] -> [(Identifier, Metadata)]
+getPartnersOfType t = 
+    let sameType (id, m) = M.lookup "type" m == Just t
+    in filter sameType
+
+makePartnerList :: [(Identifier, Metadata)] -> Compiler String
+makePartnerList ps = do
+        tpl <- loadBody "templates/partner-item.html"
+        applyTemplateListWithContexts tpl $ makeItemContextPairList ps
+
+mkPartnerField :: String -> Context String
+mkPartnerField partnerType =
+    let d = const $ do
+        ps <- getAllMetadata "fr/partners/*.md"
+        makePartnerList $ getPartnersOfType partnerType ps
+    in field ("partner-" ++ partnerType) d
+
+
+partnersCtx :: Context String
+partnersCtx =
+    let dirs = ["friend", "gold", "official", "media", "host"]
+
+    in mconcat $ map mkPartnerField dirs

@@ -19,6 +19,7 @@ globalContext lang =
     blockLoader lang `mappend`
     constField "lang" lang `mappend`
     field "eventcolor" (getRoomClass . itemIdentifier) `mappend`
+    partnersCtx `mappend`
     defaultContext
 
 getBlock :: String -> [String] -> (Context String) -> Compiler String
