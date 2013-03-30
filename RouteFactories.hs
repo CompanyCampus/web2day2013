@@ -20,7 +20,22 @@ globalContext lang =
     constField "lang" lang `mappend`
     field "eventcolor" (getRoomClass . itemIdentifier) `mappend`
     partnersCtx `mappend`
+    confSpeakersCtx lang `mappend`
     defaultContext
+
+confSpeakersCtx :: String -> Context String
+confSpeakersCtx lang =
+    field "speakers" (\conf -> getSpeakerCompiler lang conf) `mappend`
+    field "speakers-names" (\conf -> getSpeakerNameCompiler lang conf) `mappend`
+    roomClassCtx `mappend`
+    short_date lang `mappend`
+    field "topicBlock" (\conf -> getTopicCompiler lang conf)
+
+hisEventsCtx :: String -> Context String
+hisEventsCtx lang =
+    let e = confSpeakersCtx lang
+    in field "confs" (\speaker -> speakerEventsCompiler e lang speaker)
+
 
 getBlock :: String -> [String] -> (Context String) -> Compiler String
 getBlock lang args ctx = let
@@ -113,6 +128,20 @@ iso8601_date date =
         return $ fromMaybe "" $ M.lookup date metadata >>= makeIso8601
     )
 
+makeShortDate :: String -> String -> Maybe String
+makeShortDate lang =
+    let parser = parseTime defaultTimeLocale "%Y-%m-%d %H:%M" :: String -> Maybe LocalTime
+        addTimeZone = localTimeToUTC (hoursToTimeZone 2) -- /!\ Hard coded for May 2013
+        formatter = formatTime defaultTimeLocale "%A %H:%M"
+    in fmap (formatter . addTimeZone) . parser
+
+short_date :: String -> Context String
+short_date lang =
+    field "short_start" (\item -> do
+        metadata <- getMetadata $ itemIdentifier item
+        return $ fromMaybe "" $ M.lookup "start" metadata >>= makeShortDate lang
+    )
+
 makeSinglePages :: String -> Rules ()
 makeSinglePages lang =
     let r = gsubRoute ("pages/") (const "")
@@ -128,9 +157,10 @@ imagesList dir = let
       addBrackets = ("["++) . (++"]")
       addQuotes = ("\""++) . (++"\"")
       imgs = loadAll (fromGlob $ "assets/images/photos/" ++ dir ++ "/*") :: Compiler [Item CopyFile]
-   in do
+    in do
       list <- imgs
-      return $ addBrackets $ intercalate (",") $ map (addQuotes . show . itemIdentifier) list
+      return $ addBrackets $ intercalate (",") $ map (addQuotes . show .  itemIdentifier) list
+
 
 imagesDataCtx = let
    dirs = ["200x200", "408x408", "200x408", "408x200"]
@@ -145,3 +175,4 @@ makeImagesdata =
       compile $ do
          makeItem ""
              >>= loadAndApplyTemplate "templates/imagesdata.js" imagesDataCtx
+

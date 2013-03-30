@@ -3,7 +3,7 @@
 module LinkedCompilers where
 
 import           Control.Applicative    ((<$>))
-import           Data.List              (intersperse)
+import           Data.List              (intersperse, intercalate)
 import qualified Data.Map               as M
 import           Data.Maybe             (catMaybes, fromMaybe)
 import           Data.Monoid            (mappend, mconcat, mempty)
@@ -12,11 +12,6 @@ import           Utils
 
 import Hakyll
 
-confSpeakersCtx :: String -> Context String
-confSpeakersCtx lang =
-    field "speakers" (\conf -> getSpeakerCompiler lang conf) `mappend`
-    roomClassCtx `mappend`
-    field "topicBlock" (\conf -> getTopicCompiler lang conf)
 
 getRoomClass id = do
     md <- getMetadata id
@@ -37,6 +32,15 @@ getSpeakerCompiler lang conf = do
     tpl <- loadBody "templates/speaker-item.html"
     content <- applyTemplateListWithContexts tpl (makeItemContextPairList speakers)
     return content
+
+getSpeakerNameCompiler lang conf =
+    let getName (id, m) =
+            fromMaybe "" (M.lookup "firstname" m) ++ " " ++
+            fromMaybe "" (M.lookup "lastname" m) 
+    in do
+        speakerList <- getSpeakerList conf
+        speakers <- getSpeakers lang speakerList
+        return $ intercalate (", ") $ map getName speakers
 
 
 
@@ -96,7 +100,6 @@ isWithinSpeakers :: [String] -> (Identifier, Metadata) -> Bool
 isWithinSpeakers speakers speaker =
    itemIdFromIdentifier (fst speaker) `elem` speakers
 
-
 filterItems :: (Item String -> Compiler Bool) -> [Item String] -> Compiler ([Item String])
 filterItems p l = do
     ct <- sequence $ map (keepItem p) l
@@ -107,12 +110,8 @@ keepItem p i = do
     ok <- p i
     return $ if ok then Just i else Nothing
 
-hisEventsCtx :: String -> Context String
-hisEventsCtx lang =
-    field "confs" (\speaker -> speakerEventsCompiler lang speaker)
-
-speakerEventsCompiler :: String -> Item String -> Compiler String
-speakerEventsCompiler lang speaker = getEventsCompiler lang $ itemIdFromItem speaker
+speakerEventsCompiler :: Context String -> String -> Item String -> Compiler String
+speakerEventsCompiler c lang speaker = getEventsCompiler c lang $ itemIdFromItem speaker
 
 itemIdFromItem :: Item String -> String
 itemIdFromItem i = itemId
@@ -128,15 +127,16 @@ itemIdFromIdentifier i = itemId
         stringId = show i
         fileName = last $ splitOn (=='/') stringId
 
-getEventsCompiler :: String -> String -> Compiler String
-getEventsCompiler lang speaker = do
+
+getEventsCompiler :: Context String -> String -> String -> Compiler String
+getEventsCompiler actx lang speaker = do
     hisEvents <- getSpeakerEvents lang speaker
     tpl <- loadBody $ "templates/event-item.html"
     content <- applyTemplateList tpl ctx hisEvents
     return content
     where
         ctx =
-            roomClassCtx `mappend`
+            actx `mappend`
             defaultContext
 
 getSpeakerEvents :: String -> String -> Compiler [Item String]
