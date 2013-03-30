@@ -1,0 +1,5 @@
+{
+     "deploy": {
+                 "webroot": "/_site"
+               }
+  }
