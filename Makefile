@@ -19,6 +19,7 @@ mrproper: clean
 	rm *.o
 
 publish: build
+	git remote add clever git+ssh://git@push.clever-cloud.com/app_afb08f99-09ec-467b-a7db-c99887ad3d94.git || true
 	git stash save
 	./ensure_publish_branch.sh
 	git checkout publish || true
