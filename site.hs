@@ -43,20 +43,16 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "index.html" $ do
-        route   idRoute
-        compile copyFileCompiler
-
     makeImagesdata
 --------------------------------------------------------------------------------
 -- Reusable blocks
 --
 
-    forM_ ["en", "fr"] $ \lang ->
+    forM_ langs $ \lang ->
         match (fromGlob $ lang ++ "/blocks/*.md") $ do
         compile $ pandocCompiler
 
-    forM_ ["en", "fr"] $ \lang ->
+    forM_ langs $ \lang ->
         match (fromGlob $ lang ++ "/blocks/*.html") $ do
         compile $ getResourceBody
 
@@ -64,71 +60,71 @@ main = hakyll $ do
 -- Events
 --
 
-    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "events" "event")
+    forM_ langs $ \lang -> (makeIndexPage lang "events" "event")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (completeEventContext lang) lang "events" "event")
+    forM_ langs $ \lang -> (makeElementsWithContext (completeEventContext lang) lang "events" "event")
 
 --------------------------------------------------------------------------------
 -- Topics
 --
 
-    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "topics" "topic")
+    forM_ langs $ \lang -> (makeIndexPage lang "topics" "topic")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (completeTopicContext lang) lang "topics" "topic")
+    forM_ langs $ \lang -> (makeElementsWithContext (completeTopicContext lang) lang "topics" "topic")
 
 --------------------------------------------------------------------------------
 -- Calendar
 --
-    forM_ ["en", "fr"] makeCalendar
+    forM_ langs makeCalendar
 
 
 --------------------------------------------------------------------------------
 -- Speakers
 --
 
-    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "speakers" "speaker")
+    forM_ langs $ \lang -> (makeIndexPage lang "speakers" "speaker")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (completeSpeakerContext lang) lang "speakers" "speaker")
+    forM_ langs $ \lang -> (makeElementsWithContext (completeSpeakerContext lang) lang "speakers" "speaker")
 
 
 --------------------------------------------------------------------------------
 -- Posts
 --
 
-    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "posts" "post")
+    forM_ langs $ \lang -> (makeIndexPage lang "posts" "post")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElements lang "posts" "post")
+    forM_ langs $ \lang -> (makeElements lang "posts" "post")
 
 --------------------------------------------------------------------------------
 -- Contributors
 --
 
-    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "contributors" "contributor")
+    forM_ langs $ \lang -> (makeIndexPage lang "contributors" "contributor")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElements lang "contributors" "contributor")
+    forM_ langs $ \lang -> (makeElements lang "contributors" "contributor")
 
 
 --------------------------------------------------------------------------------
 -- Partners
 --
 
-    forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "partners" "partner")
+    forM_ langs $ \lang -> (makeIndexPage lang "partners" "partner")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElements lang "partners" "partner")
+    forM_ langs $ \lang -> (makeElements lang "partners" "partner")
 
 
 --------------------------------------------------------------------------------
 -- Simple pages
 --
-    forM_ ["en", "fr"] makeSinglePages
+    forM_ langs makeSinglePages
 
 
 --------------------------------------------------------------------------------
 -- Index
 --
-    forM_ ["en", "fr"] $ \lang ->
+    forM_ langs $ \lang ->
         match (fromGlob $ lang ++ "/index.html") $ do
-            route idRoute
+            route langRoute
             compile $ getResourceBody
                 >>= loadAndApplyTemplate "templates/index.html" (globalContext lang)
                 >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
@@ -140,4 +136,3 @@ main = hakyll $ do
     match "templates/**" $ compile templateCompiler
 
 --------------------------------------------------------------------------------
-

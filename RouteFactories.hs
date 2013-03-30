@@ -15,8 +15,14 @@ import Hakyll
 
 import LinkedCompilers
 
+langs = ["fr", "en"]
+defaultLang = "fr"
+
+langRoute = gsubRoute (defaultLang ++ "/") (const "")
+
 globalContext lang =
     blockLoader lang `mappend`
+    constField "urllang" (if (lang == defaultLang) then "" else lang ++ "/") `mappend`
     constField "lang" lang `mappend`
     field "eventcolor" (getRoomClass . itemIdentifier) `mappend`
     partnersCtx `mappend`
@@ -62,15 +68,15 @@ getBlock lang args ctx = let
 
 blockLoader :: String -> Context String
 blockLoader lang =
-    functionField "block" (\args item -> getBlock lang args (constField "lang" lang))
+    functionField "block" (\args item -> getBlock lang args (globalContext lang))
 
 invertLang :: FilePath -> FilePath
 invertLang = joinPath . il . removePage . splitDirectories . getPath
     where
         getPath = (flip replaceExtension "html")
         removePage = filter (/= "pages")
-        il ("fr":xs) = "en":xs
-        il ("en":xs) = "fr":xs
+        il ("fr":xs) = if("en" /= defaultLang) then "en":xs else xs
+        il ("en":xs) = if("fr" /= defaultLang) then "fr":xs else xs
         il xs         = xs
 
 elementList :: String -> String -> String -> Compiler String
@@ -82,7 +88,7 @@ elementList lang plural singular = do
 
 makeIndexPage lang plural singular =
     create [fromFilePath (lang ++ "/"++ plural ++".html")] $ do
-        route $ setExtension "html"
+        route $ (setExtension "html") `composeRoutes` langRoute
         compile $ do
             let elts =
                     field plural (\_ -> elementList lang plural singular) `mappend`
@@ -98,7 +104,7 @@ makeElementsWithContext ctx lang plural singular = let
         bigCtx = ctx `mappend` (globalContext lang)
     in
         match (fromGlob $ lang ++ "/"++ plural ++"/*.md") $ do
-            route $ setExtension "html"
+            route $ (setExtension "html") `composeRoutes` langRoute
             compile $ pandocCompiler
                 >>= loadAndApplyTemplate (
                     fromFilePath $ "templates/"++ singular ++".html") bigCtx
@@ -110,7 +116,7 @@ makeElements = makeElementsWithContext mempty
 makeCalendar :: String -> Rules ()
 makeCalendar lang =
     create [fromFilePath $ lang ++ "/calendar.ics"] $ do
-    route idRoute
+    route $ (setExtension "html") `composeRoutes` langRoute
     compile $ do
         makeItem ""
             >>= calendarCompiler lang
@@ -158,7 +164,7 @@ makeSinglePages lang =
     let r = gsubRoute ("pages/") (const "")
     in
         match (fromGlob $ lang ++ "/pages/*.md") $ do
-        route $ r `composeRoutes` (setExtension "html")
+        route $ r `composeRoutes` (setExtension "html") `composeRoutes` langRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
             >>= relativizeUrls
