@@ -20,21 +20,32 @@ globalContext lang =
     constField "lang" lang `mappend`
     field "eventcolor" (getRoomClass . itemIdentifier) `mappend`
     partnersCtx `mappend`
-    confSpeakersCtx lang `mappend`
+    reducedEventContext lang `mappend`
     defaultContext
 
-confSpeakersCtx :: String -> Context String
-confSpeakersCtx lang =
-    field "speakers" (\conf -> getSpeakerCompiler lang conf) `mappend`
+reducedEventContext :: String -> Context String
+reducedEventContext lang =
     field "speakers-names" (\conf -> getSpeakerNameCompiler lang conf) `mappend`
     roomClassCtx `mappend`
     short_date lang `mappend`
     field "topicBlock" (\conf -> getTopicCompiler lang conf)
 
-hisEventsCtx :: String -> Context String
-hisEventsCtx lang =
-    let e = confSpeakersCtx lang
+completeEventContext :: String -> Context String
+completeEventContext lang =
+    reducedEventContext lang `mappend`
+    field "speakers" (\conf -> getSpeakerCompiler lang conf)
+
+completeSpeakerContext :: String -> Context String
+completeSpeakerContext lang =
+    let e = reducedEventContext lang
     in field "confs" (\speaker -> speakerEventsCompiler e lang speaker)
+
+completeTopicContext :: String -> Context String
+completeTopicContext lang =
+    field "events" (\topic ->
+        getTopicEventsCompiler (reducedEventContext lang) lang (
+                        itemIdFromIdentifier $ itemIdentifier topic))
+
 
 
 getBlock :: String -> [String] -> (Context String) -> Compiler String

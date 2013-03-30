@@ -154,17 +154,15 @@ hasSpeaker name conf =
         end = fromMaybe False
         pipe = end . matchSpeakers . splitSpeakers . getSpeakers
 
-topicEventsCtx :: String -> Context String
-topicEventsCtx lang =
-    field "events" (\topic -> getTopicEventsCompiler lang (itemIdFromIdentifier $ itemIdentifier topic))
-
-getTopicEventsCompiler :: String -> String -> Compiler String
-getTopicEventsCompiler lang topic = do
-    events <- getTopicEvents lang topic
-    tpl <- loadBody "templates/event-item.html"
-    content <- applyTemplateListWithContexts tpl (
-        makeItemContextPairListWith events getConstRoomClassCtx)
-    return content
+getTopicEventsCompiler :: Context String -> String -> String -> Compiler String
+getTopicEventsCompiler ctx lang topic =
+    let c id = getConstRoomClassCtx id `mappend` ctx
+    in do
+        events <- getTopicEvents lang topic
+        tpl <- loadBody "templates/event-item.html"
+        content <- applyTemplateListWithContexts tpl (
+            makeItemContextPairListWith events c)
+        return content
 
 getTopicEvents :: String -> String -> Compiler [(Identifier, Metadata)]
 getTopicEvents lang topic = do

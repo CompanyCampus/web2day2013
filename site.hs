@@ -66,7 +66,7 @@ main = hakyll $ do
 
     forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "events" "event")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (confSpeakersCtx lang) lang "events" "event")
+    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (completeEventContext lang) lang "events" "event")
 
 --------------------------------------------------------------------------------
 -- Topics
@@ -74,7 +74,7 @@ main = hakyll $ do
 
     forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "topics" "topic")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (topicEventsCtx lang) lang "topics" "topic")
+    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (completeTopicContext lang) lang "topics" "topic")
 
 --------------------------------------------------------------------------------
 -- Calendar
@@ -88,7 +88,7 @@ main = hakyll $ do
 
     forM_ ["en", "fr"] $ \lang -> (makeIndexPage lang "speakers" "speaker")
 
-    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (hisEventsCtx lang) lang "speakers" "speaker")
+    forM_ ["en", "fr"] $ \lang -> (makeElementsWithContext (completeSpeakerContext lang) lang "speakers" "speaker")
 
 
 --------------------------------------------------------------------------------
