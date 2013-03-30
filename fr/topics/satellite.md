@@ -1,5 +1,5 @@
 ---
-title: Satellite - 
+title: Satellite
 ---
 
 
