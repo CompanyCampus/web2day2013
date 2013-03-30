@@ -2,6 +2,7 @@ site
 *.hi
 *.o
 _cache
+_site
 .DS_Store
 a.txt
 .com.apple.timemachine.supported
