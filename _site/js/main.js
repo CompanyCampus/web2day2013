@@ -26,14 +26,16 @@ $.fn.randomize = function(selector){
 
 
 jQuery(function($){
-   
+
 	_.each($('.blocfloat2h'),function(i,a,y){
-      var e = $(i);
-      var ah = e.height();
-      var v = blocwidth + (blocspace / 2);
-      var nt = (ah+(v - (ah%v)))+((Math.floor(ah/v)-1)*(blocspace / 2));
-      e.height(nt);
-      
+        var e = $(i),
+            children = e.children(),
+            originalHeight = _.reduce(children, function(a, c) { return a + $(c).height(); }, 0),
+            unitHeight = blocwidth + (blocspace / 2),
+            delta = unitHeight - (originalHeight%unitHeight) + Math.floor(originalHeight / unitHeight - 1) * (blocspace / 2);
+
+        $(i).height(originalHeight + delta);
+
 	});
    
    if(($('.no_more_pic')).length == 0){
