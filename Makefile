@@ -21,8 +21,7 @@ mrproper: clean
 publish: build
 	git remote add clever git+ssh://git@push.clever-cloud.com/app_afb08f99-09ec-467b-a7db-c99887ad3d94.git || true
 	git stash save
-	./ensure_publish_branch.sh
-	git checkout publish || true
+	git checkout publish || git checkout --orphan publish
 	find . -maxdepth 1 ! -name '.' ! -name '.git*' ! -name '_site' -exec rm -rf {} +
 	find _site -maxdepth 1 -exec mv {} . \;
 	rmdir _site
