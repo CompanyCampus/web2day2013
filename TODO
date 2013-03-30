@@ -1,13 +1,5 @@
-GENERAL
-- On peut intégrer une vidéo ? on a le teaser du web2day qui doit arriver.
-    => Oui, il suffit de mettre le HTML en dur // OK
-
-AGENDA
-- légende couleur pour les salles, on reprend les couleurs du logo :
-. bleu trempo
-. rose steve jobs
-. orange Aaron Swartz
-=> done
+TODO
+====
 
 SPONSORS
 c'est la grosse partie ! je vais essayer d'expliquer par écrit mais le plus simple et de se voir :)
@@ -36,3 +28,19 @@ Twitter widget :
 heigth : 404
 Theme : Dark
 Domains : fr.linkedin.com, example.com, localhost.sounderbox.com, www.web2day-nantes.org
+
+
+Done
+====
+
+GENERAL
+- On peut intégrer une vidéo ? on a le teaser du web2day qui doit arriver.
+    => Oui, il suffit de mettre le HTML en dur // OK
+
+AGENDA
+- légende couleur pour les salles, on reprend les couleurs du logo :
+. bleu trempo
+. rose steve jobs
+. orange Aaron Swartz
+=> done
+
