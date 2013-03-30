@@ -8,46 +8,17 @@
         <link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.css" />
         <link rel="stylesheet" type="text/css" href="../../assets/css/fullcalendar.css" />
         <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
-		<link rel="stylesheet" href="../../assets/css/stylesheet.css" type="text/css" charset="utf-8" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		
+		<link rel="stylesheet" type="text/css" href="../../assets/css/stylesheet.css" type="text/css" charset="utf-8" />
 
-		
     </head>
     <body>
-        <!--div id="header">
-			<div id="separator">
-				<ul id="topmenu">
-					<li>
-						<a href="#">SPEAKERS</a>
-					</li>
-					<li>
-						<a href="#">EVENTS</a>
-					</li>
-					<li>
-						<a href="#">BLOG</a>
-					</li>
-					<li>
-						<a href="#">SPONSORS</a>
-					</li>
-					<li>
-						<a href="#">ALL</a>
-					</li>
-				</ul>
-			</div>
-		
-            <div id="logo">
-                 <a href"/"><img src="/assets/images/logo_web2day.png" /></a>
-            </div>
-            
-        </div-->
 
         <div id="content">
            <div id="bloc_home" class="bloc bloc2h"><a href="../../en/"><img src="../../assets/images/logo-web2day-2013-title.png" /></a></div>
 
-                        <div class="bloc bloc1 speakername">
+            <div class="bloc bloc1 blocktitle">
 <a href="../../en/topics/web-is-industry.html">Web is Industry</span>
-   <i class="icon-user icon-large"></i>
+   <i class="icon-folder-close icon-large"></i>
 </a>
 </div>
 
@@ -62,6 +33,33 @@
 </div>
 
 
+<div class="bloc bloc1 eventbloc event-maxi">
+   <a href="../../en/events/colin-and-collin-report.html">
+   <i class="icon-calendar pull-right icon-2x"></i>
+    <h3>N-Colin &amp; P-Collin report</h3>
+    <span class="speakers">Nicolas Colin</span>
+    <span class="start">Thursday 09:20</span>
+    <span class="location">Room 1</span>
+ </a>
+</div>
+<div class="bloc bloc1 eventbloc event-maxi">
+   <a href="../../en/events/from-startup-to-industry.html">
+   <i class="icon-calendar pull-right icon-2x"></i>
+    <h3>From startup to industry</h3>
+    <span class="speakers">Stéphane Distinguin</span>
+    <span class="start">Thursday 08:00</span>
+    <span class="location">Room 1</span>
+ </a>
+</div>
+<div class="bloc bloc1 eventbloc event-maxi">
+   <a href="../../en/events/ntic-and-company.html">
+   <i class="icon-calendar pull-right icon-2x"></i>
+    <h3>NTIC &amp; company</h3>
+    <span class="speakers"></span>
+    <span class="start">Friday 14:20</span>
+    <span class="location">Room 1</span>
+ </a>
+</div>
 
 
 <div class="bloc blocfloat2h speakerbio">
@@ -72,7 +70,7 @@
 
 
             <div class="bloc bloc1 bloc lang">
-	<a href="../../fr/topics/web-is-industry.html"><span class="bloc-title">Version française</span>
+	<a href="../../topics/web-is-industry.html"><span class="bloc-title">Version française</span>
 <br />
 <span class="bloc-body">
 	<i class="icon-flag icon-4x icon-light"></i>
@@ -99,13 +97,41 @@
 </div>
 
 
+            <div id="footer">
+                <div id="partners-official"><div class="bloc partner-official">
+    <a href="http://www.intuiti.net">
+        <img src="../../assets/images/partners/official/logo-intuiti.png" alt="Logo Intuiti" />
+    </a>
+</div>
+</div>
+                <div id="partners-gold"><div class="bloc partner-gold">
+    <a href="http://www.audencia.com">
+        <img src="../../assets/images/partners/gold/logo-audencia.png" alt="Logo Audencia" />
+    </a>
+</div>
+</div>
+                <div id="partners-media"><div class="bloc partner-media">
+    <a href="http://www.rudebaguette.com">
+        <img src="../../assets/images/partners/media/logo-rudebaguette.png" alt="Logo Rude baguette" />
+    </a>
+</div>
+</div>
+                <div id="partners-friend"><div class="bloc partner-friend">
+    <a href="http://www.companycamp.us">
+        <img src="../../assets/images/partners/friends/logo-companycampus.png" alt="Logo Company Campus" />
+    </a>
+</div>
+</div>
+                <div id="partners-host"><div class="bloc partner-host">
+    <a href="http://www.atlantic2.org">
+        <img src="../../assets/images/partners/host/logo-organisateur.png" alt="Logo Atlantic 2.0" />
+    </a>
+</div>
+</div>
+            </div>
+
         </div>
-        <div id="p3d">
-        </div>
-        
-        <div id="footer">
-        </div>
-		  
+
 	     <script type="text/javascript" src="../../js/imagesdata.js"></script>
 	     <script type="text/javascript" src="../../js/underscore-min.js"></script>
 	     <script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
@@ -113,6 +139,7 @@
 	     <script type="text/javascript" src="../../js/gcal.js"></script>
 	     <script type="text/javascript" src="../../js/masonry.js"></script>
 	     <script type="text/javascript" src="../../js/main.js"></script>
+
 		  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
@@ -123,11 +150,5 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
         <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-        
-	     <!--script type="text/javascript" src="/js/Three.js"></script>
-	     <script type="text/javascript" src="/js/main_particles.js"></script-->
-        
-        
-        
     </body>
 </html>
