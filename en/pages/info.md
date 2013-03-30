@@ -3,7 +3,7 @@ title: Infos & Access
 ---
 
 <div class="bloc bloc1">
-<span class="bloc-title">Stéréolux</span>
+<span class="bloc-title">Stereolux</span>
 <div class="bloc-body">
 
 4 Boulevard Léon Bureau,  
