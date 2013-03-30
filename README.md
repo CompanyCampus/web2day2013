@@ -3,6 +3,8 @@ WEB2DAY 2013
 
 This is the website of the Web2Day 2013.
 
+You can see the result there: <http://web2day-nantes.org>
+
 ## Build the site
 
 ### Hakyll
