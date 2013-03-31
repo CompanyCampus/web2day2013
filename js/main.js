@@ -63,7 +63,10 @@ jQuery(function($){
    $('.randomize_plz').randomize();
    
    $('.carousel').carousel();
-   
+
+   if($('.no_partners').length != 0) {
+      $("#footer .partners-bloc").remove();
+   }
    
 	var mainpage = $('#content');
 	mainpage.masonry({
