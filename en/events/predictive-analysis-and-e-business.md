@@ -8,4 +8,4 @@ speaker: vlademir-mosewicz
 topic: stakes-of-datas
 ---
 
-More informations coming soon...
+Predictive analysis include techniques from statistics, data mining and game theory that analyze present and past facts to make predictive hypotheses about future events. In business, information is critical to decision making. For 20 minutes, Vladimir Mosewicz from IBM will focus on the business around predictive data.
