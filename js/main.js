@@ -63,6 +63,10 @@ jQuery(function($){
    $('.randomize_plz').randomize();
    
    $('.carousel').carousel();
+   
+   $('.carousel').each(function( index, el ) {
+      $(el).find('.item:first').addClass('active');
+   });
 
    if($('.no_partners').length != 0) {
       $("#footer .partners-bloc").remove();
