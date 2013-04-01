@@ -3,15 +3,9 @@ firstname: Quentin
 lastname: Adam
 twitter: waxzce
 twitterwidgetid: 
-site: http://waxzce.org
-avatar: 
-companylogo: 
+site: http://www.waxzce.org
+avatar: /assets/images/contributors/waxzce.jpg
+companylogo: /assets/images/contributors/waxzce-clevercloud.jpg
 ---
 
-Cupcake ipsum dolor sit amet bonbon jelly-o bonbon candy. I love gummies pie I
-love apple pie dessert biscuit candy canes bear claw. Chocolate bar lemon
-drops caramels faworki cheesecake dessert.
-
-Gingerbread brownie cookie sugar plum marzipan dessert ice cream. Marshmallow
-chocolate bar I love gingerbread macaroon. Cheesecake ice cream brownie sweet
-roll chupa chups faworki.
+waxzce is there
