@@ -148,9 +148,8 @@ iso8601_date date =
 makeShortDate :: String -> String -> Maybe String
 makeShortDate lang =
     let parser = parseTime defaultTimeLocale "%Y-%m-%d %H:%M" :: String -> Maybe LocalTime
-        addTimeZone = localTimeToUTC (hoursToTimeZone 2) -- /!\ Hard coded for May 2013
         formatter = formatTime defaultTimeLocale "%A %H:%M"
-    in fmap (formatter . addTimeZone) . parser
+    in fmap formatter . parser
 
 short_date :: String -> Context String
 short_date lang =
