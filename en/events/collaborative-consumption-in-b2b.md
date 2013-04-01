@@ -8,4 +8,4 @@ speaker: matthieu-charron
 topic: collaborative-economy
 ---
 
-More informations coming soon...
+Transform our mass consumption in more responsible consumption, it's the movement that challenges old models for some time. In this panel, you will see the application of this new consumption pattern in companies.
