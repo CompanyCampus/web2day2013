@@ -30,7 +30,7 @@ jQuery(function($){
 	_.each($('.blocfloat2h'),function(i,a,y){
         var e = $(i),
             children = e.children(),
-            originalHeight = _.reduce(children, function(a, c) { return a + $(c).height(); }, 0),
+            originalHeight = e.height();// _.reduce(children, function(a, c) { return a + $(c).height(); }, 0),
             unitHeight = blocwidth + (blocspace / 2),
             delta = unitHeight - (originalHeight%unitHeight) + Math.floor(originalHeight / unitHeight - 1) * (blocspace / 2);
 
