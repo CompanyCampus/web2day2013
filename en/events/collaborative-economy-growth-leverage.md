@@ -8,4 +8,4 @@ speaker: vincent-ricordeau,guillaume-allanic,heloise-beldico,nicolas-ferrary
 topic: collaborative-economy
 ---
 
-More informations coming soon...
+With the success in their respective fields Ricordeau Vincent, Heloise Beldico and Nicolas Ferrary talk about the importance of collaboration. Is this model is reliable, cost effective and sustainable ?
