@@ -8,4 +8,4 @@ speaker: louisdavid-benyayer
 topic: develop-business
 ---
 
-More informations coming soon...
+Imagine no longer be dependent on distributors to do your everyday purchases ? With many examples Louis David Benyayer break long supply chain models to expose a more human consumption.
