@@ -8,4 +8,4 @@ speaker: blaise-bertrand
 topic: develop-business
 ---
 
-More informations coming soon...
+This talk presents recent theories on the evolution of design profession. Blaise Bertrand displays his desire to humanize the creative process by getting closer of the client's environment.

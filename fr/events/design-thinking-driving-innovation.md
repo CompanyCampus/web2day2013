@@ -8,4 +8,4 @@ speaker: blaise-bertrand
 topic: develop-business
 ---
 
-Ce talk présente de récentes théories sur l'évolution du métier de designer. Blaise Bertrand affichera sa volonté d'humaniser le processus de création en s'imissant pleinement dans l'environnement de son client.
+Ce talk présente de récentes théories sur l'évolution du métier de designer. Blaise Bertrand affichera sa volonté d'humaniser le processus de création en s'immiscant pleinement dans l'environnement de son client.
