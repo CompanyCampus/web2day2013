@@ -8,4 +8,4 @@ speaker: michel-levyprovencal
 topic: internet-of-things
 ---
 
-More informations coming soon...
+Gradually we will connect our world, so all that surrounds us provides access to information : tables, walls, windows... During this panel, you'll have the opportunity to attend a detailed and pragmatic evolution of our everyday objects.
