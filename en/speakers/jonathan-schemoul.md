@@ -9,3 +9,4 @@ bigphoto: /assets/images/speakers/jonathan-schemoul/jonathan-schemoul2.png
 bigphoto2: /assets/images/speakers/jonathan-schemoul/jonathan-schemoul3.png
 ---
 
+Jonathan Schemoul is a consultant in electronic engineering and site manager hackspark.fr.
