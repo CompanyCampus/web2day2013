@@ -8,4 +8,4 @@ speaker: colin-delahiguera
 topic: stakes-of-datas
 ---
 
-More informations coming soon...
+During this 20 minutes talk, Colin de la Higuera, professor of computer science at the University of Nantes introduce the session on a predictive data inventory and show its most frequent uses.
