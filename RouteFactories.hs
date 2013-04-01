@@ -145,17 +145,25 @@ iso8601_date date =
         return $ fromMaybe "" $ M.lookup date metadata >>= makeIso8601
     )
 
-makeShortDate :: String -> String -> Maybe String
-makeShortDate lang =
+makeShortStart :: String -> String -> Maybe String
+makeShortStart lang =
     let parser = parseTime defaultTimeLocale "%Y-%m-%d %H:%M" :: String -> Maybe LocalTime
         formatter = formatTime defaultTimeLocale "%A %H:%M"
     in fmap formatter . parser
 
+makeShortEnd :: String -> String -> Maybe String
+makeShortEnd lang =
+    let parser = parseTime defaultTimeLocale "%Y-%m-%d %H:%M" :: String -> Maybe LocalTime
+        formatter = formatTime defaultTimeLocale "%H:%M"
+    in fmap formatter . parser
+
 short_date :: String -> Context String
 short_date lang =
-    field "short_start" (\item -> do
-        metadata <- getMetadata $ itemIdentifier item
-        return $ fromMaybe "" $ M.lookup "start" metadata >>= makeShortDate lang
+    let s_start m = fromMaybe "" $ M.lookup "start" m >>= makeShortStart lang
+        s_end m = fromMaybe "" $ M.lookup "end" m >>= makeShortEnd lang
+    in field "short_start" (\item -> do
+        md <- getMetadata $ itemIdentifier item
+        return $ s_start md ++ " - " ++ s_end md
     )
 
 makeSinglePages :: String -> Rules ()
