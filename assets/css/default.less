@@ -214,6 +214,25 @@ body, p, ul, table {
 	width:@blocwidth*2+(@blocspace);
 }
 
+.partner-block>a {
+    position: relative;
+}
+
+.partner-ribbon {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 66px;
+    height: 65px;
+}
+
+.ribbon-official { background: url('/assets/images/ribbon-official.png') no-repeat;}
+.ribbon-host { background: url('/assets/images/ribbon-host.png') no-repeat;}
+.ribbon-gold { background: url('/assets/images/ribbon-gold.png') no-repeat;}
+.ribbon-friends { background: url('/assets/images/ribbon-friends.png') no-repeat;}
+.ribbon-media { background: url('/assets/images/ribbon-media.png') no-repeat;}
+
 .bloc.sharebloc {
     background-color:@colorshare;
     overflow:visible!important;
