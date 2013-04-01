@@ -8,4 +8,4 @@ speaker: morgiane-achache,raphael-labbe,nicolas-kayserbril,damian-vanachter,phil
 topic: innovation-media
 ---
 
-More informations coming soon...
+During the panel about media Morgiana Achache, Raphael Labbe, Nicolas Kayserbril, Damian Van Achter, Philippe Couve and Roman Saillet try to answer this question : in what extent the dynamism of the digital ecosystem influences the development of media ?
