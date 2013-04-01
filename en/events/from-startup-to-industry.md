@@ -8,4 +8,4 @@ speaker: stephane-distinguin,
 topic: web-is-industry
 ---
 
-More informations coming soon...
+Startups scramble traditional business models. Once profitable, are they forced to adopt industrial processes ? On the other hand, is that the methods "startup" may apply to traditional businesses ? Stéphane Distinguin develop these topics during this panel.
