@@ -1,6 +1,6 @@
 ---
 name: Euptouyou
 type: official
-logo: /assets/images/partners/host/logo-euptouyou.png
+logo: /assets/images/partners/official/logo-euptouyou.png
 site: http://www.euptouyou.com/
 ---
