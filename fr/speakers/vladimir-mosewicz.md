@@ -9,4 +9,4 @@ bigphoto: /assets/images/speakers/vladimir-mosewicz/vladimir-mosewicz2.png
 bigphoto2: /assets/images/speakers/vladimir-mosewicz/vladimir-mosewicz3.png
 ---
 
-Vladimir fait parti de l'entité "IBM Software group" en tant que "Solutions expert for Chief Marketing Officer"
+Vladimir fait parti de l'entité "IBM Software group" en tant que "Solutions expert for Chief Marketing Officer".
