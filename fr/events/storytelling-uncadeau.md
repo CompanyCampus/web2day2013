@@ -8,4 +8,4 @@ speaker: mathilde-lerouzic
 topic: develop-business
 ---
 
-Trouver le cadeau idéal n'est pas une mince affaire. Avec des miliers de références sur le web la tâche se complique. Uncadeau.com se positionne comme un moteur de recherche consacré aux cadeaux. Mathilde Le Rouzic racontera l'histoire de sa startup. 
+Trouver le cadeau idéal n'est pas une mince affaire. Avec des miliers de références sur le web la tâche s'avère chronophage. Uncadeau.com se positionne comme un moteur de recherche consacré aux cadeaux. Mathilde Le Rouzic racontera l'histoire de sa startup. 

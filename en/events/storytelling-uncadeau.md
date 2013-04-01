@@ -8,4 +8,4 @@ speaker: mathilde-lerouzic
 topic: develop-business
 ---
 
-More informations coming soon...
+Find the perfect gift is not an easy task. With thousands of references on the web, task is time-consuming. Uncadeau.com position itself as a search engine dedicated to gifts. Mathilde Rouzic tell the story of her startup.

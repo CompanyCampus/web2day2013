@@ -8,4 +8,4 @@ speaker:
 topic: satellite
 ---
 
-More informations coming soon...
+Highlight of the event, web2day opens the festivities with its traditional launch conference.
