@@ -8,4 +8,4 @@ speaker: nicolas-kayserbril
 topic: innovation-media
 ---
 
-More informations coming soon...
+Data-journalism consist in telling stories with pragmatic datas. The duty of the data-journalist is to munch, crush, chew and squeeze the data collected in order to highlight sense. For 15 minutes, Nicolas Kayser-Bril bring its expertise in this field.
