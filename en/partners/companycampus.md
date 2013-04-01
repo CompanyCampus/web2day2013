@@ -1,6 +1,6 @@
 ---
 name: Company Campus
-type: friend
+type: friends
 logo: /assets/images/partners/friends/logo-companycampus.png
 site: http://www.companycamp.us
 ---
