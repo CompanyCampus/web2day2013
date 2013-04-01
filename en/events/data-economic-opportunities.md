@@ -8,4 +8,4 @@ speaker: claire-gallon,henri-verdier,louisdavid-benyayer,simon-chignard
 topic: stakes-of-datas
 ---
 
-More informations coming soon...
+With the opening of public data to citizens, a market is emerging. Public and businesses in the digital economy are proponents of "open data", each person putting behind this concept some objectives and different promises. Our four guests will express their visions of open data.
