@@ -8,4 +8,4 @@ speaker: fabien-poulard
 topic: stakes-of-datas
 ---
 
-Dictanova nous présentera comment ils ont pu prédire les résultats de l'élection Miss France avant l'annonce officielle...
+Dictanova nous présentera comment ils ont pu prédire les résultats de l'élection Miss France avant l'annonce officielle.

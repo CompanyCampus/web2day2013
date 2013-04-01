@@ -8,4 +8,4 @@ speaker: fabien-poulard
 topic: stakes-of-datas
 ---
 
-More informations coming soon...
+Dictanova will present how they were able to predict the results of the Miss France before the official announcement.
