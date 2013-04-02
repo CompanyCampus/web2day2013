@@ -130,7 +130,7 @@ jQuery(function($){
                         right:  ''
                      },
                      defaultView: 'agendaDay',
-            			events: (w_LANG == 'fr' ? '':'https://www.google.com/calendar/feeds/gm9kigemqnjj5snv7cee19pb1c%40group.calendar.google.com/public/basic'),
+            			events: (w_LANG == 'fr' ? 'https://www.google.com/calendar/feeds/ked68srus0s8r2u8kim0tocd0k1p4tlb%40import.calendar.google.com/public/basic':'https://www.google.com/calendar/feeds/nqhcejs322mkmb0ltrrg2sgm8a6ereqe%40import.calendar.google.com/public/basic'),
             			eventClick: function(event) {
             				// opens events in a popup window
             				window.open(event.url, 'gcalevent', 'width=700,height=600');
@@ -139,8 +139,9 @@ jQuery(function($){
                      eventAfterRender:function( event, element, view ) {
                         var b_class_name = (function(kk){
                            switch(kk){
-                              case "salle maxi" : return "salle_maxi";
-                              case "salle mini" : return "salle_mini";
+                              case "Room 1" : return "salle_maxi";
+                              case "Room 2" : return "salle_mini";
+                              case "Trempolino" : return "trempolino";
                            }
                         }(event.location));
                         console.log(arguments);
