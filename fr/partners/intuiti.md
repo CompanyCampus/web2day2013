@@ -1,6 +1,6 @@
 ---
-name: CCI
+name: Intuiti
 type: official
-logo: /assets/images/partners/official/logo-cci.png
-site: http://nantesstnazaire.cci.fr/
+logo: /assets/images/partners/official/logo-intuiti.png
+site: http://www.intuiti.net
 ---
