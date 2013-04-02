@@ -41,7 +41,7 @@ jQuery(function($){
    if(($('.no_more_pic')).length == 0){
    _.each(my_images,function(v, k){
       var is_square = (_.uniq(k.split("x")).length == 1);
-      var r = _.random(0, (is_square ? 1 : 2));
+      var r = _.random(0, (is_square ? 1 : 3));
       var b_class_name = (function(kk){
          switch(kk){
             case "200x200" : return "bloc1";
@@ -51,7 +51,7 @@ jQuery(function($){
          }
       }(k));
       for(var i = 0 ; i < r ; i++){
-         var insert = v[_.random(0,_.size(v)-1)];
+         var insert = v[_.random(0,_.size(v)-3)];
          var c  = $('#content');
          var ch = c.find('div.bloc');
          var n = _.random(0,_.size(ch)-1);
