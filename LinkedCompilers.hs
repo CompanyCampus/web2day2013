@@ -217,6 +217,6 @@ mkPartnerField partnerType =
 
 partnersCtx :: Context String
 partnersCtx =
-    let dirs = ["friend", "gold", "official", "media", "host", "annual"]
+    let dirs = ["friends", "gold", "official", "media", "host", "annual"]
 
     in mconcat $ map mkPartnerField dirs

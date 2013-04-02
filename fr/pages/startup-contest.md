@@ -49,4 +49,6 @@ Les résultats seront annoncés le vendredi matin, juste avant que les gagnants
 ne montent à bord de l’éléphant des Machines de l’île pour une ballade en
 compagnie d’investisseurs.
 
+<a href="http://w2d-form.cleverapps.io/?lang=fr">Inscrivez vous !</a>
+
 </div>
