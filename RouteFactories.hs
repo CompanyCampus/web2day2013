@@ -124,6 +124,19 @@ makeCalendar lang =
             >>= calendarCompiler lang
             >>= loadAndApplyTemplate "templates/calendar.ics" (globalContext lang)
 
+    create [fromFilePath $ lang ++ "/calendar.json"] $ do
+    route $ langRoute
+    compile $ do
+        makeItem ""
+            >>= calendarCompilerJson lang
+
+calendarCompilerJson :: String -> Item a ->  Compiler (Item String)
+calendarCompilerJson lang item = do
+    events <- loadAll $ fromGlob (lang ++ "/events/*.md")
+    tpl <- loadBody "templates/event-json"
+    contents <- applyJoinTemplateList ", " tpl (iso8601Ctx `mappend` globalContext lang) events
+    makeItem $ "[" ++ contents ++ "]"
+
 calendarCompiler :: String -> Item a ->  Compiler (Item String)
 calendarCompiler lang item = do
     events <- loadAll $ fromGlob (lang ++ "/events/*.md")
