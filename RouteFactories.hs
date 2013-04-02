@@ -118,7 +118,7 @@ makeElements = makeElementsWithContext mempty
 makeCalendar :: String -> Rules ()
 makeCalendar lang =
     create [fromFilePath $ lang ++ "/calendar.ics"] $ do
-    route $ (setExtension "html") `composeRoutes` langRoute
+    route $ langRoute
     compile $ do
         makeItem ""
             >>= calendarCompiler lang
