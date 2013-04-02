@@ -144,7 +144,6 @@ jQuery(function($){
                               case "Trempolino" : return "trempolino";
                            }
                         }(event.location));
-                        console.log(arguments);
                         element.addClass(b_class_name);
                      }
             };
