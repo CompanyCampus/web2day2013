@@ -134,10 +134,7 @@ jQuery(function($){
                      defaultView: 'agendaDay',
             			events: (w_LANG == 'fr' ? '/calendar.json':'/en/calendar.json'),
             			eventClick: function(event) {
-            				// opens events in a popup window
-            				console.log(event)
-                        //window.open(event.url, 'gcalevent', 'width=700,height=600');
-            				return false;
+            				window.location = event.url;
             			},
                      eventAfterRender:function( event, element, view ) {
                         var b_class_name = (function(kk){
