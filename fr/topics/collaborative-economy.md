@@ -2,4 +2,4 @@
 title: Economie Collaborative
 ---
 
-Changez la manière de produire et de consommer en collaborant
+Changez la manière de produire et de consommer en collaborant.

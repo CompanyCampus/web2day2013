@@ -2,4 +2,4 @@
 title: Web is Industry
 ---
 
-Découvrez la face industrielle du web
+Découvrez la face industrielle du web.
