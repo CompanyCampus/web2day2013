@@ -1,6 +1,6 @@
 ---
 name: SFR
 type: annual
-logo: /assets/images/partners/annual/audencia_copy.jpeg
+logo: /assets/images/partners/annual/logo-sfr.png
 site: http://www.sfr.fr
 ---
