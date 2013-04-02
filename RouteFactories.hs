@@ -130,13 +130,6 @@ makeCalendar lang =
         makeItem ""
             >>= calendarCompilerJson lang
 
-calendarCompilerJson :: String -> Item a ->  Compiler (Item String)
-calendarCompilerJson lang item = do
-    events <- loadAll $ fromGlob (lang ++ "/events/*.md")
-    tpl <- loadBody "templates/event-json"
-    contents <- applyJoinTemplateList ", " tpl (iso8601Ctx `mappend` globalContext lang) events
-    makeItem $ "[" ++ contents ++ "]"
-
 calendarCompiler :: String -> Item a ->  Compiler (Item String)
 calendarCompiler lang item = do
     events <- loadAll $ fromGlob (lang ++ "/events/*.md")
@@ -159,6 +152,30 @@ iso8601_date date =
         metadata <- getMetadata $ itemIdentifier item
         return $ fromMaybe "" $ M.lookup date metadata >>= makeIso8601
     )
+
+calendarCompilerJson :: String -> Item a ->  Compiler (Item String)
+calendarCompilerJson lang item = do
+    events <- loadAll $ fromGlob (lang ++ "/events/*.md")
+    tpl <- loadBody "templates/event-json"
+    contents <- applyJoinTemplateList ", " tpl (timestampCtx `mappend` globalContext lang) events
+    makeItem $ "[" ++ contents ++ "]"
+
+timestampCtx = (timestamp_date "start") `mappend` (timestamp_date "end")
+
+makeTimestampDate :: String -> Maybe String
+makeTimestampDate =
+    let parser = parseTime defaultTimeLocale "%Y-%m-%d %H:%M" :: String -> Maybe LocalTime
+        addTimeZone = localTimeToUTC (hoursToTimeZone 2) -- /!\ Hard coded for May 2013
+        formatter = formatTime defaultTimeLocale "%s"
+    in fmap (formatter . addTimeZone) . parser
+
+timestamp_date :: String -> Context String
+timestamp_date date =
+    field ("timestamp_"++ date) (\item -> do
+        metadata <- getMetadata $ itemIdentifier item
+        return $ fromMaybe "" $ M.lookup date metadata >>= makeTimestampDate
+    )
+
 
 makeShortStart :: String -> String -> Maybe String
 makeShortStart lang =
