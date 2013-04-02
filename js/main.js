@@ -62,7 +62,7 @@ jQuery(function($){
    
    $('.randomize_plz').randomize();
    
-   $('.carousel').carousel();
+   $('.carousel').carousel({interval:10000});
    
    $('.carousel').each(function( index, el ) {
       $(el).find('.item:first').addClass('active');
