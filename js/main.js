@@ -130,7 +130,7 @@ jQuery(function($){
                         right:  ''
                      },
                      defaultView: 'agendaDay',
-            			events: 'https://www.google.com/calendar/feeds/gm9kigemqnjj5snv7cee19pb1c%40group.calendar.google.com/public/basic',
+            			events: (w_LANG == 'fr' ? '':'https://www.google.com/calendar/feeds/gm9kigemqnjj5snv7cee19pb1c%40group.calendar.google.com/public/basic'),
             			eventClick: function(event) {
             				// opens events in a popup window
             				window.open(event.url, 'gcalevent', 'width=700,height=600');
