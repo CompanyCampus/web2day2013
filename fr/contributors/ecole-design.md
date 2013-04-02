@@ -2,7 +2,7 @@
 firstname: Ecole
 lastname: de Design
 twitter: lecolededesign
-twitterwidgetid: 319020567099473921
+twitterwidgetid: 319030547869470720
 site: http://www.lecolededesign.com/
 avatar: /assets/images/contributors/ecole-de-design.jpg
 companylogo: /assets/images/contributors/logo-ecoledesign.jpg
