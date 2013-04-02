@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 module RouteFactories where
 
-import           Data.List               (intercalate)
+import           Data.List               (concat, intercalate)
 import qualified Data.Map                as M
 import           Data.Maybe              (fromMaybe)
 import           Data.Monoid             (mappend, mconcat, mempty)
@@ -12,6 +12,7 @@ import           System.FilePath         (joinPath, replaceExtension, splitDirec
 import           System.Locale           (TimeLocale, defaultTimeLocale)
 
 import Hakyll
+import Utils
 
 import LinkedCompilers
 
@@ -34,6 +35,7 @@ reducedEventContext lang =
     field "speakers-names" (\conf -> getSpeakerNameCompiler lang conf) `mappend`
     roomClassCtx `mappend`
     short_date lang `mappend`
+    makeGoogleAgendaAddLink lang `mappend`
     field "topicBlock" (\conf -> getTopicCompiler lang conf)
 
 completeEventContext :: String -> Context String
@@ -164,6 +166,39 @@ short_date lang =
     in field "short_start" (\item -> do
         md <- getMetadata $ itemIdentifier item
         return $ s_start md ++ " - " ++ s_end md
+    )
+
+makeGoogleAgendaAddLink :: String -> Context String
+makeGoogleAgendaAddLink lang =
+    let s_start m = concat . take 1 . splitOn (=='+') $ fromMaybe "" $ M.lookup "start" m >>= makeIso8601
+        s_end m = concat . take 1 . splitOn (=='+') $ fromMaybe "" $ M.lookup "end" m >>= makeIso8601
+        name m = url_encode . fromMaybe "" $ M.lookup "title" m
+        location m = url_encode . fromMaybe "" $ M.lookup "location" m
+        url_encode = replaceAll " " encodeChar
+        encodeChar c = case c of
+            " " -> "+"
+            "$" -> "%24"
+            "&" -> "%26"
+            "+" -> "%2B"
+            "," -> "%2C"
+            "/" -> "%2F"
+            ":" -> "%3A"
+            ";" -> "%3B"
+            "=" -> "%3D"
+            "?" -> "%3F"
+            "@" -> "%40"
+        url s e n l u =
+            "http://www.google.com/calendar/event?action=TEMPLATE" ++
+            "&text=" ++ n ++
+            "&dates=" ++ s ++ "/" ++ e ++
+            "&details=http://www.web2day-nantes.org/" ++ u ++
+            "&sprop=website:www.web2day-nantes.org" ++
+            "&location=" ++ l
+    in field "gcal_url" (\item -> do
+        md <- getMetadata $ itemIdentifier item
+        id <- getUnderlying
+        u <- getRoute id
+        return $ url (s_start md) (s_end md) (name md) (location md) (fromMaybe "" u)
     )
 
 makeSinglePages :: String -> Rules ()
