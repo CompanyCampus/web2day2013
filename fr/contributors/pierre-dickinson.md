@@ -2,7 +2,7 @@
 firstname: Pierre
 lastname: Dickinson
 twitter: mecanographik
-twitterwidgetid: 
+twitterwidgetid: 319012491160068096
 site: http://www.mecanographik.fr
 avatar: 
 companylogo: 
