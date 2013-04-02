@@ -1,6 +1,6 @@
 ---
-name: Intuiti
-type: official
-logo: /assets/images/partners/official/logo-intuiti.png
-site: http://www.intuiti.net
+name: CCI
+type: gold
+logo: /assets/images/partners/gold/logo-cci.png
+site: http://nantesstnazaire.cci.fr/CCI44/Page/
 ---
