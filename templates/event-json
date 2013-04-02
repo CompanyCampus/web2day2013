@@ -1,7 +1,7 @@
 {
     "title": "$title$",
-    "start": "$iso8601_start$",
-    "end": "$iso8601_end$",
+    "start": "$start$",
+    "end": "$end$",
     "url": "http://web2day-nantes.org/$url$"
     "location": "$location$",
     "description": "more info: http://web2day-nantes.org/$url$",
