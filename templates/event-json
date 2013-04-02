@@ -1,8 +1,9 @@
 {
     "title": "$title$",
-    "start": $timestamp_start$,
-    "end": $timestamp_end$,
-    "url": "http://web2day-nantes.org/$url$"
+    "start": "$timestamp_start$",
+    "end": "$timestamp_end$",
+    "url": "http://web2day-nantes.org$url$",
     "location": "$location$",
-    "description": "more info: http://web2day-nantes.org/$url$",
+    "allDay":false,
+    "description": "more info: http://web2day-nantes.org$url$"
 }

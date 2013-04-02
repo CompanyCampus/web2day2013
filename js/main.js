@@ -129,6 +129,7 @@ jQuery(function($){
                         center: '',
                         right:  ''
                      },
+                     firstHour: 9,
                      slotMinutes:10,
                      defaultView: 'agendaDay',
             			events: (w_LANG == 'fr' ? '/calendar.json':'/en/calendar.json'),
@@ -154,7 +155,8 @@ jQuery(function($){
    		$('#calendar-friday').fullCalendar(opts);
          opts2['date'] = 16;
    		$('#calendar-thursday').fullCalendar(opts2);
-		
+         
+         $('tr.fc-minor:nth-child(3n+1) th').css('visibility', 'visible');		
    	});
 
 
