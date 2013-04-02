@@ -4,7 +4,7 @@ lastname:  Destré
 twitter: webelis
 twitterwidgetid: 319011908449599488
 site: http://webelis.fr
-avatar: 
+avatar: /assets/images/contributors/philippe-destre.jpg
 companylogo: 
 ---
 
