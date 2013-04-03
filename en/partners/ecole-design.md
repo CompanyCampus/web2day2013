@@ -1,6 +1,6 @@
 ---
-firstname: Ecole de design
-lastname: 
+firstname: Ecole
+lastname: de design
 twitter: lecolededesign
 twitterwidgetid: 319030547869470720
 site: http://www.lecolededesign.com/
