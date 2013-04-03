@@ -88,7 +88,7 @@ elementList lang plural singular = do
     list <- applyTemplateList tpl (globalContext lang) elts
     return list
 
-makeIndexPage lang plural singular =
+makeIndexPage plural singular lang =
     create [fromFilePath (lang ++ "/"++ plural ++".html")] $ do
         route $ (setExtension "html") `composeRoutes` langRoute
         compile $ do
@@ -102,7 +102,7 @@ makeIndexPage lang plural singular =
                 >>= loadAndApplyTemplate "templates/default.html" (globalContext lang)
                 >>= relativizeUrls
 
-makeElementsWithContext ctx lang plural singular = let
+makeElementsWithContext ctx plural singular lang = let
         bigCtx = ctx `mappend` (globalContext lang)
     in
         match (fromGlob $ lang ++ "/"++ plural ++"/*.md") $ do

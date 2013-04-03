@@ -60,17 +60,17 @@ main = hakyll $ do
 -- Events
 --
 
-    forM_ langs $ \lang -> (makeIndexPage lang "events" "event")
+    forM_ langs $ makeIndexPage "events" "event"
 
-    forM_ langs $ \lang -> (makeElementsWithContext (completeEventContext lang) lang "events" "event")
+    forM_ langs $ \lang -> (makeElementsWithContext (completeEventContext lang) "events" "event" lang)
 
 --------------------------------------------------------------------------------
 -- Topics
 --
 
-    forM_ langs $ \lang -> (makeIndexPage lang "topics" "topic")
+    forM_ langs $ makeIndexPage "topics" "topic"
 
-    forM_ langs $ \lang -> (makeElementsWithContext (completeTopicContext lang) lang "topics" "topic")
+    forM_ langs $ \lang -> (makeElementsWithContext (completeTopicContext lang) "topics" "topic" lang)
 
 --------------------------------------------------------------------------------
 -- Calendar
@@ -82,35 +82,35 @@ main = hakyll $ do
 -- Speakers
 --
 
-    forM_ langs $ \lang -> (makeIndexPage lang "speakers" "speaker")
+    forM_ langs $ makeIndexPage "speakers" "speaker"
 
-    forM_ langs $ \lang -> (makeElementsWithContext (completeSpeakerContext lang) lang "speakers" "speaker")
+    forM_ langs $ \lang -> (makeElementsWithContext (completeSpeakerContext lang) "speakers" "speaker" lang)
 
 
 --------------------------------------------------------------------------------
 -- Posts
 --
 
-    forM_ langs $ \lang -> (makeIndexPage lang "posts" "post")
+    forM_ langs $ makeIndexPage "posts" "post"
 
-    forM_ langs $ \lang -> (makeElements lang "posts" "post")
+    forM_ langs $ makeElements  "posts" "post"
 
 --------------------------------------------------------------------------------
 -- Contributors
 --
 
-    forM_ langs $ \lang -> (makeIndexPage lang "contributors" "contributor")
+    forM_ langs $ makeIndexPage "contributors" "contributor"
 
-    forM_ langs $ \lang -> (makeElements lang "contributors" "contributor")
+    forM_ langs $ makeElements  "contributors" "contributor"
 
 
 --------------------------------------------------------------------------------
 -- Partners
 --
 
-    forM_ langs $ \lang -> (makeIndexPage lang "partners" "partner")
+    forM_ langs $ makeIndexPage "partners" "partner"
 
-    forM_ langs $ \lang -> (makeElements lang "partners" "partner")
+    forM_ langs $ makeElements  "partners" "partner"
 
 
 --------------------------------------------------------------------------------
