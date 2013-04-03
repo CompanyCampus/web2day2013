@@ -1,8 +1,8 @@
 ---
 firstname: Louis David 
 lastname: Benyayer
-twitter: @LDBenyayer
-twitterwiddgetid: 303956165929353216
+twitter: @withoutmodel
+twitterwiddgetid: 319478491311652865
 site: http://www.vobiscum.fr/
 avatar: /assets/images/speakers/louisdavid-benyayer/louisdavid-benyayer1.png
 bigphoto: /assets/images/speakers/louisdavid-benyayer/louisdavid-benyayer2.png
