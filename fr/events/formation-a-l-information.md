@@ -1,5 +1,5 @@
 ---
-title: Se former à l'information
+title: Nouvelles méthodes de formation à l'information
 location: Room 2
 start: 2013-05-17 09:30
 end: 2013-05-17 09:45

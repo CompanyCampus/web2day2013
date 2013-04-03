@@ -1,5 +1,5 @@
 ---
-title: Nouvelles écritures informationnelles
+title: Nouvelles écritures informationnelles sur le web
 location: Room 2
 start: 2013-05-17 09:15
 end: 2013-05-17 09:30
