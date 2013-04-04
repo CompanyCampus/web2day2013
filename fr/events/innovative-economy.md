@@ -8,4 +8,4 @@ speaker: louisdavid-benyayer,
 topic: develop-business
 ---
 
-Imaginez-vous ne plus être dépendants des distributeurs pour réaliser vos achats du quotidien ? Grâce à de multiples exemples Louis-David Benyayer cassera, entre autre, les modèles de circuits long de la grande distribution pour exposer une vision plus humaine de la consommation.
+Imaginez-vous ne plus être dépendants des distributeurs pour réaliser vos achats du quotidien ? Grâce à de multiples exemples (Crowdsourcing, internet des objets, consommation collaborative, crowdfunding, big data...) Louis-David Benyayer cassera, entre autre, les modèles de circuits long de la grande distribution pour exposer une vision plus humaine de la consommation.
