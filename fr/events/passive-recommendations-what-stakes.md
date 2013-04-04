@@ -4,7 +4,7 @@ location: Room 1
 start: 2013-05-16 12:05
 end: 2013-05-16 13:00
 type: Panel
-speaker: liam-boogar,gabriel-mandelbaum,yann-lechelle,
+speaker: liam-boogar,gabriel-mandelbaum,yann-lechelle,franck-monsauret
 topic: develop-business
 ---
 
