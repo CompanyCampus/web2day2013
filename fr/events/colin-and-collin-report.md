@@ -1,5 +1,4 @@
 ---
-title: Rapport N-Colin & P-Collin
 location: Room 1
 start: 2013-05-16 11:20
 end: 2013-05-16 11:50
