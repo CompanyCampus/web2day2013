@@ -9,4 +9,5 @@ bigphoto: /assets/images/speakers/adrien-demalherbe/adrien-demalherbe2.png
 bigphoto2: /assets/images/speakers/adrien-demalherbe/adrien-demalherbe3.png
 ---
 
-Adrien de Malherbe est Directeur Commercial chez TapJoy. Il blogue également sur la publicité, le marketing viral, et les medias mobiles et sociaux.
+Adrien de Malherbe est directeur commercial pour Tapjoy depuis 2011.
+Diplomé de ESC Rouen, il a travaillé pour Young & Rubicam à Paris, GroupM à Londres et a monté les bureaux France de Goviral à Paris. Suite à l'acquisition de Goviral par AOL, Adrien a décidé de rejoindre Tapjoy pour diriger le marché français.
