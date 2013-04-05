@@ -2,7 +2,7 @@
 firstname: Guillaume
 lastname: Allanic
 twitter: @AllanicG
-twitterwiddgetid: 319478491311652865
+twitterwiddgetid: 320202706218270720
 site: https://www.labanquepostale.fr/accueil.html
 avatar: /assets/images/speakers/guillaume-allanic/guillaume-allanic1.png
 bigphoto: /assets/images/speakers/guillaume-allanic/none
