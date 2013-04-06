@@ -9,4 +9,4 @@ bigphoto: /assets/images/speakers/alexis-moussinepouchkine/alexis-moussinepouchk
 bigphoto2: /assets/images/speakers/alexis-moussinepouchkine/alexis-moussinepouchkine3.png
 ---
 
-Après plus de dix années passées dans les équipes Java de Sun Microsystems et d'Oracle, Alexis est désormais responsable des relations développeur chez Google France.
+After 10 years in the Java Team of Sun Microsystems and Oracle, Alexis is now developer relations at Google France.
