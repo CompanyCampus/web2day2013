@@ -1,5 +1,5 @@
 ---
-title: Pourquoi Intuiti sponsorise le web2day
+title: Intuiti, partenaire du web2day
 author: Volodia Lepron
 tags: sponsor, intuiti
 date: 2013-03-26 16:13
