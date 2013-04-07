@@ -28,11 +28,13 @@ globalContext lang =
     field "eventcolor" (getRoomClass . itemIdentifier) `mappend`
     partnersCtx `mappend`
     reducedEventContext lang `mappend`
+    highlightContext `mappend`
     defaultContext
 
 reducedEventContext :: String -> Context String
 reducedEventContext lang =
     field "speakers-names" (\conf -> getSpeakerNameCompiler lang conf) `mappend`
+    highlightContext `mappend`
     roomClassCtx `mappend`
     short_date lang `mappend`
     makeGoogleAgendaAddLink lang `mappend`
@@ -46,14 +48,15 @@ completeEventContext lang =
 completeSpeakerContext :: String -> Context String
 completeSpeakerContext lang =
     let e = reducedEventContext lang
-    in field "confs" (\speaker -> speakerEventsCompiler e lang speaker)
+    in 
+        field "confs" (\speaker -> speakerEventsCompiler e lang speaker) `mappend`
+        highlightContext
 
 completeTopicContext :: String -> Context String
 completeTopicContext lang =
     field "events" (\topic ->
         getTopicEventsCompiler (reducedEventContext lang) lang (
                         itemIdFromIdentifier $ itemIdentifier topic))
-
 
 
 getBlock :: String -> [String] -> (Context String) -> Compiler String

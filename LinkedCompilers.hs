@@ -46,6 +46,7 @@ getSpeakerNameCompiler lang conf =
 
 makeDefaultContext :: (Identifier, Metadata) -> Context String
 makeDefaultContext (i, m) =
+        highlightContext `mappend`
         makeUrlField i `mappend`
         makeMetadataContext m
     where
@@ -220,3 +221,29 @@ partnersCtx =
     let dirs = ["friends", "gold", "silver", "official", "media", "host", "annual"]
 
     in mconcat $ map mkPartnerField dirs
+
+highlightContext :: Context String
+highlightContext =
+        field "item-size" (\item -> do
+           md <- getMetadata $ itemIdentifier item
+           return $ getSize md
+        ) `mappend`
+        field "speaker-img" (\speaker -> do
+           md <- getMetadata $ itemIdentifier speaker
+           return $ getPic md
+        )
+    where
+        getClassFromHighlight "2v2h" = "bloc2v2h"
+        getClassFromHighlight "2v"   = "bloc2v"
+        getClassFromHighlight "2h"   = "bloc2h"
+        getClassFromHighlight _      = "bloc1"
+        getSize md = getClassFromHighlight $  fromMaybe "" (M.lookup "highlight" md)
+
+        getPicFromHighlight "2h"   = "highlightpic"
+        getPicFromHighlight "2v"   = "highlightpic"
+        getPicFromHighlight "2v2h" = "highlightpic"
+        getPicFromHighlight _      = "avatar"
+        getPic md =
+            let fieldName = getPicFromHighlight $ fromMaybe "" (M.lookup "highlight" md)
+            in fromMaybe "" $ M.lookup fieldName md
+
