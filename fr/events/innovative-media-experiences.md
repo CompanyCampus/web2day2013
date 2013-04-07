@@ -1,5 +1,5 @@
 ---
-title: Comment créer des expériences médiatiques enrichissantes et créatives ?
+title: Expériences médiatiques enrichissantes et créatives
 location: Room 2
 start: 2013-05-17 09:45
 end: 2013-05-17 10:00

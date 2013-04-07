@@ -4,7 +4,7 @@ location: Room 1
 start: 2013-05-17 14:00
 end: 2013-05-17 15:10
 type: Panel
-speaker: vincent-ricordeau,guillaume-allanic,heloise-beldico,nicolas-ferrary
+speaker: vincent-ricordeau,guillaume-allanic,heloise-beldico,nicolas-ferrary,guillaume-allanic
 topic: collaborative-economy
 ---
 
