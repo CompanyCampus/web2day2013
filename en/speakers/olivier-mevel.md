@@ -9,4 +9,8 @@ bigphoto: /assets/images/speakers/olivier-mevel/olivier-mevel2.png
 bigphoto2: /assets/images/speakers/olivier-mevel/olivier-mevel3.png
 ---
 
-Olivier Mével is graduated from Ensta, the National School of Advanced Techniques. After a "cooperation" in New York at Thomson where he discovered the Web in 1995, he returned to France and created Babel, creation studio sites. Violet will follow in 2002 and ReaDIYmate in 2009.
+Olivier co-founded in 1995, with Philippe Feinsilber, one of the first digital agency and in 2000 was part of the Kasskooye collective that made fun of the crazy new economy.
+
+In 2003, he co-founded with rafi Haladjian, Violet, the company behind Nabaztag, the widely popular Wifi bunny now seen as the Internet of Things icon.
+
+When Violet was bought-out in 2009 by Mindscape Olivier co-founded with Marc Chareyron (Olivier doesn't know to do anything alone :-)) 23 de Enero and they created reaDIYmate and TeleSound. Both products were launched on Kickstarter.
