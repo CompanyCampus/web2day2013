@@ -9,4 +9,5 @@ bigphoto: /assets/images/speakers/gabriel-mandelbaum/gabriel-mandelbaum2.png
 bigphoto2: /assets/images/speakers/gabriel-mandelbaum/gabriel-mandelbaum3.png
 ---
 
-Gabriel is in charge of investor relations, commercial partnerships and sales at Spideo. He managed the New Media arm of production company, Marathon Media, Zodiac Entertainment before founding Spideo. He holds a Master’s in management, specialized in Media Management from HEC Paris.
+Gabriel Mandelbaum is co-founder of Spideo, a Paris based company specialized in Movie and TV Discovery technologies. 
+The Spideo iPad app has been released in the US and in France in April 2013. 
