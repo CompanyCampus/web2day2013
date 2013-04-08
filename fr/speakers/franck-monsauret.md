@@ -1,8 +1,8 @@
 ---
 firstname: Franck 
 lastname: Monsauret
-twitter: @Outbrain
-twitterwiddgetid: 319478491311652865
+twitter: @OutbrainFR
+twitterwiddgetid: 321190494879227904
 site: http://www.outbrain.com/
 avatar: /assets/images/speakers/franck-monsauret/franck-monsauret1.png
 bigphoto: /assets/images/speakers/franck-monsauret/franck-monsauret2.png
