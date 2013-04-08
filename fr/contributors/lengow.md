@@ -2,10 +2,10 @@
 firstname: Lengow
 lastname: 
 twitter: lengow
-twitterwidgetid: 321235470560411649
+twitterwidgetid: 321235418735575044
 site: http://www.lengow.fr/
-avatar: /assets/images/contributors/logo-ouishare.jpg
-companylogo: /assets/images/contributors/ceo-ouishare.jpg
+avatar: /assets/images/contributors/site-lengow.png
+companylogo: /assets/images/contributors/logo-lengow.png
 ---
 
 Lengow permet aux sites d’E-commerce de diffuser leurs produits sur les principaux comparateurs de prix du marché (Kelkoo, Shopping, Le Guide.com…) et de contrôler le retour sur investissement de ces canaux.
