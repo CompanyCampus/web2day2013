@@ -8,3 +8,4 @@ speaker:
 topic: 
 ---
 
+L'heure de faire un résumé des nouveautés et enseignements acquis lors de ces deux jours de conférences.
