@@ -1,5 +1,5 @@
 ---
-title: IO-Extented
+title: IO-Extended
 location: Room 2
 start: 2013-05-16 19:00
 end: 2013-05-17 02:00
