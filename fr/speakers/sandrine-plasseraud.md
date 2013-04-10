@@ -2,7 +2,7 @@
 firstname: Sandrine
 lastname: Plasseraud
 twitter: @sandrine
-twitterwiddgetid: 321921368801284097
+twitterwiddgetid: 321969472644714496
 site: http://wearesocial.fr/
 avatar: /assets/images/speakers/sandrine-plasseraud/sandrine-plasseraud1.png
 bigphoto: /assets/images/speakers/sandrine-plasseraud/sandrine-plasseraud2.png
