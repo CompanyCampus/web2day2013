@@ -1,6 +1,5 @@
 ---
 title: Concours de startups
-speaker: corinne-delaporte,
 ---
 
 <div class="bloc bloc1 contestblock">
