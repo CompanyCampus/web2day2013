@@ -9,4 +9,4 @@ topic: develop-business
 highlight: 2v2h
 ---
 
-Avec plus de 1800 sites e-commerce en France et une augmentation constante des achats sur le web, ce secteur est fait d'opportunités et de contraintes à depasser pour se démarquer. Alors comment faire face à des géants français comme Vente Privée, Price Minister ou encore Amazon à l'international ? 
+Avec plus de 100000 sites e-commerce en France et une augmentation constante des achats sur le web, ce secteur est fait d'opportunités et de contraintes à depasser pour se démarquer. Alors comment faire face à des géants français comme Vente Privée, Price Minister ou encore Amazon à l'international ? 
