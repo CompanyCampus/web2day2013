@@ -205,7 +205,7 @@ getPartnersOfType t =
 
 makePartnerList :: [(Identifier, Metadata)] -> Compiler String
 makePartnerList ps = do
-        tpl <- loadBody "templates/partner-smallitem.html"
+        tpl <- loadBody "templates/partner-item.html"
         applyTemplateListWithContexts tpl $ makeItemContextPairList ps
 
 mkPartnerField :: String -> Context String
