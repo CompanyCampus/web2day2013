@@ -26,6 +26,12 @@ $.fn.randomize = function(selector){
 
 
 jQuery(function($){
+    var home_pics = {
+        "bloc2v2h": "/assets/images/photos/408x408/crowdy.jpg",
+        "bloc2h": "/assets/images/photos/408x200/launchconf.jpg",
+        "bloc2v": "/assets/images/photos/200x408/elephant.jpg",
+        "bloc1": "/assets/images/photos/200x200/fleurpellerin.jpg"
+    };
 
 	_.each($('.blocfloat2h'),function(i,a,y){
         var e = $(i),
@@ -58,6 +64,14 @@ jQuery(function($){
          $('<div class="optionalOnMobile bloc '+b_class_name+'"><img src="/'+insert+'"/></div>').insertAfter($(ch[n]));
       }
    });
+   }
+
+   if($('.home_pics').length > 0) {
+       var blocks = $("#content").find("div.bloc");
+        _.each(_.pairs(home_pics), function(kv) {
+            var pos = _.random(0, _.size(blocks)-1);
+            $('<div class="optionalOnMobile bloc '+kv[0]+'"><img src="'+kv[1]+'"/></div>').insertAfter($(blocks[pos]));
+        });
    }
    
    $('.randomize_plz').randomize();
