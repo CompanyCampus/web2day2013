@@ -7,6 +7,8 @@ site: http://www.fabernovel.com
 avatar: /assets/images/speakers/stephane-distinguin/stephane-distinguin1.png
 bigphoto: /assets/images/speakers/stephane-distinguin/stephane-distinguin2.png
 bigphoto2: /assets/images/speakers/stephane-distinguin/stephane-distinguin3.png
+highlight: 2v2h
+highlightpic: /assets/images/speakers/stephane-distinguin/stephane-distinguin4.png
 ---
 
 Graduated from ESCP, Stéphane Distinguin joined Deloitte & Touche in 1997. In 1999 he cofunded Up&Up, an «early stage» investment fund. as a French entrepreneur and activist in the field of innovation, he created FaberNovel in 2003.  
