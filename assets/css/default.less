@@ -100,13 +100,29 @@ body, p, ul, table {
     margin:40px;
 }
 
-@media (max-width: 767px) { #content {
-    margin:20px;
-} }
+@media (max-width: 767px) { 
 
-@media (max-width: 490px) { #content {
-    margin:0px;
-} }
+	#content {margin:20px;} 
+	#footer-papa {margin-left:20px}
+
+}
+
+@media (max-width: 490px) { 
+	#content {margin:0px;} 
+	#footer-papa {margin-left:0px}
+	}
+
+@media (max-width: 3000px) { 
+	#footer-papa {max-width:1240px;}
+
+}
+@media (max-width: 1320px) { 
+	#footer-papa {max-width:824px;}
+}
+@media (max-width: 824px) { 
+	#footer-papa {max-width:408px;}
+}
+
 
 
 /* block title */
@@ -586,9 +602,9 @@ table tr th{
 }
 
 #footer-papa {
-max-width:900px;
+/*max-width:900px;*/
 padding:0 ;
-margin-left:40px;
+
 margin-right:40px;
 margin-bottom:40px;
 background-color:#a7a9ac;
