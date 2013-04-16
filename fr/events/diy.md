@@ -4,7 +4,7 @@ location: Room 2
 start: 2013-05-16 11:00
 end: 2013-05-16 12:00
 type: Demo
-speaker: olivier-mevel,jonathan-schemoul,julien-bellanger
+speaker: olivier-mevel,jonathan-schemoul,julien-bellanger,lucile-colombain
 topic: internet-of-things
 ---
 
