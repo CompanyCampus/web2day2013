@@ -14,13 +14,12 @@ title: Concours de startups
 <div class="bloc blocfloat2h speakerbio">
 <i class="icon-book icon-large"></i>
 
-Atlantic 2.0 et le Company Campus organisent ensemble 
-le Startup Contest 2013 et proposent aux investisseurs 
-et aux startupers un espace de rencontre privilégié. 
-La compétition qui aura lieu en parallèle désignera la 
-gagnant de cette édition 2013 qui aura l’opportunité de 
-partager une ballade à bord de l’éléphant des machines 
-avec des investisseurs.
+
+Atlantic 2.0 et le Company Campus organisent ensemble le Startup Contest 2013
+et proposent aux investisseurs et aux startupers un espace de rencontre
+privilégié. La compétition aura lieu en parallèle et désignera le gagnant de
+cette édition 2013. Les 3 premiers auront l’opportunité de partager une
+ballade à bord de l’éléphant des machines avec des investisseurs.
 
 
 Le Startup Contest 2013, c’est:

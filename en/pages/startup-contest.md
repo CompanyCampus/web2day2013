@@ -14,11 +14,12 @@ title: Startups Contest
 <div class="bloc blocfloat2h speakerbio">
 <i class="icon-book icon-large"></i>
 
-Atlantic 2.0 and Company Campus organised together the Startup Contest 2013 to 
-give to VCs and startups a privileged meeting place. The competition which takes 
-places simultaneously will designate the winner of this 2013 edition who will take a ride 
-on the Elephant des machines with some VCs.  
-  
+Atlantic 2.0 and Company Campus organised together the Startup Contest 2013 to
+give to VCs and startups a privileged meeting place. The competition which
+takes places simultaneously will designate the winner of this 2013 edition.
+The top three startups will take a ride on the Elephant des machines with some
+VCs.
+
 The Startup contest 2013 also come with:  
 
 **A registration form with a Business Model Canvas**  
