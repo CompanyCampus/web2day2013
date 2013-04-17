@@ -2,7 +2,7 @@
 firstname: Corinne 
 lastname: Delaporte
 twitter: @euptouyou
-twitterwiddgetid: 321921368801284097
+twitterwiddgetid: 324584068882759680
 site: http://www.euptouyou.com/
 avatar: /assets/images/speakers/corinne-delaporte/corinne-delaporte1.png
 bigphoto: /assets/images/speakers/corinne-delaporte/corinne-delaporte2.png
