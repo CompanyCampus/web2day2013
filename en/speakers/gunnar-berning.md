@@ -3,7 +3,7 @@ firstname: Gunnar
 lastname: Berning
 twitter: @twago_france
 twitterwiddgetid: 324099266572337152
-site: http://www.twago.com/
+site: http://www.twago.fr/
 avatar: /assets/images/speakers/gunnar-berning/gunnar-berning1.png
 bigphoto: /assets/images/speakers/gunnar-berning/gunnar-berning2.png
 bigphoto2: /assets/images/speakers/gunnar-berning/gunnar-berning3.png
