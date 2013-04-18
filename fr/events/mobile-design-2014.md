@@ -4,7 +4,7 @@ location: Room 2
 start: 2013-05-16 14:00
 end: 2013-05-16 15:00
 type: Panel
-speaker: 
+speaker: baptiste-benezet,
 topic: design
 ---
 
