@@ -4,7 +4,7 @@ location: Room 1
 start: 2013-05-17 15:50
 end: 2013-05-17 16:20
 type: Pitch
-speaker: celine-lazorthes,bruno-walther,
+speaker: celine-lazorthes,bruno-walther,julien-tartarin
 topic: startup
 ---
 
