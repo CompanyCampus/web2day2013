@@ -7,7 +7,7 @@ date: 2013-03-27 10:07
 
 Vous cherchez un logement pour le Web2Day ? Pourquoi ne pas opter pour une solution 2.0 avec Airbnb ? Airbnb est un service en ligne qui réunit des voyageurs à la recherche de logements uniques et des hôtes qui ont un hébergement ou une chambre à louer. Près de 200 appartements, maisons ou chambres chez l'habitant sont disponibles à Nantes.
 
-Grâce au partenariat entre Web2Day et Airbnb, bénéficiez même d'un coupon de réduction de 10€ avec le code : WEB2DAY. Consultez l'intégralité de nos logements disponibles à Nantes sur [ce lien](https://www.airbnb.fr/s/Nantes--France?checkin=15-05-2013&checkout=17-05-2013&af=2989860&c=web2day){:target="_blank"} ou explorez notre [wishliste spéciale Web2Day](https://www.airbnb.fr/wishlists/10359032&af=2989860&c=web2daywishlist){:target="_blank"} !
+Grâce au partenariat entre Web2Day et Airbnb, bénéficiez même d'un coupon de réduction de 10€ avec le code : WEB2DAY. Consultez l'intégralité de nos logements disponibles à Nantes sur [ce lien](https://www.airbnb.fr/s/Nantes--France?checkin=15-05-2013&checkout=17-05-2013&af=2989860&c=web2day)(:target="_blank") ou explorez notre [wishliste spéciale Web2Day](https://www.airbnb.fr/wishlists/10359032&af=2989860&c=web2daywishlist){:target="_blank"} !
 
 Nantais, logez un participant Web2Day chez vous avec Airbnb !
 
