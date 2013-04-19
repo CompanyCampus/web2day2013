@@ -22,7 +22,7 @@ Tramway L1
 </div>
 </div>
 
-<div class="bloc bloc1">
+<div class="bloc bloc1 bloc-log">
 <span class="bloc-title">Logement</span>
 <div class="bloc-body">
 
