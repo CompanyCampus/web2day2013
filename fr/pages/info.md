@@ -23,10 +23,10 @@ Tramway L1
 </div>
 
 <div class="bloc bloc1">
-<span class="bloc-title">Logements</span>
+<span class="bloc-title">Logement</span>
 <div class="bloc-body">
 
-Profitez de logements à prix réduits grâce à notre<a href="http://www.atlantic2.org/airbnb-partenaire-du-web2day/">partenariat</a>avec Airbnb 
+Des centaines de logements disponibles avec <a href="http://www.atlantic2.org/airbnb-partenaire-du-web2day/" target="blank">Airbnb</a> !
 
 </div>
 </div>
