@@ -26,13 +26,13 @@ The Startup contest 2013 also come with:
 
 **A Vine pitch #6secondsW2D for each startup**  
 
-**A deadline, april 29th, to submit the application**  
+**A deadline, May 7th, to submit the application**  
 
 **40 startups qualified and selected for apply to the final**  
 
 Thursday 16th may, pitch sessions and a final
 
-After a morning pitch session, 7 startups will be qualified for a final during the late 
+After a morning pitch session, 4 startups will be qualified for a final during the late 
 afternoon. Two wild cards, coming from the Startup Factory, will join them.
 
 **Matching Meetings**

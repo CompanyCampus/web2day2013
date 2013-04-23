@@ -28,13 +28,13 @@ Le Startup Contest 2013, c’est:
 
 **Un Pitch Vine #6secondsW2D pour chaque startup**
 
-**Une deadline le 29 avril pour soumettre sa candidature**
+**Une deadline le 7 mai pour soumettre sa candidature**
 
 **40 startups qualifiées et sélectionnées pour postuler à la finale**
 
 **Le jeudi 16 mai, des sessions de pitch et une finale**
 
-Après une session de pitch le matin, 7 startups seront qualifiées pour une
+Après une session de pitch le matin, 4 startups seront qualifiées pour une
 finale l’après midi. Elles seront rejoints par deux guests issus de la Startup
 Factory.
 
